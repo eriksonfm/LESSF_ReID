@@ -1,4 +1,4 @@
 ./models/
-./ metrics
+./metrics/
 __pycache__
 requirements_installed
