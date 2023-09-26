@@ -1,0 +1,14 @@
+torch 
+opencv-python 
+gdown 
+tensorboard 
+joblib 
+transformers 
+sentencepiece 
+termcolor 
+scikit-learn 
+faiss-gpu 
+jupyterlab 
+ipykernel 
+torchreid
+pillow
