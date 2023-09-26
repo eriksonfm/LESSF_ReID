@@ -38,24 +38,24 @@ def load_dataset(dataset_name):
 	
 	if dataset_name == "Market":
 	
-		train_images = load_set_from_market_duke("/home/gbertocco/Doctorate/reid-data/market1501/Market-1501-v15.09.15/bounding_box_train")
-		gallery_images = load_set_from_market_duke("/home/gbertocco/Doctorate/reid-data/market1501/Market-1501-v15.09.15/bounding_box_test")
-		queries_images = load_set_from_market_duke("/home/gbertocco/Doctorate/reid-data/market1501/Market-1501-v15.09.15/query")
+		train_images = load_set_from_market_duke("/hadatasets/ReID_Datasets/Market-1501-v15.09.15/bounding_box_train")
+		gallery_images = load_set_from_market_duke("/hadatasets/ReID_Datasets/market1501/Market-1501-v15.09.15/bounding_box_test")
+		queries_images = load_set_from_market_duke("/hadatasets/ReID_Datasets/market1501/Market-1501-v15.09.15/query")
 
 	elif dataset_name == "Duke":
 
-		train_images = load_set_from_market_duke("/home/gbertocco/Doctorate/reid-data/dukemtmc/DukeMTMC-reID/bounding_box_train")
-		gallery_images = load_set_from_market_duke("/home/gbertocco/Doctorate/reid-data/dukemtmc/DukeMTMC-reID/bounding_box_test")
-		queries_images = load_set_from_market_duke("/home/gbertocco/Doctorate/reid-data/dukemtmc/DukeMTMC-reID/query")
+		train_images = load_set_from_market_duke("/hadatasets/ReID_Datasets/DukeMTMC-reID/bounding_box_train")
+		gallery_images = load_set_from_market_duke("/hadatasets/ReID_Datasets/DukeMTMC-reID/bounding_box_test")
+		queries_images = load_set_from_market_duke("/hadatasets/ReID_Datasets/DukeMTMC-reID/query")
 
 	elif dataset_name == "MSMT17":
 
-		base_name_train = "/home/gbertocco/Doctorate/reid-data/MSMT17_V2/mask_train_v2"
-		train_images = load_set_from_MSMT17("/home/gbertocco/Doctorate/reid-data/MSMT17_V2/list_train_uda.txt", base_name_train)
+		base_name_train = "/hadatasets/ReID_Datasets/MSMT17_V2/mask_train_v2"
+		train_images = load_set_from_MSMT17("/hadatasets/ReID_Datasets/MSMT17_V2/list_train_uda.txt", base_name_train)
 
-		base_name_test = "/home/gbertocco/Doctorate/reid-data/MSMT17_V2/mask_test_v2"
-		gallery_images = load_set_from_MSMT17("/home/gbertocco/Doctorate/reid-data/MSMT17_V2/list_gallery.txt", base_name_test)
-		queries_images = load_set_from_MSMT17("/home/gbertocco/Doctorate/reid-data/MSMT17_V2/list_query.txt", base_name_test)
+		base_name_test = "/hadatasets/ReID_Datasets/MSMT17_V2/mask_test_v2"
+		gallery_images = load_set_from_MSMT17("/hadatasets/ReID_Datasets/MSMT17_V2/list_gallery.txt", base_name_test)
+		queries_images = load_set_from_MSMT17("/hadatasets/ReID_Datasets/MSMT17_V2/list_query.txt", base_name_test)
 
 
 	return train_images, gallery_images, queries_images
