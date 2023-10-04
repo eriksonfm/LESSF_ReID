@@ -124,6 +124,7 @@ def validate(queries, gallery, model, rerank=False, gpu_index=0):
 	# Compute Ranks
 	ranks = [1, 5, 10]
 	print("Computing CMC and mAP ...")
+  
 	cmc, mAP = torchreid.metrics.evaluate_rank(distmat, queries[:,1], gallery[:,1], 
 														queries[:,2], gallery[:,2], use_metric_cuhk03=False)
 

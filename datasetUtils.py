@@ -32,6 +32,26 @@ def load_set_from_MSMT17(PATH, base_name):
 	images_names = np.array(images_names)
 	return images_names
 
+def load_from_Jadson(PATH, base_dir):
+    
+    images_names = []
+    file = open(PATH, "r")
+    file.readline()
+    for line in file.readlines():
+        img_name, pid_name = line.split(",")
+        
+        pid = int(pid_name[:-1]) # retirando o \n que sobrou da linha
+        # o pid precisa attack/n_attack
+        
+        camid = img_name.split("/")[5].split("_")[0]
+        # o camid identifica o aparelho
+        
+        img_path = os.path.join(base_dir, img_name)
+        images_names.append([img_path, pid, camid])
+        
+    images_names = np.array(images_names)
+    return images_names
+
 
 ## Load target dataset
 def load_dataset(dataset_name):
@@ -56,6 +76,13 @@ def load_dataset(dataset_name):
 		base_name_test = "/hadatasets/ReID_Datasets/MSMT17_V2/mask_test_v2"
 		gallery_images = load_set_from_MSMT17("/hadatasets/ReID_Datasets/MSMT17_V2/list_gallery.txt", base_name_test)
 		queries_images = load_set_from_MSMT17("/hadatasets/ReID_Datasets/MSMT17_V2/list_query.txt", base_name_test)
+  
+	elif dataset_name == "Jadson":
+		base_name_dir = "/hadatasets/Synthetic-Realities/20-spoofing-mpad/2020-plosone-recod-mpad"
+
+		train_images = load_from_Jadson("csvs/train_motog5.csv", base_name_dir) 
+		gallery_images = load_from_Jadson("csvs/test_motog5.csv", base_name_dir) 
+		queries_images = load_from_Jadson("csvs/val_motog5.csv", base_name_dir) 
 
 
 	return train_images, gallery_images, queries_images
