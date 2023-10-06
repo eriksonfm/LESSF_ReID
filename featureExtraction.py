@@ -161,6 +161,7 @@ def extractFeatures(subset, model, batch_size, gpu_index=0, eval_mode=True):
             
     end = time.time()
     print("Features extracted in %.2f seconds" % (end-start))
+    
 
     return subset_fvs
 

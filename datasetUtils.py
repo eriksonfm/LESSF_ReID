@@ -37,14 +37,18 @@ def load_from_Jadson(PATH, base_dir):
     images_names = []
     file = open(PATH, "r")
     file.readline()
+    counter=0
     for line in file.readlines():
         img_name, pid_name = line.split(",")
         
         pid = int(pid_name[:-1]) # retirando o \n que sobrou da linha
         # o pid precisa attack/n_attack
         
-        camid = img_name.split("/")[5].split("_")[0]
+        # camid = img_name.split("/")[5].split("_")[0]
         # o camid identifica o aparelho
+        
+        camid = counter
+        counter +=1
         
         img_path = os.path.join(base_dir, img_name)
         images_names.append([img_path, pid, camid])
