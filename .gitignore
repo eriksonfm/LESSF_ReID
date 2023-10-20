@@ -2,3 +2,9 @@ models/
 metrics/
 __pycache__
 requirements_installed
+.vscode/launch.json
+.vscode/settings.json
+resultados/main.html
+resultados/metricas.html
+resultados/test.pt
+resultados/validation.pt
