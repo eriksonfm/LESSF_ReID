@@ -8,3 +8,5 @@ resultados/main.html
 resultados/metricas.html
 resultados/test.pt
 resultados/validation.pt
+resultados/labels_test.npy
+resultados/labels_validation.npy
