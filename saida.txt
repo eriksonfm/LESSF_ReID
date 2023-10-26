@@ -1,0 +1,3883 @@
+dependências instaladas
+Num GPU's: 4
+Allocated GPU's for model: [1, 2, 3]
+Successfully loaded imagenet pretrained weights from "/home/emorais/.cache/torch/checkpoints/osnet_x1_0_imagenet.pth"
+Successfully loaded imagenet pretrained weights from "/home/emorais/.cache/torch/checkpoints/osnet_x1_0_imagenet.pth"
+Training Size: (16522, 3)
+Gallery Size: (17661, 3)
+Query Size: (2228, 3)
+Validating ResNet50 on Duke ...
+Features extracted in 9.80 seconds
+Features extracted in 16.40 seconds
+Computing CMC and mAP ...
+** Results **
+mAP: 2.29%
+CMC curve
+Rank-1  : 7.59%
+Rank-5  : 14.86%
+Rank-10 : 18.58%
+Rank-20 : 22.49%
+Validating OSNet on Duke ...
+Features extracted in 3.15 seconds
+Features extracted in 9.58 seconds
+Computing CMC and mAP ...
+** Results **
+mAP: 4.96%
+CMC curve
+Rank-1  : 16.56%
+Rank-5  : 26.97%
+Rank-10 : 31.91%
+Rank-20 : 38.11%
+Validating DenseNet121 on Duke ...
+Features extracted in 3.23 seconds
+Features extracted in 12.75 seconds
+Computing CMC and mAP ...
+** Results **
+mAP: 3.89%
+CMC curve
+Rank-1  : 12.03%
+Rank-5  : 21.72%
+Rank-10 : 26.71%
+Rank-20 : 32.32%
+Computing CMC and mAP ...
+** Results **
+mAP: 6.17%
+Ranks:
+Rank-1  : 17.28%
+Rank-5  : 28.19%
+Rank-10 : 33.84%
+###============ Iteration number 1/30 ============###
+Extracting Online Features for ResNet50 ...
+Features extracted in 10.99 seconds
+Extracting Online Features for OSNet ...
+Features extracted in 9.85 seconds
+Extracting Online Features for DenseNet121 ...
+Features extracted in 10.81 seconds
+Computing jaccard distance...
+Jaccard distance computing time cost: 22.579692125320435
+Computing jaccard distance...
+Jaccard distance computing time cost: 22.952332258224487
+Computing jaccard distance...
+Jaccard distance computing time cost: 22.06435751914978
+Reliability: 0.242
+Mean Purity: 0.44181
+There are 171 clusters with 1 cameras
+There are 53 clusters with 2 cameras
+There are 17 clusters with 3 cameras
+There are 3 clusters with 4 cameras
+There are 3 clusters with 5 cameras
+Number of classes: 247
+Learning Rate: 0.000035
+Training ResNet50 ...
+Features extracted in 4.20 seconds
+Batches computed: 15, Tau value: 0.040
+Mean Loss: 6.3812201, Mean Center Loss: 4.1307506, Mean Hard Triplet Loss: 4.5009390
+Percetage of correct triplets: 0.76
+Features extracted in 4.79 seconds
+Batches computed: 30, Tau value: 0.040
+Mean Loss: 3.2041585, Mean Center Loss: 1.4885691, Mean Hard Triplet Loss: 3.4311787
+Percetage of correct triplets: 0.76
+Features extracted in 4.63 seconds
+Batches computed: 45, Tau value: 0.040
+Mean Loss: 2.5000316, Mean Center Loss: 1.0036173, Mean Hard Triplet Loss: 2.9928287
+Percetage of correct triplets: 0.77
+Features extracted in 4.79 seconds
+Batches computed: 60, Tau value: 0.040
+Mean Loss: 2.0780435, Mean Center Loss: 0.7705435, Mean Hard Triplet Loss: 2.6150001
+Percetage of correct triplets: 0.76
+Features extracted in 4.84 seconds
+Batches computed: 75, Tau value: 0.040
+Mean Loss: 1.8773836, Mean Center Loss: 0.6853008, Mean Hard Triplet Loss: 2.3841655
+Percetage of correct triplets: 0.75
+Features extracted in 4.55 seconds
+Batches computed: 90, Tau value: 0.040
+Mean Loss: 1.6983782, Mean Center Loss: 0.5860670, Mean Hard Triplet Loss: 2.2246226
+Percetage of correct triplets: 0.74
+Features extracted in 4.57 seconds
+Batches computed: 105, Tau value: 0.040
+Mean Loss: 1.5841475, Mean Center Loss: 0.5607208, Mean Hard Triplet Loss: 2.0468536
+Percetage of correct triplets: 0.72
+Training OSNet ...
+Features extracted in 4.27 seconds
+Batches computed: 15, Tau value: 0.040
+Mean Loss: 7.3825601, Mean Center Loss: 4.3499228, Mean Hard Triplet Loss: 6.0652746
+Percetage of correct triplets: 0.78
+Features extracted in 4.73 seconds
+Batches computed: 30, Tau value: 0.040
+Mean Loss: 5.4897932, Mean Center Loss: 2.8558034, Mean Hard Triplet Loss: 5.2679798
+Percetage of correct triplets: 0.76
+Features extracted in 4.95 seconds
+Batches computed: 45, Tau value: 0.040
+Mean Loss: 4.5945208, Mean Center Loss: 2.1994502, Mean Hard Triplet Loss: 4.7901411
+Percetage of correct triplets: 0.78
+Features extracted in 4.75 seconds
+Batches computed: 60, Tau value: 0.040
+Mean Loss: 4.1680733, Mean Center Loss: 1.9280856, Mean Hard Triplet Loss: 4.4799753
+Percetage of correct triplets: 0.78
+Features extracted in 4.62 seconds
+Batches computed: 75, Tau value: 0.040
+Mean Loss: 3.8956853, Mean Center Loss: 1.7566680, Mean Hard Triplet Loss: 4.2780347
+Percetage of correct triplets: 0.77
+Features extracted in 4.69 seconds
+Batches computed: 90, Tau value: 0.040
+Mean Loss: 3.6291631, Mean Center Loss: 1.6154191, Mean Hard Triplet Loss: 4.0274880
+Percetage of correct triplets: 0.76
+Features extracted in 4.82 seconds
+Batches computed: 105, Tau value: 0.040
+Mean Loss: 3.3599498, Mean Center Loss: 1.4959499, Mean Hard Triplet Loss: 3.7279998
+Percetage of correct triplets: 0.78
+Training DenseNet121 ...
+Features extracted in 4.88 seconds
+Batches computed: 15, Tau value: 0.040
+Mean Loss: 5.9818432, Mean Center Loss: 3.9277260, Mean Hard Triplet Loss: 4.1082346
+Percetage of correct triplets: 0.77
+Features extracted in 4.67 seconds
+Batches computed: 30, Tau value: 0.040
+Mean Loss: 3.5576630, Mean Center Loss: 1.8332269, Mean Hard Triplet Loss: 3.4488722
+Percetage of correct triplets: 0.77
+Features extracted in 5.05 seconds
+Batches computed: 45, Tau value: 0.040
+Mean Loss: 2.8321074, Mean Center Loss: 1.2917641, Mean Hard Triplet Loss: 3.0806867
+Percetage of correct triplets: 0.76
+Features extracted in 4.89 seconds
+Batches computed: 60, Tau value: 0.040
+Mean Loss: 2.5062701, Mean Center Loss: 1.0562603, Mean Hard Triplet Loss: 2.9000196
+Percetage of correct triplets: 0.76
+Features extracted in 5.01 seconds
+Batches computed: 75, Tau value: 0.040
+Mean Loss: 2.1946614, Mean Center Loss: 0.8653487, Mean Hard Triplet Loss: 2.6586253
+Percetage of correct triplets: 0.75
+Features extracted in 5.31 seconds
+Batches computed: 90, Tau value: 0.040
+Mean Loss: 1.9478539, Mean Center Loss: 0.7124281, Mean Hard Triplet Loss: 2.4708515
+Percetage of correct triplets: 0.74
+Features extracted in 4.87 seconds
+Batches computed: 105, Tau value: 0.040
+Mean Loss: 1.8778057, Mean Center Loss: 0.6832710, Mean Hard Triplet Loss: 2.3890694
+Percetage of correct triplets: 0.76
+###============ Iteration number 2/30 ============###
+Extracting Online Features for ResNet50 ...
+Features extracted in 11.81 seconds
+Extracting Online Features for OSNet ...
+Features extracted in 10.12 seconds
+Extracting Online Features for DenseNet121 ...
+Features extracted in 11.87 seconds
+Computing jaccard distance...
+Jaccard distance computing time cost: 24.48403239250183
+Computing jaccard distance...
+Jaccard distance computing time cost: 23.16306209564209
+Computing jaccard distance...
+Jaccard distance computing time cost: 23.204553842544556
+Reliability: 0.351
+Mean Purity: 0.35334
+There are 245 clusters with 1 cameras
+There are 86 clusters with 2 cameras
+There are 34 clusters with 3 cameras
+There are 12 clusters with 4 cameras
+There are 1 clusters with 5 cameras
+There are 2 clusters with 6 cameras
+There are 1 clusters with 7 cameras
+Number of classes: 381
+Learning Rate: 0.000070
+Training ResNet50 ...
+Features extracted in 6.70 seconds
+Batches computed: 23, Tau value: 0.040
+Mean Loss: 1.9364423, Mean Center Loss: 0.7529080, Mean Hard Triplet Loss: 2.3670687
+Percetage of correct triplets: 0.79
+Features extracted in 7.09 seconds
+Batches computed: 46, Tau value: 0.040
+Mean Loss: 1.6072381, Mean Center Loss: 0.6287344, Mean Hard Triplet Loss: 1.9570072
+Percetage of correct triplets: 0.79
+Features extracted in 6.63 seconds
+Batches computed: 69, Tau value: 0.040
+Mean Loss: 1.3447805, Mean Center Loss: 0.5014468, Mean Hard Triplet Loss: 1.6866673
+Percetage of correct triplets: 0.78
+Features extracted in 6.92 seconds
+Batches computed: 92, Tau value: 0.040
+Mean Loss: 1.1906265, Mean Center Loss: 0.4430511, Mean Hard Triplet Loss: 1.4951508
+Percetage of correct triplets: 0.79
+Features extracted in 6.76 seconds
+Batches computed: 115, Tau value: 0.040
+Mean Loss: 1.0701425, Mean Center Loss: 0.3982081, Mean Hard Triplet Loss: 1.3438687
+Percetage of correct triplets: 0.78
+Features extracted in 7.03 seconds
+Batches computed: 138, Tau value: 0.040
+Mean Loss: 0.9239673, Mean Center Loss: 0.3538766, Mean Hard Triplet Loss: 1.1401814
+Percetage of correct triplets: 0.78
+Features extracted in 6.88 seconds
+Batches computed: 161, Tau value: 0.040
+Mean Loss: 0.8816337, Mean Center Loss: 0.3287087, Mean Hard Triplet Loss: 1.1058500
+Percetage of correct triplets: 0.80
+Training OSNet ...
+Features extracted in 6.59 seconds
+Batches computed: 23, Tau value: 0.040
+Mean Loss: 3.7014600, Mean Center Loss: 1.7201434, Mean Hard Triplet Loss: 3.9626333
+Percetage of correct triplets: 0.81
+Features extracted in 6.93 seconds
+Batches computed: 46, Tau value: 0.040
+Mean Loss: 3.3983895, Mean Center Loss: 1.5224126, Mean Hard Triplet Loss: 3.7519538
+Percetage of correct triplets: 0.80
+Features extracted in 6.36 seconds
+Batches computed: 69, Tau value: 0.040
+Mean Loss: 3.0054336, Mean Center Loss: 1.3388536, Mean Hard Triplet Loss: 3.3331600
+Percetage of correct triplets: 0.80
+Features extracted in 6.42 seconds
+Batches computed: 92, Tau value: 0.040
+Mean Loss: 2.7934913, Mean Center Loss: 1.1690207, Mean Hard Triplet Loss: 3.2489412
+Percetage of correct triplets: 0.80
+Features extracted in 6.40 seconds
+Batches computed: 115, Tau value: 0.040
+Mean Loss: 2.6380701, Mean Center Loss: 1.1126188, Mean Hard Triplet Loss: 3.0509027
+Percetage of correct triplets: 0.81
+Features extracted in 6.43 seconds
+Batches computed: 138, Tau value: 0.040
+Mean Loss: 2.4225111, Mean Center Loss: 0.9917159, Mean Hard Triplet Loss: 2.8615903
+Percetage of correct triplets: 0.82
+Features extracted in 6.40 seconds
+Batches computed: 161, Tau value: 0.040
+Mean Loss: 2.3202946, Mean Center Loss: 0.9461057, Mean Hard Triplet Loss: 2.7483778
+Percetage of correct triplets: 0.79
+Training DenseNet121 ...
+Features extracted in 6.53 seconds
+Batches computed: 23, Tau value: 0.040
+Mean Loss: 2.1629705, Mean Center Loss: 0.8297683, Mean Hard Triplet Loss: 2.6664043
+Percetage of correct triplets: 0.80
+Features extracted in 6.76 seconds
+Batches computed: 46, Tau value: 0.040
+Mean Loss: 1.8644802, Mean Center Loss: 0.7117375, Mean Hard Triplet Loss: 2.3054854
+Percetage of correct triplets: 0.81
+Features extracted in 7.12 seconds
+Batches computed: 69, Tau value: 0.040
+Mean Loss: 1.6345090, Mean Center Loss: 0.6036940, Mean Hard Triplet Loss: 2.0616302
+Percetage of correct triplets: 0.78
+Features extracted in 6.89 seconds
+Batches computed: 92, Tau value: 0.040
+Mean Loss: 1.5305630, Mean Center Loss: 0.5601674, Mean Hard Triplet Loss: 1.9407912
+Percetage of correct triplets: 0.79
+Features extracted in 7.16 seconds
+Batches computed: 115, Tau value: 0.040
+Mean Loss: 1.3462428, Mean Center Loss: 0.4824907, Mean Hard Triplet Loss: 1.7275042
+Percetage of correct triplets: 0.79
+Features extracted in 7.19 seconds
+Batches computed: 138, Tau value: 0.040
+Mean Loss: 1.2330662, Mean Center Loss: 0.4613853, Mean Hard Triplet Loss: 1.5433617
+Percetage of correct triplets: 0.78
+Features extracted in 7.21 seconds
+Batches computed: 161, Tau value: 0.040
+Mean Loss: 1.1213287, Mean Center Loss: 0.4094827, Mean Hard Triplet Loss: 1.4236919
+Percetage of correct triplets: 0.79
+###============ Iteration number 3/30 ============###
+Extracting Online Features for ResNet50 ...
+Features extracted in 12.79 seconds
+Extracting Online Features for OSNet ...
+Features extracted in 11.22 seconds
+Extracting Online Features for DenseNet121 ...
+Features extracted in 12.98 seconds
+Computing jaccard distance...
+Jaccard distance computing time cost: 24.98578667640686
+Computing jaccard distance...
+Jaccard distance computing time cost: 22.757150888442993
+Computing jaccard distance...
+Jaccard distance computing time cost: 21.925227403640747
+Reliability: 0.613
+Mean Purity: 0.36546
+There are 321 clusters with 1 cameras
+There are 114 clusters with 2 cameras
+There are 66 clusters with 3 cameras
+There are 59 clusters with 4 cameras
+There are 7 clusters with 5 cameras
+There are 5 clusters with 6 cameras
+There are 2 clusters with 7 cameras
+There are 1 clusters with 8 cameras
+Number of classes: 575
+Learning Rate: 0.000105
+Training ResNet50 ...
+Features extracted in 9.09 seconds
+Batches computed: 35, Tau value: 0.040
+Mean Loss: 1.7929834, Mean Center Loss: 0.7634783, Mean Hard Triplet Loss: 2.0590102
+Percetage of correct triplets: 0.76
+Features extracted in 8.60 seconds
+Batches computed: 70, Tau value: 0.040
+Mean Loss: 1.5944444, Mean Center Loss: 0.6806101, Mean Hard Triplet Loss: 1.8276687
+Percetage of correct triplets: 0.76
+Features extracted in 8.24 seconds
+Batches computed: 105, Tau value: 0.040
+Mean Loss: 1.4160941, Mean Center Loss: 0.5919333, Mean Hard Triplet Loss: 1.6483218
+Percetage of correct triplets: 0.74
+Features extracted in 8.14 seconds
+Batches computed: 140, Tau value: 0.040
+Mean Loss: 1.2112034, Mean Center Loss: 0.5108925, Mean Hard Triplet Loss: 1.4006219
+Percetage of correct triplets: 0.75
+Features extracted in 8.11 seconds
+Batches computed: 175, Tau value: 0.040
+Mean Loss: 1.0510710, Mean Center Loss: 0.4368662, Mean Hard Triplet Loss: 1.2284094
+Percetage of correct triplets: 0.75
+Features extracted in 8.13 seconds
+Batches computed: 210, Tau value: 0.040
+Mean Loss: 0.9697341, Mean Center Loss: 0.3960206, Mean Hard Triplet Loss: 1.1474269
+Percetage of correct triplets: 0.76
+Features extracted in 8.65 seconds
+Batches computed: 245, Tau value: 0.040
+Mean Loss: 0.9320536, Mean Center Loss: 0.4035183, Mean Hard Triplet Loss: 1.0570706
+Percetage of correct triplets: 0.75
+Training OSNet ...
+Features extracted in 7.46 seconds
+Batches computed: 35, Tau value: 0.040
+Mean Loss: 3.0255126, Mean Center Loss: 1.3582024, Mean Hard Triplet Loss: 3.3346203
+Percetage of correct triplets: 0.78
+Features extracted in 8.31 seconds
+Batches computed: 70, Tau value: 0.040
+Mean Loss: 2.7438309, Mean Center Loss: 1.1979322, Mean Hard Triplet Loss: 3.0917972
+Percetage of correct triplets: 0.78
+Features extracted in 7.80 seconds
+Batches computed: 105, Tau value: 0.040
+Mean Loss: 2.6108766, Mean Center Loss: 1.1262269, Mean Hard Triplet Loss: 2.9692994
+Percetage of correct triplets: 0.78
+Features extracted in 8.37 seconds
+Batches computed: 140, Tau value: 0.040
+Mean Loss: 2.4180393, Mean Center Loss: 1.0306630, Mean Hard Triplet Loss: 2.7747526
+Percetage of correct triplets: 0.78
+Features extracted in 8.53 seconds
+Batches computed: 175, Tau value: 0.040
+Mean Loss: 2.2164555, Mean Center Loss: 0.9249139, Mean Hard Triplet Loss: 2.5830831
+Percetage of correct triplets: 0.77
+Features extracted in 7.90 seconds
+Batches computed: 210, Tau value: 0.040
+Mean Loss: 2.0872983, Mean Center Loss: 0.8367350, Mean Hard Triplet Loss: 2.5011266
+Percetage of correct triplets: 0.77
+Features extracted in 8.74 seconds
+Batches computed: 245, Tau value: 0.040
+Mean Loss: 2.0018832, Mean Center Loss: 0.8265258, Mean Hard Triplet Loss: 2.3507149
+Percetage of correct triplets: 0.77
+Training DenseNet121 ...
+Features extracted in 9.03 seconds
+Batches computed: 35, Tau value: 0.040
+Mean Loss: 1.8934304, Mean Center Loss: 0.7703682, Mean Hard Triplet Loss: 2.2461242
+Percetage of correct triplets: 0.77
+Features extracted in 9.15 seconds
+Batches computed: 70, Tau value: 0.040
+Mean Loss: 1.7476504, Mean Center Loss: 0.7224040, Mean Hard Triplet Loss: 2.0504928
+Percetage of correct triplets: 0.75
+Features extracted in 9.29 seconds
+Batches computed: 105, Tau value: 0.040
+Mean Loss: 1.6071871, Mean Center Loss: 0.6706018, Mean Hard Triplet Loss: 1.8731707
+Percetage of correct triplets: 0.76
+Features extracted in 9.58 seconds
+Batches computed: 140, Tau value: 0.040
+Mean Loss: 1.4728032, Mean Center Loss: 0.5931524, Mean Hard Triplet Loss: 1.7593017
+Percetage of correct triplets: 0.77
+Features extracted in 9.39 seconds
+Batches computed: 175, Tau value: 0.040
+Mean Loss: 1.3606815, Mean Center Loss: 0.5573796, Mean Hard Triplet Loss: 1.6066038
+Percetage of correct triplets: 0.76
+Features extracted in 9.69 seconds
+Batches computed: 210, Tau value: 0.040
+Mean Loss: 1.2895563, Mean Center Loss: 0.5204079, Mean Hard Triplet Loss: 1.5382968
+Percetage of correct triplets: 0.75
+Features extracted in 9.24 seconds
+Batches computed: 245, Tau value: 0.040
+Mean Loss: 1.1259416, Mean Center Loss: 0.4609563, Mean Hard Triplet Loss: 1.3299705
+Percetage of correct triplets: 0.76
+###============ Iteration number 4/30 ============###
+Extracting Online Features for ResNet50 ...
+Features extracted in 13.57 seconds
+Extracting Online Features for OSNet ...
+Features extracted in 11.24 seconds
+Extracting Online Features for DenseNet121 ...
+Features extracted in 12.54 seconds
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.772449493408203
+Computing jaccard distance...
+Jaccard distance computing time cost: 21.805687189102173
+Computing jaccard distance...
+Jaccard distance computing time cost: 21.26436996459961
+Reliability: 0.793
+Mean Purity: 0.35293
+There are 230 clusters with 1 cameras
+There are 169 clusters with 2 cameras
+There are 100 clusters with 3 cameras
+There are 82 clusters with 4 cameras
+There are 18 clusters with 5 cameras
+There are 11 clusters with 6 cameras
+There are 2 clusters with 7 cameras
+There are 3 clusters with 8 cameras
+Number of classes: 615
+Learning Rate: 0.000140
+Training ResNet50 ...
+Features extracted in 10.35 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 1.6161652, Mean Center Loss: 0.6930798, Mean Hard Triplet Loss: 1.8461708
+Percetage of correct triplets: 0.78
+Features extracted in 10.34 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 1.4422469, Mean Center Loss: 0.6078014, Mean Hard Triplet Loss: 1.6688909
+Percetage of correct triplets: 0.75
+Features extracted in 10.34 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 1.2444244, Mean Center Loss: 0.5108143, Mean Hard Triplet Loss: 1.4672202
+Percetage of correct triplets: 0.76
+Features extracted in 10.33 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 1.1486382, Mean Center Loss: 0.4876022, Mean Hard Triplet Loss: 1.3220720
+Percetage of correct triplets: 0.76
+Features extracted in 10.23 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 1.0627455, Mean Center Loss: 0.4470139, Mean Hard Triplet Loss: 1.2314631
+Percetage of correct triplets: 0.77
+Features extracted in 10.41 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.9713354, Mean Center Loss: 0.4001411, Mean Hard Triplet Loss: 1.1423887
+Percetage of correct triplets: 0.76
+Features extracted in 10.07 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.9348353, Mean Center Loss: 0.3894051, Mean Hard Triplet Loss: 1.0908604
+Percetage of correct triplets: 0.76
+Training OSNet ...
+Features extracted in 9.96 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 2.5327518, Mean Center Loss: 1.0310453, Mean Hard Triplet Loss: 3.0034129
+Percetage of correct triplets: 0.78
+Features extracted in 9.74 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 2.3378944, Mean Center Loss: 0.9495588, Mean Hard Triplet Loss: 2.7766712
+Percetage of correct triplets: 0.77
+Features extracted in 9.21 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 2.2305518, Mean Center Loss: 0.9018243, Mean Hard Triplet Loss: 2.6574549
+Percetage of correct triplets: 0.77
+Features extracted in 46.15 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 2.0123036, Mean Center Loss: 0.8120895, Mean Hard Triplet Loss: 2.4004283
+Percetage of correct triplets: 0.78
+Features extracted in 9.25 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 1.9214776, Mean Center Loss: 0.7582517, Mean Hard Triplet Loss: 2.3264518
+Percetage of correct triplets: 0.78
+Features extracted in 9.17 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 1.8224376, Mean Center Loss: 0.7089983, Mean Hard Triplet Loss: 2.2268787
+Percetage of correct triplets: 0.77
+Features extracted in 8.75 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 1.7917893, Mean Center Loss: 0.6947255, Mean Hard Triplet Loss: 2.1941276
+Percetage of correct triplets: 0.76
+Training DenseNet121 ...
+Features extracted in 11.23 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 1.7624424, Mean Center Loss: 0.7139676, Mean Hard Triplet Loss: 2.0969496
+Percetage of correct triplets: 0.75
+Features extracted in 11.01 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 1.5370447, Mean Center Loss: 0.6310933, Mean Hard Triplet Loss: 1.8119028
+Percetage of correct triplets: 0.78
+Features extracted in 11.23 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 1.4017557, Mean Center Loss: 0.5812112, Mean Hard Triplet Loss: 1.6410889
+Percetage of correct triplets: 0.76
+Features extracted in 11.09 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 1.3046556, Mean Center Loss: 0.5327837, Mean Hard Triplet Loss: 1.5437439
+Percetage of correct triplets: 0.76
+Features extracted in 11.51 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 1.2131279, Mean Center Loss: 0.5186400, Mean Hard Triplet Loss: 1.3889758
+Percetage of correct triplets: 0.76
+Features extracted in 10.45 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 1.2011596, Mean Center Loss: 0.4742667, Mean Hard Triplet Loss: 1.4537859
+Percetage of correct triplets: 0.76
+Features extracted in 10.36 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 1.0910867, Mean Center Loss: 0.4445770, Mean Hard Triplet Loss: 1.2930194
+Percetage of correct triplets: 0.76
+###============ Iteration number 5/30 ============###
+Extracting Online Features for ResNet50 ...
+Features extracted in 11.96 seconds
+Extracting Online Features for OSNet ...
+Features extracted in 10.74 seconds
+Extracting Online Features for DenseNet121 ...
+Features extracted in 12.65 seconds
+Computing jaccard distance...
+Jaccard distance computing time cost: 19.964248180389404
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.621483087539673
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.832930326461792
+Reliability: 0.876
+Mean Purity: 0.34117
+There are 158 clusters with 1 cameras
+There are 177 clusters with 2 cameras
+There are 152 clusters with 3 cameras
+There are 97 clusters with 4 cameras
+There are 22 clusters with 5 cameras
+There are 10 clusters with 6 cameras
+There are 4 clusters with 7 cameras
+There are 1 clusters with 8 cameras
+Number of classes: 621
+Learning Rate: 0.000175
+Training ResNet50 ...
+Features extracted in 11.51 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 1.3520442, Mean Center Loss: 0.5694314, Mean Hard Triplet Loss: 1.5652257
+Percetage of correct triplets: 0.76
+Features extracted in 10.94 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 1.1866998, Mean Center Loss: 0.4908648, Mean Hard Triplet Loss: 1.3916699
+Percetage of correct triplets: 0.76
+Features extracted in 10.96 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 1.1060687, Mean Center Loss: 0.4573084, Mean Hard Triplet Loss: 1.2975205
+Percetage of correct triplets: 0.76
+Features extracted in 10.63 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 1.0232371, Mean Center Loss: 0.4304825, Mean Hard Triplet Loss: 1.1855093
+Percetage of correct triplets: 0.77
+Features extracted in 11.35 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.9190741, Mean Center Loss: 0.3899485, Mean Hard Triplet Loss: 1.0582513
+Percetage of correct triplets: 0.76
+Features extracted in 10.51 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.9067254, Mean Center Loss: 0.3867811, Mean Hard Triplet Loss: 1.0398885
+Percetage of correct triplets: 0.76
+Features extracted in 10.93 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.8006503, Mean Center Loss: 0.3329135, Mean Hard Triplet Loss: 0.9354736
+Percetage of correct triplets: 0.77
+Training OSNet ...
+Features extracted in 9.43 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 2.0667688, Mean Center Loss: 0.7982746, Mean Hard Triplet Loss: 2.5369885
+Percetage of correct triplets: 0.76
+Features extracted in 9.41 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 1.9045542, Mean Center Loss: 0.7343991, Mean Hard Triplet Loss: 2.3403101
+Percetage of correct triplets: 0.77
+Features extracted in 9.35 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 1.8077369, Mean Center Loss: 0.6788290, Mean Hard Triplet Loss: 2.2578158
+Percetage of correct triplets: 0.77
+Features extracted in 9.59 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 1.7275781, Mean Center Loss: 0.6502287, Mean Hard Triplet Loss: 2.1546990
+Percetage of correct triplets: 0.76
+Features extracted in 9.62 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 1.6704498, Mean Center Loss: 0.6334439, Mean Hard Triplet Loss: 2.0740119
+Percetage of correct triplets: 0.77
+Features extracted in 9.89 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 1.5735859, Mean Center Loss: 0.5966008, Mean Hard Triplet Loss: 1.9539703
+Percetage of correct triplets: 0.76
+Features extracted in 9.61 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 1.5280822, Mean Center Loss: 0.5715728, Mean Hard Triplet Loss: 1.9130188
+Percetage of correct triplets: 0.78
+Training DenseNet121 ...
+Features extracted in 10.95 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 1.4476235, Mean Center Loss: 0.5636614, Mean Hard Triplet Loss: 1.7679242
+Percetage of correct triplets: 0.76
+Features extracted in 11.13 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 1.3033474, Mean Center Loss: 0.5111844, Mean Hard Triplet Loss: 1.5843260
+Percetage of correct triplets: 0.77
+Features extracted in 11.21 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 1.2490930, Mean Center Loss: 0.5095288, Mean Hard Triplet Loss: 1.4791283
+Percetage of correct triplets: 0.76
+Features extracted in 11.23 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 1.1211899, Mean Center Loss: 0.4448727, Mean Hard Triplet Loss: 1.3526343
+Percetage of correct triplets: 0.76
+Features extracted in 11.12 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 1.0822118, Mean Center Loss: 0.4407463, Mean Hard Triplet Loss: 1.2829309
+Percetage of correct triplets: 0.76
+Features extracted in 10.75 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 1.0067896, Mean Center Loss: 0.4077735, Mean Hard Triplet Loss: 1.1980322
+Percetage of correct triplets: 0.77
+Features extracted in 10.73 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.9825507, Mean Center Loss: 0.3861222, Mean Hard Triplet Loss: 1.1928570
+Percetage of correct triplets: 0.76
+Validating online ResNet50 ...
+Features extracted in 4.44 seconds
+Features extracted in 12.43 seconds
+Computing CMC and mAP ...
+** Results **
+mAP: 50.31%
+CMC curve
+Rank-1  : 70.06%
+Rank-5  : 80.07%
+Rank-10 : 83.39%
+Rank-20 : 85.64%
+Validating momentum ResNet50 ...
+Features extracted in 4.49 seconds
+Features extracted in 12.82 seconds
+Computing CMC and mAP ...
+** Results **
+mAP: 31.70%
+CMC curve
+Rank-1  : 52.33%
+Rank-5  : 67.64%
+Rank-10 : 71.81%
+Rank-20 : 75.13%
+Validating online OSNet ...
+Features extracted in 4.15 seconds
+Features extracted in 10.90 seconds
+Computing CMC and mAP ...
+** Results **
+mAP: 43.45%
+CMC curve
+Rank-1  : 64.23%
+Rank-5  : 77.42%
+Rank-10 : 80.79%
+Rank-20 : 83.39%
+Validating momentum OSNet ...
+Features extracted in 4.72 seconds
+Features extracted in 10.89 seconds
+Computing CMC and mAP ...
+** Results **
+mAP: 20.62%
+CMC curve
+Rank-1  : 43.40%
+Rank-5  : 58.44%
+Rank-10 : 63.91%
+Rank-20 : 69.75%
+Validating online DenseNet121 ...
+Features extracted in 5.37 seconds
+Features extracted in 13.93 seconds
+Computing CMC and mAP ...
+** Results **
+mAP: 46.79%
+CMC curve
+Rank-1  : 65.62%
+Rank-5  : 77.51%
+Rank-10 : 81.37%
+Rank-20 : 83.89%
+Validating momentum DenseNet121 ...
+Features extracted in 5.22 seconds
+Features extracted in 14.44 seconds
+Computing CMC and mAP ...
+** Results **
+mAP: 28.23%
+CMC curve
+Rank-1  : 49.24%
+Rank-5  : 64.45%
+Rank-10 : 69.79%
+Rank-20 : 73.79%
+Validating ensembled with online models ...
+Computing CMC and mAP ...
+** Results **
+mAP: 53.33%
+Ranks:
+Rank-1  : 70.60%
+Rank-5  : 80.88%
+Rank-10 : 83.30%
+Validating ensembled with momentum models ...
+Computing CMC and mAP ...
+** Results **
+mAP: 34.71%
+Ranks:
+Rank-1  : 56.01%
+Rank-5  : 69.43%
+Rank-10 : 74.46%
+###============ Iteration number 6/30 ============###
+Extracting Online Features for ResNet50 ...
+Features extracted in 13.07 seconds
+Extracting Online Features for OSNet ...
+Features extracted in 11.47 seconds
+Extracting Online Features for DenseNet121 ...
+Features extracted in 13.65 seconds
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.956424951553345
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.292998790740967
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.875239372253418
+Reliability: 0.909
+Mean Purity: 0.37889
+There are 137 clusters with 1 cameras
+There are 157 clusters with 2 cameras
+There are 192 clusters with 3 cameras
+There are 115 clusters with 4 cameras
+There are 24 clusters with 5 cameras
+There are 14 clusters with 6 cameras
+There are 4 clusters with 7 cameras
+Number of classes: 643
+Learning Rate: 0.000210
+Training ResNet50 ...
+Features extracted in 12.76 seconds
+Batches computed: 40, Tau value: 0.040
+Mean Loss: 1.1942517, Mean Center Loss: 0.4842499, Mean Hard Triplet Loss: 1.4200035
+Percetage of correct triplets: 0.74
+Features extracted in 12.51 seconds
+Batches computed: 80, Tau value: 0.040
+Mean Loss: 1.1331684, Mean Center Loss: 0.4678133, Mean Hard Triplet Loss: 1.3307102
+Percetage of correct triplets: 0.72
+Features extracted in 12.13 seconds
+Batches computed: 120, Tau value: 0.040
+Mean Loss: 1.0320659, Mean Center Loss: 0.4396983, Mean Hard Triplet Loss: 1.1847353
+Percetage of correct triplets: 0.74
+Features extracted in 12.38 seconds
+Batches computed: 160, Tau value: 0.040
+Mean Loss: 0.9261399, Mean Center Loss: 0.3714185, Mean Hard Triplet Loss: 1.1094426
+Percetage of correct triplets: 0.74
+Features extracted in 12.46 seconds
+Batches computed: 200, Tau value: 0.040
+Mean Loss: 0.8757603, Mean Center Loss: 0.3665971, Mean Hard Triplet Loss: 1.0183264
+Percetage of correct triplets: 0.73
+Features extracted in 12.37 seconds
+Batches computed: 240, Tau value: 0.040
+Mean Loss: 0.8497839, Mean Center Loss: 0.3629329, Mean Hard Triplet Loss: 0.9737021
+Percetage of correct triplets: 0.75
+Features extracted in 11.98 seconds
+Batches computed: 280, Tau value: 0.040
+Mean Loss: 0.8132959, Mean Center Loss: 0.3484924, Mean Hard Triplet Loss: 0.9296069
+Percetage of correct triplets: 0.75
+Training OSNet ...
+Features extracted in 10.63 seconds
+Batches computed: 40, Tau value: 0.040
+Mean Loss: 1.7792161, Mean Center Loss: 0.6645417, Mean Hard Triplet Loss: 2.2293489
+Percetage of correct triplets: 0.74
+Features extracted in 11.00 seconds
+Batches computed: 80, Tau value: 0.040
+Mean Loss: 1.7202123, Mean Center Loss: 0.6434077, Mean Hard Triplet Loss: 2.1536091
+Percetage of correct triplets: 0.74
+Features extracted in 11.21 seconds
+Batches computed: 120, Tau value: 0.040
+Mean Loss: 1.6658069, Mean Center Loss: 0.6424319, Mean Hard Triplet Loss: 2.0467502
+Percetage of correct triplets: 0.73
+Features extracted in 11.05 seconds
+Batches computed: 160, Tau value: 0.040
+Mean Loss: 1.6282514, Mean Center Loss: 0.6022093, Mean Hard Triplet Loss: 2.0520842
+Percetage of correct triplets: 0.74
+Features extracted in 10.85 seconds
+Batches computed: 200, Tau value: 0.040
+Mean Loss: 1.5081173, Mean Center Loss: 0.5676232, Mean Hard Triplet Loss: 1.8809883
+Percetage of correct triplets: 0.74
+Features extracted in 10.50 seconds
+Batches computed: 240, Tau value: 0.040
+Mean Loss: 1.4360509, Mean Center Loss: 0.5267702, Mean Hard Triplet Loss: 1.8185614
+Percetage of correct triplets: 0.74
+Features extracted in 9.88 seconds
+Batches computed: 280, Tau value: 0.040
+Mean Loss: 1.4247843, Mean Center Loss: 0.5216376, Mean Hard Triplet Loss: 1.8062933
+Percetage of correct triplets: 0.73
+Training DenseNet121 ...
+Features extracted in 12.41 seconds
+Batches computed: 40, Tau value: 0.040
+Mean Loss: 1.3507780, Mean Center Loss: 0.5214165, Mean Hard Triplet Loss: 1.6587230
+Percetage of correct triplets: 0.73
+Features extracted in 12.56 seconds
+Batches computed: 80, Tau value: 0.040
+Mean Loss: 1.2095290, Mean Center Loss: 0.4873692, Mean Hard Triplet Loss: 1.4443197
+Percetage of correct triplets: 0.74
+Features extracted in 12.61 seconds
+Batches computed: 120, Tau value: 0.040
+Mean Loss: 1.1487090, Mean Center Loss: 0.4648185, Mean Hard Triplet Loss: 1.3677811
+Percetage of correct triplets: 0.74
+Features extracted in 12.60 seconds
+Batches computed: 160, Tau value: 0.040
+Mean Loss: 1.1287056, Mean Center Loss: 0.4495216, Mean Hard Triplet Loss: 1.3583680
+Percetage of correct triplets: 0.75
+Features extracted in 12.57 seconds
+Batches computed: 200, Tau value: 0.040
+Mean Loss: 1.1112280, Mean Center Loss: 0.4348786, Mean Hard Triplet Loss: 1.3526988
+Percetage of correct triplets: 0.74
+Features extracted in 12.33 seconds
+Batches computed: 240, Tau value: 0.040
+Mean Loss: 1.0613908, Mean Center Loss: 0.4254692, Mean Hard Triplet Loss: 1.2718432
+Percetage of correct triplets: 0.73
+Features extracted in 12.32 seconds
+Batches computed: 280, Tau value: 0.040
+Mean Loss: 0.9775389, Mean Center Loss: 0.3965624, Mean Hard Triplet Loss: 1.1619531
+Percetage of correct triplets: 0.75
+###============ Iteration number 7/30 ============###
+Extracting Online Features for ResNet50 ...
+Features extracted in 13.06 seconds
+Extracting Online Features for OSNet ...
+Features extracted in 11.72 seconds
+Extracting Online Features for DenseNet121 ...
+Features extracted in 12.81 seconds
+Computing jaccard distance...
+Jaccard distance computing time cost: 23.728464365005493
+Computing jaccard distance...
+Jaccard distance computing time cost: 23.522963285446167
+Computing jaccard distance...
+Jaccard distance computing time cost: 24.423986673355103
+Reliability: 0.931
+Mean Purity: 0.36221
+There are 121 clusters with 1 cameras
+There are 143 clusters with 2 cameras
+There are 212 clusters with 3 cameras
+There are 123 clusters with 4 cameras
+There are 26 clusters with 5 cameras
+There are 12 clusters with 6 cameras
+There are 4 clusters with 7 cameras
+Number of classes: 641
+Learning Rate: 0.000245
+Training ResNet50 ...
+Features extracted in 11.64 seconds
+Batches computed: 40, Tau value: 0.040
+Mean Loss: 0.9910381, Mean Center Loss: 0.3867790, Mean Hard Triplet Loss: 1.2085182
+Percetage of correct triplets: 0.73
+Features extracted in 11.75 seconds
+Batches computed: 80, Tau value: 0.040
+Mean Loss: 0.9826101, Mean Center Loss: 0.4197704, Mean Hard Triplet Loss: 1.1256793
+Percetage of correct triplets: 0.74
+Features extracted in 11.64 seconds
+Batches computed: 120, Tau value: 0.040
+Mean Loss: 0.9292991, Mean Center Loss: 0.3786636, Mean Hard Triplet Loss: 1.1012710
+Percetage of correct triplets: 0.74
+Features extracted in 12.04 seconds
+Batches computed: 160, Tau value: 0.040
+Mean Loss: 0.8744567, Mean Center Loss: 0.3640257, Mean Hard Triplet Loss: 1.0208620
+Percetage of correct triplets: 0.75
+Features extracted in 11.98 seconds
+Batches computed: 200, Tau value: 0.040
+Mean Loss: 0.7526654, Mean Center Loss: 0.3244923, Mean Hard Triplet Loss: 0.8563462
+Percetage of correct triplets: 0.75
+Features extracted in 11.76 seconds
+Batches computed: 240, Tau value: 0.040
+Mean Loss: 0.7248814, Mean Center Loss: 0.3067753, Mean Hard Triplet Loss: 0.8362123
+Percetage of correct triplets: 0.76
+Features extracted in 12.04 seconds
+Batches computed: 280, Tau value: 0.040
+Mean Loss: 0.7026257, Mean Center Loss: 0.2958775, Mean Hard Triplet Loss: 0.8134965
+Percetage of correct triplets: 0.75
+Training OSNet ...
+Features extracted in 9.98 seconds
+Batches computed: 40, Tau value: 0.040
+Mean Loss: 1.5325492, Mean Center Loss: 0.5488375, Mean Hard Triplet Loss: 1.9674233
+Percetage of correct triplets: 0.75
+Features extracted in 10.35 seconds
+Batches computed: 80, Tau value: 0.040
+Mean Loss: 1.4654286, Mean Center Loss: 0.5316884, Mean Hard Triplet Loss: 1.8674805
+Percetage of correct triplets: 0.75
+Features extracted in 10.76 seconds
+Batches computed: 120, Tau value: 0.040
+Mean Loss: 1.4061123, Mean Center Loss: 0.4965519, Mean Hard Triplet Loss: 1.8191208
+Percetage of correct triplets: 0.75
+Features extracted in 11.20 seconds
+Batches computed: 160, Tau value: 0.040
+Mean Loss: 1.3681004, Mean Center Loss: 0.4939900, Mean Hard Triplet Loss: 1.7482208
+Percetage of correct triplets: 0.73
+Features extracted in 10.51 seconds
+Batches computed: 200, Tau value: 0.040
+Mean Loss: 1.2680573, Mean Center Loss: 0.4527652, Mean Hard Triplet Loss: 1.6305843
+Percetage of correct triplets: 0.74
+Features extracted in 10.69 seconds
+Batches computed: 240, Tau value: 0.040
+Mean Loss: 1.2536039, Mean Center Loss: 0.4533922, Mean Hard Triplet Loss: 1.6004235
+Percetage of correct triplets: 0.75
+Features extracted in 10.35 seconds
+Batches computed: 280, Tau value: 0.040
+Mean Loss: 1.2026089, Mean Center Loss: 0.4255379, Mean Hard Triplet Loss: 1.5541419
+Percetage of correct triplets: 0.74
+Training DenseNet121 ...
+Features extracted in 11.66 seconds
+Batches computed: 40, Tau value: 0.040
+Mean Loss: 1.0798105, Mean Center Loss: 0.4211890, Mean Hard Triplet Loss: 1.3172428
+Percetage of correct triplets: 0.74
+Features extracted in 12.42 seconds
+Batches computed: 80, Tau value: 0.040
+Mean Loss: 1.0390468, Mean Center Loss: 0.4103279, Mean Hard Triplet Loss: 1.2574379
+Percetage of correct triplets: 0.75
+Features extracted in 12.16 seconds
+Batches computed: 120, Tau value: 0.040
+Mean Loss: 1.0152163, Mean Center Loss: 0.4054498, Mean Hard Triplet Loss: 1.2195330
+Percetage of correct triplets: 0.74
+Features extracted in 12.58 seconds
+Batches computed: 160, Tau value: 0.040
+Mean Loss: 0.9911599, Mean Center Loss: 0.4015966, Mean Hard Triplet Loss: 1.1791266
+Percetage of correct triplets: 0.75
+Features extracted in 11.90 seconds
+Batches computed: 200, Tau value: 0.040
+Mean Loss: 0.9140457, Mean Center Loss: 0.3622774, Mean Hard Triplet Loss: 1.1035366
+Percetage of correct triplets: 0.76
+Features extracted in 11.90 seconds
+Batches computed: 240, Tau value: 0.040
+Mean Loss: 0.8573989, Mean Center Loss: 0.3439753, Mean Hard Triplet Loss: 1.0268473
+Percetage of correct triplets: 0.75
+Features extracted in 11.81 seconds
+Batches computed: 280, Tau value: 0.040
+Mean Loss: 0.8380324, Mean Center Loss: 0.3388363, Mean Hard Triplet Loss: 0.9983923
+Percetage of correct triplets: 0.75
+###============ Iteration number 8/30 ============###
+Extracting Online Features for ResNet50 ...
+Features extracted in 12.36 seconds
+Extracting Online Features for OSNet ...
+Features extracted in 10.91 seconds
+Extracting Online Features for DenseNet121 ...
+Features extracted in 12.59 seconds
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.806772232055664
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.863481760025024
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.764064073562622
+Reliability: 0.938
+Mean Purity: 0.37425
+There are 110 clusters with 1 cameras
+There are 135 clusters with 2 cameras
+There are 218 clusters with 3 cameras
+There are 131 clusters with 4 cameras
+There are 26 clusters with 5 cameras
+There are 12 clusters with 6 cameras
+There are 3 clusters with 7 cameras
+There are 1 clusters with 8 cameras
+Number of classes: 636
+Learning Rate: 0.000280
+Training ResNet50 ...
+Features extracted in 13.05 seconds
+Batches computed: 39, Tau value: 0.040
+Mean Loss: 0.8411604, Mean Center Loss: 0.3447464, Mean Hard Triplet Loss: 0.9928279
+Percetage of correct triplets: 0.75
+Features extracted in 12.48 seconds
+Batches computed: 78, Tau value: 0.040
+Mean Loss: 0.8363866, Mean Center Loss: 0.3503518, Mean Hard Triplet Loss: 0.9720695
+Percetage of correct triplets: 0.75
+Features extracted in 12.80 seconds
+Batches computed: 117, Tau value: 0.040
+Mean Loss: 0.8419364, Mean Center Loss: 0.3377963, Mean Hard Triplet Loss: 1.0082803
+Percetage of correct triplets: 0.74
+Features extracted in 12.39 seconds
+Batches computed: 156, Tau value: 0.040
+Mean Loss: 0.6966299, Mean Center Loss: 0.2920339, Mean Hard Triplet Loss: 0.8091920
+Percetage of correct triplets: 0.74
+Features extracted in 12.65 seconds
+Batches computed: 195, Tau value: 0.040
+Mean Loss: 0.6960056, Mean Center Loss: 0.2870262, Mean Hard Triplet Loss: 0.8179587
+Percetage of correct triplets: 0.73
+Features extracted in 12.79 seconds
+Batches computed: 234, Tau value: 0.040
+Mean Loss: 0.7235861, Mean Center Loss: 0.2948592, Mean Hard Triplet Loss: 0.8574538
+Percetage of correct triplets: 0.75
+Features extracted in 12.51 seconds
+Batches computed: 273, Tau value: 0.040
+Mean Loss: 0.6998064, Mean Center Loss: 0.2885310, Mean Hard Triplet Loss: 0.8225509
+Percetage of correct triplets: 0.73
+Training OSNet ...
+Features extracted in 11.23 seconds
+Batches computed: 39, Tau value: 0.040
+Mean Loss: 1.2564802, Mean Center Loss: 0.4549161, Mean Hard Triplet Loss: 1.6031282
+Percetage of correct triplets: 0.73
+Features extracted in 11.27 seconds
+Batches computed: 78, Tau value: 0.040
+Mean Loss: 1.2246235, Mean Center Loss: 0.4336020, Mean Hard Triplet Loss: 1.5820430
+Percetage of correct triplets: 0.73
+Features extracted in 10.38 seconds
+Batches computed: 117, Tau value: 0.040
+Mean Loss: 1.2127345, Mean Center Loss: 0.4376013, Mean Hard Triplet Loss: 1.5502663
+Percetage of correct triplets: 0.73
+Features extracted in 11.00 seconds
+Batches computed: 156, Tau value: 0.040
+Mean Loss: 1.1723147, Mean Center Loss: 0.4257081, Mean Hard Triplet Loss: 1.4932133
+Percetage of correct triplets: 0.73
+Features extracted in 10.38 seconds
+Batches computed: 195, Tau value: 0.040
+Mean Loss: 1.1466015, Mean Center Loss: 0.4052867, Mean Hard Triplet Loss: 1.4826295
+Percetage of correct triplets: 0.74
+Features extracted in 10.76 seconds
+Batches computed: 234, Tau value: 0.040
+Mean Loss: 1.0990988, Mean Center Loss: 0.3992415, Mean Hard Triplet Loss: 1.3997147
+Percetage of correct triplets: 0.73
+Features extracted in 11.04 seconds
+Batches computed: 273, Tau value: 0.040
+Mean Loss: 1.0816820, Mean Center Loss: 0.3797469, Mean Hard Triplet Loss: 1.4038702
+Percetage of correct triplets: 0.73
+Training DenseNet121 ...
+Features extracted in 11.74 seconds
+Batches computed: 39, Tau value: 0.040
+Mean Loss: 0.9963488, Mean Center Loss: 0.3921016, Mean Hard Triplet Loss: 1.2084943
+Percetage of correct triplets: 0.73
+Features extracted in 11.89 seconds
+Batches computed: 78, Tau value: 0.040
+Mean Loss: 0.9247964, Mean Center Loss: 0.3711702, Mean Hard Triplet Loss: 1.1072524
+Percetage of correct triplets: 0.74
+Features extracted in 11.78 seconds
+Batches computed: 117, Tau value: 0.040
+Mean Loss: 0.8301492, Mean Center Loss: 0.3329925, Mean Hard Triplet Loss: 0.9943134
+Percetage of correct triplets: 0.74
+Features extracted in 11.66 seconds
+Batches computed: 156, Tau value: 0.040
+Mean Loss: 0.8195418, Mean Center Loss: 0.3362730, Mean Hard Triplet Loss: 0.9665376
+Percetage of correct triplets: 0.74
+Features extracted in 11.67 seconds
+Batches computed: 195, Tau value: 0.040
+Mean Loss: 0.8166100, Mean Center Loss: 0.3314849, Mean Hard Triplet Loss: 0.9702501
+Percetage of correct triplets: 0.75
+Features extracted in 11.88 seconds
+Batches computed: 234, Tau value: 0.040
+Mean Loss: 0.7846342, Mean Center Loss: 0.3182532, Mean Hard Triplet Loss: 0.9327621
+Percetage of correct triplets: 0.75
+Features extracted in 12.10 seconds
+Batches computed: 273, Tau value: 0.040
+Mean Loss: 0.7910545, Mean Center Loss: 0.3183989, Mean Hard Triplet Loss: 0.9453112
+Percetage of correct triplets: 0.74
+###============ Iteration number 9/30 ============###
+Extracting Online Features for ResNet50 ...
+Features extracted in 12.20 seconds
+Extracting Online Features for OSNet ...
+Features extracted in 10.92 seconds
+Extracting Online Features for DenseNet121 ...
+Features extracted in 12.43 seconds
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.10331892967224
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.235640048980713
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.31400966644287
+Reliability: 0.944
+Mean Purity: 0.39290
+There are 104 clusters with 1 cameras
+There are 132 clusters with 2 cameras
+There are 218 clusters with 3 cameras
+There are 133 clusters with 4 cameras
+There are 28 clusters with 5 cameras
+There are 12 clusters with 6 cameras
+There are 3 clusters with 7 cameras
+There are 1 clusters with 8 cameras
+Number of classes: 631
+Learning Rate: 0.000315
+Training ResNet50 ...
+Features extracted in 12.01 seconds
+Batches computed: 39, Tau value: 0.040
+Mean Loss: 0.7823869, Mean Center Loss: 0.3163418, Mean Hard Triplet Loss: 0.9320901
+Percetage of correct triplets: 0.73
+Features extracted in 11.88 seconds
+Batches computed: 78, Tau value: 0.040
+Mean Loss: 0.8371350, Mean Center Loss: 0.3691339, Mean Hard Triplet Loss: 0.9360023
+Percetage of correct triplets: 0.74
+Features extracted in 11.78 seconds
+Batches computed: 117, Tau value: 0.040
+Mean Loss: 0.7604187, Mean Center Loss: 0.3253590, Mean Hard Triplet Loss: 0.8701195
+Percetage of correct triplets: 0.73
+Features extracted in 11.80 seconds
+Batches computed: 156, Tau value: 0.040
+Mean Loss: 0.7123994, Mean Center Loss: 0.2989277, Mean Hard Triplet Loss: 0.8269435
+Percetage of correct triplets: 0.74
+Features extracted in 12.34 seconds
+Batches computed: 195, Tau value: 0.040
+Mean Loss: 0.6764659, Mean Center Loss: 0.2942897, Mean Hard Triplet Loss: 0.7643525
+Percetage of correct triplets: 0.73
+Features extracted in 11.99 seconds
+Batches computed: 234, Tau value: 0.040
+Mean Loss: 0.6450770, Mean Center Loss: 0.2752858, Mean Hard Triplet Loss: 0.7395825
+Percetage of correct triplets: 0.73
+Features extracted in 11.89 seconds
+Batches computed: 273, Tau value: 0.040
+Mean Loss: 0.5904770, Mean Center Loss: 0.2435964, Mean Hard Triplet Loss: 0.6937611
+Percetage of correct triplets: 0.73
+Training OSNet ...
+Features extracted in 10.46 seconds
+Batches computed: 39, Tau value: 0.040
+Mean Loss: 1.0991738, Mean Center Loss: 0.3810191, Mean Hard Triplet Loss: 1.4363094
+Percetage of correct triplets: 0.72
+Features extracted in 10.14 seconds
+Batches computed: 78, Tau value: 0.040
+Mean Loss: 1.1280574, Mean Center Loss: 0.3962958, Mean Hard Triplet Loss: 1.4635232
+Percetage of correct triplets: 0.72
+Features extracted in 10.03 seconds
+Batches computed: 117, Tau value: 0.040
+Mean Loss: 1.0587190, Mean Center Loss: 0.3670611, Mean Hard Triplet Loss: 1.3833157
+Percetage of correct triplets: 0.71
+Features extracted in 10.56 seconds
+Batches computed: 156, Tau value: 0.040
+Mean Loss: 1.0871169, Mean Center Loss: 0.3829721, Mean Hard Triplet Loss: 1.4082896
+Percetage of correct triplets: 0.72
+Features extracted in 10.88 seconds
+Batches computed: 195, Tau value: 0.040
+Mean Loss: 1.0463082, Mean Center Loss: 0.3809486, Mean Hard Triplet Loss: 1.3307192
+Percetage of correct triplets: 0.71
+Features extracted in 10.57 seconds
+Batches computed: 234, Tau value: 0.040
+Mean Loss: 1.0251883, Mean Center Loss: 0.3665265, Mean Hard Triplet Loss: 1.3173237
+Percetage of correct triplets: 0.71
+Features extracted in 10.42 seconds
+Batches computed: 273, Tau value: 0.040
+Mean Loss: 0.9924747, Mean Center Loss: 0.3526465, Mean Hard Triplet Loss: 1.2796564
+Percetage of correct triplets: 0.71
+Training DenseNet121 ...
+Features extracted in 12.33 seconds
+Batches computed: 39, Tau value: 0.040
+Mean Loss: 0.8412498, Mean Center Loss: 0.3312628, Mean Hard Triplet Loss: 1.0199740
+Percetage of correct triplets: 0.72
+Features extracted in 12.11 seconds
+Batches computed: 78, Tau value: 0.040
+Mean Loss: 0.8395774, Mean Center Loss: 0.3363562, Mean Hard Triplet Loss: 1.0064424
+Percetage of correct triplets: 0.72
+Features extracted in 12.68 seconds
+Batches computed: 117, Tau value: 0.040
+Mean Loss: 0.7569465, Mean Center Loss: 0.3198799, Mean Hard Triplet Loss: 0.8741332
+Percetage of correct triplets: 0.73
+Features extracted in 12.56 seconds
+Batches computed: 156, Tau value: 0.040
+Mean Loss: 0.7127850, Mean Center Loss: 0.2867225, Mean Hard Triplet Loss: 0.8521249
+Percetage of correct triplets: 0.73
+Features extracted in 12.75 seconds
+Batches computed: 195, Tau value: 0.040
+Mean Loss: 0.7579115, Mean Center Loss: 0.3186967, Mean Hard Triplet Loss: 0.8784297
+Percetage of correct triplets: 0.74
+Features extracted in 12.84 seconds
+Batches computed: 234, Tau value: 0.040
+Mean Loss: 0.7767603, Mean Center Loss: 0.3181433, Mean Hard Triplet Loss: 0.9172340
+Percetage of correct triplets: 0.73
+Features extracted in 13.00 seconds
+Batches computed: 273, Tau value: 0.040
+Mean Loss: 0.7318488, Mean Center Loss: 0.3048059, Mean Hard Triplet Loss: 0.8540857
+Percetage of correct triplets: 0.73
+###============ Iteration number 10/30 ============###
+Extracting Online Features for ResNet50 ...
+Features extracted in 13.71 seconds
+Extracting Online Features for OSNet ...
+Features extracted in 12.03 seconds
+Extracting Online Features for DenseNet121 ...
+Features extracted in 13.66 seconds
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.20402455329895
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.326600074768066
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.533528327941895
+Reliability: 0.950
+Mean Purity: 0.39003
+There are 100 clusters with 1 cameras
+There are 131 clusters with 2 cameras
+There are 216 clusters with 3 cameras
+There are 140 clusters with 4 cameras
+There are 27 clusters with 5 cameras
+There are 10 clusters with 6 cameras
+There are 3 clusters with 7 cameras
+There are 2 clusters with 8 cameras
+Number of classes: 629
+Learning Rate: 0.000350
+Training ResNet50 ...
+Features extracted in 12.94 seconds
+Batches computed: 39, Tau value: 0.040
+Mean Loss: 0.7464072, Mean Center Loss: 0.3209057, Mean Hard Triplet Loss: 0.8510031
+Percetage of correct triplets: 0.73
+Features extracted in 12.78 seconds
+Batches computed: 78, Tau value: 0.040
+Mean Loss: 0.7451457, Mean Center Loss: 0.3069302, Mean Hard Triplet Loss: 0.8764311
+Percetage of correct triplets: 0.74
+Features extracted in 12.53 seconds
+Batches computed: 117, Tau value: 0.040
+Mean Loss: 0.7211091, Mean Center Loss: 0.3118207, Mean Hard Triplet Loss: 0.8185768
+Percetage of correct triplets: 0.73
+Features extracted in 12.78 seconds
+Batches computed: 156, Tau value: 0.040
+Mean Loss: 0.6558728, Mean Center Loss: 0.2767832, Mean Hard Triplet Loss: 0.7581793
+Percetage of correct triplets: 0.73
+Features extracted in 12.91 seconds
+Batches computed: 195, Tau value: 0.040
+Mean Loss: 0.6521323, Mean Center Loss: 0.2738696, Mean Hard Triplet Loss: 0.7565254
+Percetage of correct triplets: 0.72
+Features extracted in 12.23 seconds
+Batches computed: 234, Tau value: 0.040
+Mean Loss: 0.6102801, Mean Center Loss: 0.2591880, Mean Hard Triplet Loss: 0.7021842
+Percetage of correct triplets: 0.72
+Features extracted in 12.99 seconds
+Batches computed: 273, Tau value: 0.040
+Mean Loss: 0.5890296, Mean Center Loss: 0.2589239, Mean Hard Triplet Loss: 0.6602114
+Percetage of correct triplets: 0.72
+Training OSNet ...
+Features extracted in 11.31 seconds
+Batches computed: 39, Tau value: 0.040
+Mean Loss: 1.0001695, Mean Center Loss: 0.3476946, Mean Hard Triplet Loss: 1.3049499
+Percetage of correct triplets: 0.72
+Features extracted in 11.84 seconds
+Batches computed: 78, Tau value: 0.040
+Mean Loss: 1.0307942, Mean Center Loss: 0.3739832, Mean Hard Triplet Loss: 1.3136220
+Percetage of correct triplets: 0.71
+Features extracted in 10.53 seconds
+Batches computed: 117, Tau value: 0.040
+Mean Loss: 0.9618350, Mean Center Loss: 0.3380355, Mean Hard Triplet Loss: 1.2475989
+Percetage of correct triplets: 0.72
+Features extracted in 10.61 seconds
+Batches computed: 156, Tau value: 0.040
+Mean Loss: 0.9688883, Mean Center Loss: 0.3445634, Mean Hard Triplet Loss: 1.2486498
+Percetage of correct triplets: 0.73
+Features extracted in 10.44 seconds
+Batches computed: 195, Tau value: 0.040
+Mean Loss: 0.9230289, Mean Center Loss: 0.3313936, Mean Hard Triplet Loss: 1.1832705
+Percetage of correct triplets: 0.73
+Features extracted in 10.31 seconds
+Batches computed: 234, Tau value: 0.040
+Mean Loss: 0.8927103, Mean Center Loss: 0.3202664, Mean Hard Triplet Loss: 1.1448879
+Percetage of correct triplets: 0.72
+Features extracted in 11.07 seconds
+Batches computed: 273, Tau value: 0.040
+Mean Loss: 0.8654067, Mean Center Loss: 0.3099560, Mean Hard Triplet Loss: 1.1109012
+Percetage of correct triplets: 0.71
+Training DenseNet121 ...
+Features extracted in 11.90 seconds
+Batches computed: 39, Tau value: 0.040
+Mean Loss: 0.7730590, Mean Center Loss: 0.3017331, Mean Hard Triplet Loss: 0.9426519
+Percetage of correct triplets: 0.74
+Features extracted in 11.95 seconds
+Batches computed: 78, Tau value: 0.040
+Mean Loss: 0.7491142, Mean Center Loss: 0.3229010, Mean Hard Triplet Loss: 0.8524265
+Percetage of correct triplets: 0.72
+Features extracted in 12.12 seconds
+Batches computed: 117, Tau value: 0.040
+Mean Loss: 0.7374819, Mean Center Loss: 0.3082990, Mean Hard Triplet Loss: 0.8583658
+Percetage of correct triplets: 0.73
+Features extracted in 12.10 seconds
+Batches computed: 156, Tau value: 0.040
+Mean Loss: 0.6768312, Mean Center Loss: 0.2805882, Mean Hard Triplet Loss: 0.7924859
+Percetage of correct triplets: 0.73
+Features extracted in 11.98 seconds
+Batches computed: 195, Tau value: 0.040
+Mean Loss: 0.7260326, Mean Center Loss: 0.3171056, Mean Hard Triplet Loss: 0.8178541
+Percetage of correct triplets: 0.73
+Features extracted in 12.14 seconds
+Batches computed: 234, Tau value: 0.040
+Mean Loss: 0.7033206, Mean Center Loss: 0.2899929, Mean Hard Triplet Loss: 0.8266555
+Percetage of correct triplets: 0.74
+Features extracted in 12.32 seconds
+Batches computed: 273, Tau value: 0.040
+Mean Loss: 0.6365768, Mean Center Loss: 0.2699443, Mean Hard Triplet Loss: 0.7332651
+Percetage of correct triplets: 0.73
+Validating online ResNet50 ...
+Features extracted in 5.61 seconds
+Features extracted in 13.41 seconds
+Computing CMC and mAP ...
+** Results **
+mAP: 59.45%
+CMC curve
+Rank-1  : 75.18%
+Rank-5  : 84.92%
+Rank-10 : 87.39%
+Rank-20 : 89.72%
+Validating momentum ResNet50 ...
+Features extracted in 4.80 seconds
+Features extracted in 12.93 seconds
+Computing CMC and mAP ...
+** Results **
+mAP: 61.98%
+CMC curve
+Rank-1  : 77.74%
+Rank-5  : 85.86%
+Rank-10 : 88.64%
+Rank-20 : 90.13%
+Validating online OSNet ...
+Features extracted in 4.93 seconds
+Features extracted in 11.62 seconds
+Computing CMC and mAP ...
+** Results **
+mAP: 57.60%
+CMC curve
+Rank-1  : 76.21%
+Rank-5  : 85.82%
+Rank-10 : 88.55%
+Rank-20 : 90.71%
+Validating momentum OSNet ...
+Features extracted in 4.65 seconds
+Features extracted in 11.26 seconds
+Computing CMC and mAP ...
+** Results **
+mAP: 52.98%
+CMC curve
+Rank-1  : 73.03%
+Rank-5  : 83.89%
+Rank-10 : 86.27%
+Rank-20 : 88.87%
+Validating online DenseNet121 ...
+Features extracted in 5.12 seconds
+Features extracted in 12.97 seconds
+Computing CMC and mAP ...
+** Results **
+mAP: 58.55%
+CMC curve
+Rank-1  : 75.09%
+Rank-5  : 85.01%
+Rank-10 : 87.79%
+Rank-20 : 89.95%
+Validating momentum DenseNet121 ...
+Features extracted in 5.11 seconds
+Features extracted in 12.72 seconds
+Computing CMC and mAP ...
+** Results **
+mAP: 57.72%
+CMC curve
+Rank-1  : 74.78%
+Rank-5  : 84.96%
+Rank-10 : 88.15%
+Rank-20 : 89.99%
+Validating ensembled with online models ...
+Computing CMC and mAP ...
+** Results **
+mAP: 64.53%
+Ranks:
+Rank-1  : 78.19%
+Rank-5  : 87.07%
+Rank-10 : 89.23%
+Validating ensembled with momentum models ...
+Computing CMC and mAP ...
+** Results **
+mAP: 62.90%
+Ranks:
+Rank-1  : 78.28%
+Rank-5  : 86.58%
+Rank-10 : 88.73%
+###============ Iteration number 11/30 ============###
+Extracting Online Features for ResNet50 ...
+Features extracted in 12.76 seconds
+Extracting Online Features for OSNet ...
+Features extracted in 12.21 seconds
+Extracting Online Features for DenseNet121 ...
+Features extracted in 12.28 seconds
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.537362575531006
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.49522089958191
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.43958806991577
+Reliability: 0.953
+Mean Purity: 0.39179
+There are 93 clusters with 1 cameras
+There are 132 clusters with 2 cameras
+There are 214 clusters with 3 cameras
+There are 138 clusters with 4 cameras
+There are 26 clusters with 5 cameras
+There are 10 clusters with 6 cameras
+There are 4 clusters with 7 cameras
+There are 2 clusters with 8 cameras
+Number of classes: 619
+Learning Rate: 0.000350
+Training ResNet50 ...
+Features extracted in 66.22 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.5983470, Mean Center Loss: 0.2547169, Mean Hard Triplet Loss: 0.6872602
+Percetage of correct triplets: 0.74
+Features extracted in 12.17 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.6295581, Mean Center Loss: 0.2671112, Mean Hard Triplet Loss: 0.7248940
+Percetage of correct triplets: 0.73
+Features extracted in 11.70 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.6192358, Mean Center Loss: 0.2584779, Mean Hard Triplet Loss: 0.7215158
+Percetage of correct triplets: 0.72
+Features extracted in 12.11 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.6065821, Mean Center Loss: 0.2615262, Mean Hard Triplet Loss: 0.6901118
+Percetage of correct triplets: 0.73
+Features extracted in 11.98 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.6071128, Mean Center Loss: 0.2553177, Mean Hard Triplet Loss: 0.7035903
+Percetage of correct triplets: 0.72
+Features extracted in 11.66 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.5871475, Mean Center Loss: 0.2440988, Mean Hard Triplet Loss: 0.6860976
+Percetage of correct triplets: 0.74
+Features extracted in 11.69 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.5589175, Mean Center Loss: 0.2484114, Mean Hard Triplet Loss: 0.6210121
+Percetage of correct triplets: 0.74
+Training OSNet ...
+Features extracted in 10.21 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.9098213, Mean Center Loss: 0.3335033, Mean Hard Triplet Loss: 1.1526361
+Percetage of correct triplets: 0.72
+Features extracted in 10.66 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.9065034, Mean Center Loss: 0.3200216, Mean Hard Triplet Loss: 1.1729637
+Percetage of correct triplets: 0.73
+Features extracted in 10.68 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.8553836, Mean Center Loss: 0.3022264, Mean Hard Triplet Loss: 1.1063144
+Percetage of correct triplets: 0.72
+Features extracted in 10.68 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.8744007, Mean Center Loss: 0.3180166, Mean Hard Triplet Loss: 1.1127681
+Percetage of correct triplets: 0.72
+Features extracted in 10.70 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.8460171, Mean Center Loss: 0.3059035, Mean Hard Triplet Loss: 1.0802274
+Percetage of correct triplets: 0.72
+Features extracted in 10.46 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.8134827, Mean Center Loss: 0.2948084, Mean Hard Triplet Loss: 1.0373486
+Percetage of correct triplets: 0.73
+Features extracted in 10.60 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.8019105, Mean Center Loss: 0.2659290, Mean Hard Triplet Loss: 1.0719629
+Percetage of correct triplets: 0.72
+Training DenseNet121 ...
+Features extracted in 11.93 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.6464671, Mean Center Loss: 0.2583224, Mean Hard Triplet Loss: 0.7762894
+Percetage of correct triplets: 0.73
+Features extracted in 12.37 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.6971071, Mean Center Loss: 0.2793100, Mean Hard Triplet Loss: 0.8355941
+Percetage of correct triplets: 0.73
+Features extracted in 12.01 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.6920603, Mean Center Loss: 0.2857594, Mean Hard Triplet Loss: 0.8126018
+Percetage of correct triplets: 0.73
+Features extracted in 12.06 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.6721594, Mean Center Loss: 0.2648435, Mean Hard Triplet Loss: 0.8146319
+Percetage of correct triplets: 0.74
+Features extracted in 11.76 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.6234551, Mean Center Loss: 0.2466992, Mean Hard Triplet Loss: 0.7535119
+Percetage of correct triplets: 0.74
+Features extracted in 12.27 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.6001978, Mean Center Loss: 0.2499591, Mean Hard Triplet Loss: 0.7004775
+Percetage of correct triplets: 0.73
+Features extracted in 12.08 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.5715017, Mean Center Loss: 0.2433236, Mean Hard Triplet Loss: 0.6563562
+Percetage of correct triplets: 0.74
+###============ Iteration number 12/30 ============###
+Extracting Online Features for ResNet50 ...
+Features extracted in 12.09 seconds
+Extracting Online Features for OSNet ...
+Features extracted in 11.43 seconds
+Extracting Online Features for DenseNet121 ...
+Features extracted in 12.54 seconds
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.74463391304016
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.192970037460327
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.7701416015625
+Reliability: 0.953
+Mean Purity: 0.40038
+There are 90 clusters with 1 cameras
+There are 131 clusters with 2 cameras
+There are 209 clusters with 3 cameras
+There are 141 clusters with 4 cameras
+There are 29 clusters with 5 cameras
+There are 9 clusters with 6 cameras
+There are 4 clusters with 7 cameras
+There are 1 clusters with 8 cameras
+Number of classes: 614
+Learning Rate: 0.000350
+Training ResNet50 ...
+Features extracted in 11.67 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.5871779, Mean Center Loss: 0.2408812, Mean Hard Triplet Loss: 0.6925935
+Percetage of correct triplets: 0.72
+Features extracted in 12.43 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.5390637, Mean Center Loss: 0.2473996, Mean Hard Triplet Loss: 0.5833281
+Percetage of correct triplets: 0.73
+Features extracted in 11.86 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.5267679, Mean Center Loss: 0.2243044, Mean Hard Triplet Loss: 0.6049270
+Percetage of correct triplets: 0.72
+Features extracted in 12.00 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.5101014, Mean Center Loss: 0.2155203, Mean Hard Triplet Loss: 0.5891624
+Percetage of correct triplets: 0.73
+Features extracted in 11.81 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.4896797, Mean Center Loss: 0.2180238, Mean Hard Triplet Loss: 0.5433118
+Percetage of correct triplets: 0.73
+Features extracted in 12.07 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.4695083, Mean Center Loss: 0.2000764, Mean Hard Triplet Loss: 0.5388638
+Percetage of correct triplets: 0.73
+Features extracted in 11.83 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.4858050, Mean Center Loss: 0.2111924, Mean Hard Triplet Loss: 0.5492253
+Percetage of correct triplets: 0.73
+Training OSNet ...
+Features extracted in 10.40 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.8260508, Mean Center Loss: 0.2849377, Mean Hard Triplet Loss: 1.0822264
+Percetage of correct triplets: 0.72
+Features extracted in 10.53 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.8102479, Mean Center Loss: 0.3001938, Mean Hard Triplet Loss: 1.0201082
+Percetage of correct triplets: 0.72
+Features extracted in 10.59 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.7117837, Mean Center Loss: 0.2599369, Mean Hard Triplet Loss: 0.9036936
+Percetage of correct triplets: 0.72
+Features extracted in 10.34 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.7661948, Mean Center Loss: 0.2803600, Mean Hard Triplet Loss: 0.9716696
+Percetage of correct triplets: 0.73
+Features extracted in 10.74 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.7453086, Mean Center Loss: 0.2699812, Mean Hard Triplet Loss: 0.9506547
+Percetage of correct triplets: 0.72
+Features extracted in 10.48 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.7749532, Mean Center Loss: 0.2944845, Mean Hard Triplet Loss: 0.9609374
+Percetage of correct triplets: 0.71
+Features extracted in 10.33 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.7723089, Mean Center Loss: 0.2803501, Mean Hard Triplet Loss: 0.9839177
+Percetage of correct triplets: 0.72
+Training DenseNet121 ...
+Features extracted in 11.81 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.6353118, Mean Center Loss: 0.2596044, Mean Hard Triplet Loss: 0.7514148
+Percetage of correct triplets: 0.73
+Features extracted in 11.81 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.6096587, Mean Center Loss: 0.2511848, Mean Hard Triplet Loss: 0.7169477
+Percetage of correct triplets: 0.73
+Features extracted in 11.72 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.6180860, Mean Center Loss: 0.2506249, Mean Hard Triplet Loss: 0.7349222
+Percetage of correct triplets: 0.73
+Features extracted in 11.93 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.5917916, Mean Center Loss: 0.2466753, Mean Hard Triplet Loss: 0.6902326
+Percetage of correct triplets: 0.72
+Features extracted in 12.25 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.6016953, Mean Center Loss: 0.2533736, Mean Hard Triplet Loss: 0.6966434
+Percetage of correct triplets: 0.74
+Features extracted in 11.86 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.6320800, Mean Center Loss: 0.2601481, Mean Hard Triplet Loss: 0.7438637
+Percetage of correct triplets: 0.72
+Features extracted in 11.78 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.5762004, Mean Center Loss: 0.2381712, Mean Hard Triplet Loss: 0.6760585
+Percetage of correct triplets: 0.72
+###============ Iteration number 13/30 ============###
+Extracting Online Features for ResNet50 ...
+Features extracted in 12.19 seconds
+Extracting Online Features for OSNet ...
+Features extracted in 11.00 seconds
+Extracting Online Features for DenseNet121 ...
+Features extracted in 12.47 seconds
+Computing jaccard distance...
+Jaccard distance computing time cost: 21.17156720161438
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.472862720489502
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.903231382369995
+Reliability: 0.955
+Mean Purity: 0.40387
+There are 89 clusters with 1 cameras
+There are 127 clusters with 2 cameras
+There are 207 clusters with 3 cameras
+There are 148 clusters with 4 cameras
+There are 26 clusters with 5 cameras
+There are 8 clusters with 6 cameras
+There are 4 clusters with 7 cameras
+There are 1 clusters with 8 cameras
+Number of classes: 610
+Learning Rate: 0.000350
+Training ResNet50 ...
+Features extracted in 11.90 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.5119051, Mean Center Loss: 0.2236811, Mean Hard Triplet Loss: 0.5764479
+Percetage of correct triplets: 0.74
+Features extracted in 11.97 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.5440435, Mean Center Loss: 0.2415058, Mean Hard Triplet Loss: 0.6050754
+Percetage of correct triplets: 0.73
+Features extracted in 11.86 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.5389478, Mean Center Loss: 0.2242461, Mean Hard Triplet Loss: 0.6294034
+Percetage of correct triplets: 0.73
+Features extracted in 12.56 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.5385026, Mean Center Loss: 0.2365177, Mean Hard Triplet Loss: 0.6039699
+Percetage of correct triplets: 0.72
+Features extracted in 11.88 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.4869520, Mean Center Loss: 0.2177309, Mean Hard Triplet Loss: 0.5384422
+Percetage of correct triplets: 0.73
+Features extracted in 12.12 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.4808012, Mean Center Loss: 0.2096904, Mean Hard Triplet Loss: 0.5422216
+Percetage of correct triplets: 0.73
+Features extracted in 11.72 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.4926019, Mean Center Loss: 0.2178818, Mean Hard Triplet Loss: 0.5494403
+Percetage of correct triplets: 0.73
+Training OSNet ...
+Features extracted in 10.01 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.7781248, Mean Center Loss: 0.2852039, Mean Hard Triplet Loss: 0.9858419
+Percetage of correct triplets: 0.72
+Features extracted in 10.59 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.8070521, Mean Center Loss: 0.2956643, Mean Hard Triplet Loss: 1.0227757
+Percetage of correct triplets: 0.74
+Features extracted in 10.90 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.7457021, Mean Center Loss: 0.2669314, Mean Hard Triplet Loss: 0.9575415
+Percetage of correct triplets: 0.71
+Features extracted in 10.46 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.7504741, Mean Center Loss: 0.2739695, Mean Hard Triplet Loss: 0.9530092
+Percetage of correct triplets: 0.72
+Features extracted in 10.90 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.7251986, Mean Center Loss: 0.2542019, Mean Hard Triplet Loss: 0.9419933
+Percetage of correct triplets: 0.72
+Features extracted in 10.60 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.6998046, Mean Center Loss: 0.2605524, Mean Hard Triplet Loss: 0.8785043
+Percetage of correct triplets: 0.73
+Features extracted in 11.17 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.7116478, Mean Center Loss: 0.2647146, Mean Hard Triplet Loss: 0.8938665
+Percetage of correct triplets: 0.72
+Training DenseNet121 ...
+Features extracted in 12.03 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.5863592, Mean Center Loss: 0.2325366, Mean Hard Triplet Loss: 0.7076452
+Percetage of correct triplets: 0.74
+Features extracted in 11.98 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.6070566, Mean Center Loss: 0.2506574, Mean Hard Triplet Loss: 0.7127983
+Percetage of correct triplets: 0.73
+Features extracted in 11.99 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.5879853, Mean Center Loss: 0.2424417, Mean Hard Triplet Loss: 0.6910871
+Percetage of correct triplets: 0.74
+Features extracted in 12.18 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.5797481, Mean Center Loss: 0.2453545, Mean Hard Triplet Loss: 0.6687872
+Percetage of correct triplets: 0.74
+Features extracted in 11.93 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.5409037, Mean Center Loss: 0.2366558, Mean Hard Triplet Loss: 0.6084957
+Percetage of correct triplets: 0.74
+Features extracted in 12.50 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.5267837, Mean Center Loss: 0.2185105, Mean Hard Triplet Loss: 0.6165463
+Percetage of correct triplets: 0.73
+Features extracted in 12.38 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.5161161, Mean Center Loss: 0.2081533, Mean Hard Triplet Loss: 0.6159255
+Percetage of correct triplets: 0.73
+###============ Iteration number 14/30 ============###
+Extracting Online Features for ResNet50 ...
+Features extracted in 12.39 seconds
+Extracting Online Features for OSNet ...
+Features extracted in 10.92 seconds
+Extracting Online Features for DenseNet121 ...
+Features extracted in 12.72 seconds
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.213416814804077
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.589303016662598
+Computing jaccard distance...
+Jaccard distance computing time cost: 21.593671083450317
+Reliability: 0.958
+Mean Purity: 0.40144
+There are 87 clusters with 1 cameras
+There are 124 clusters with 2 cameras
+There are 208 clusters with 3 cameras
+There are 143 clusters with 4 cameras
+There are 26 clusters with 5 cameras
+There are 9 clusters with 6 cameras
+There are 7 clusters with 7 cameras
+Number of classes: 604
+Learning Rate: 0.000350
+Training ResNet50 ...
+Features extracted in 12.49 seconds
+Batches computed: 37, Tau value: 0.040
+Mean Loss: 0.5260315, Mean Center Loss: 0.2173095, Mean Hard Triplet Loss: 0.6174439
+Percetage of correct triplets: 0.73
+Features extracted in 12.71 seconds
+Batches computed: 74, Tau value: 0.040
+Mean Loss: 0.5583768, Mean Center Loss: 0.2392665, Mean Hard Triplet Loss: 0.6382205
+Percetage of correct triplets: 0.73
+Features extracted in 12.87 seconds
+Batches computed: 111, Tau value: 0.040
+Mean Loss: 0.5378852, Mean Center Loss: 0.2278862, Mean Hard Triplet Loss: 0.6199980
+Percetage of correct triplets: 0.73
+Features extracted in 12.43 seconds
+Batches computed: 148, Tau value: 0.040
+Mean Loss: 0.4976994, Mean Center Loss: 0.2120639, Mean Hard Triplet Loss: 0.5712711
+Percetage of correct triplets: 0.74
+Features extracted in 13.06 seconds
+Batches computed: 185, Tau value: 0.040
+Mean Loss: 0.5445004, Mean Center Loss: 0.2341837, Mean Hard Triplet Loss: 0.6206334
+Percetage of correct triplets: 0.75
+Features extracted in 12.85 seconds
+Batches computed: 222, Tau value: 0.040
+Mean Loss: 0.5118078, Mean Center Loss: 0.2253169, Mean Hard Triplet Loss: 0.5729817
+Percetage of correct triplets: 0.73
+Features extracted in 11.78 seconds
+Batches computed: 259, Tau value: 0.040
+Mean Loss: 0.4677162, Mean Center Loss: 0.2016332, Mean Hard Triplet Loss: 0.5321662
+Percetage of correct triplets: 0.74
+Training OSNet ...
+Features extracted in 10.28 seconds
+Batches computed: 37, Tau value: 0.040
+Mean Loss: 0.7647772, Mean Center Loss: 0.2848553, Mean Hard Triplet Loss: 0.9598438
+Percetage of correct triplets: 0.73
+Features extracted in 11.66 seconds
+Batches computed: 74, Tau value: 0.040
+Mean Loss: 0.7559544, Mean Center Loss: 0.2704379, Mean Hard Triplet Loss: 0.9710330
+Percetage of correct triplets: 0.73
+Features extracted in 11.28 seconds
+Batches computed: 111, Tau value: 0.040
+Mean Loss: 0.7496745, Mean Center Loss: 0.2794003, Mean Hard Triplet Loss: 0.9405486
+Percetage of correct triplets: 0.72
+Features extracted in 11.63 seconds
+Batches computed: 148, Tau value: 0.040
+Mean Loss: 0.7023461, Mean Center Loss: 0.2574952, Mean Hard Triplet Loss: 0.8897019
+Percetage of correct triplets: 0.73
+Features extracted in 11.43 seconds
+Batches computed: 185, Tau value: 0.040
+Mean Loss: 0.6769211, Mean Center Loss: 0.2454218, Mean Hard Triplet Loss: 0.8629985
+Percetage of correct triplets: 0.72
+Features extracted in 10.70 seconds
+Batches computed: 222, Tau value: 0.040
+Mean Loss: 0.6574998, Mean Center Loss: 0.2460936, Mean Hard Triplet Loss: 0.8228123
+Percetage of correct triplets: 0.73
+Features extracted in 10.69 seconds
+Batches computed: 259, Tau value: 0.040
+Mean Loss: 0.6274169, Mean Center Loss: 0.2277347, Mean Hard Triplet Loss: 0.7993643
+Percetage of correct triplets: 0.71
+Training DenseNet121 ...
+Features extracted in 11.74 seconds
+Batches computed: 37, Tau value: 0.040
+Mean Loss: 0.6206752, Mean Center Loss: 0.2426079, Mean Hard Triplet Loss: 0.7561346
+Percetage of correct triplets: 0.73
+Features extracted in 12.44 seconds
+Batches computed: 74, Tau value: 0.040
+Mean Loss: 0.6113688, Mean Center Loss: 0.2551490, Mean Hard Triplet Loss: 0.7124395
+Percetage of correct triplets: 0.73
+Features extracted in 11.80 seconds
+Batches computed: 111, Tau value: 0.040
+Mean Loss: 0.5509030, Mean Center Loss: 0.2316588, Mean Hard Triplet Loss: 0.6384884
+Percetage of correct triplets: 0.73
+Features extracted in 12.02 seconds
+Batches computed: 148, Tau value: 0.040
+Mean Loss: 0.5334921, Mean Center Loss: 0.2148829, Mean Hard Triplet Loss: 0.6372183
+Percetage of correct triplets: 0.75
+Features extracted in 12.05 seconds
+Batches computed: 185, Tau value: 0.040
+Mean Loss: 0.5066620, Mean Center Loss: 0.2101416, Mean Hard Triplet Loss: 0.5930407
+Percetage of correct triplets: 0.74
+Features extracted in 12.23 seconds
+Batches computed: 222, Tau value: 0.040
+Mean Loss: 0.5519266, Mean Center Loss: 0.2301313, Mean Hard Triplet Loss: 0.6435906
+Percetage of correct triplets: 0.73
+Features extracted in 11.59 seconds
+Batches computed: 259, Tau value: 0.040
+Mean Loss: 0.4931896, Mean Center Loss: 0.2073338, Mean Hard Triplet Loss: 0.5717116
+Percetage of correct triplets: 0.74
+###============ Iteration number 15/30 ============###
+Extracting Online Features for ResNet50 ...
+Features extracted in 12.50 seconds
+Extracting Online Features for OSNet ...
+Features extracted in 11.01 seconds
+Extracting Online Features for DenseNet121 ...
+Features extracted in 12.43 seconds
+Computing jaccard distance...
+Jaccard distance computing time cost: 21.452664136886597
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.364132404327393
+Computing jaccard distance...
+Jaccard distance computing time cost: 21.855106115341187
+Reliability: 0.963
+Mean Purity: 0.40534
+There are 90 clusters with 1 cameras
+There are 121 clusters with 2 cameras
+There are 209 clusters with 3 cameras
+There are 142 clusters with 4 cameras
+There are 28 clusters with 5 cameras
+There are 12 clusters with 6 cameras
+There are 4 clusters with 7 cameras
+Number of classes: 606
+Learning Rate: 0.000350
+Training ResNet50 ...
+Features extracted in 12.24 seconds
+Batches computed: 37, Tau value: 0.040
+Mean Loss: 0.5640363, Mean Center Loss: 0.2375417, Mean Hard Triplet Loss: 0.6529892
+Percetage of correct triplets: 0.73
+Features extracted in 12.17 seconds
+Batches computed: 74, Tau value: 0.040
+Mean Loss: 0.5140213, Mean Center Loss: 0.2226621, Mean Hard Triplet Loss: 0.5827184
+Percetage of correct triplets: 0.72
+Features extracted in 11.95 seconds
+Batches computed: 111, Tau value: 0.040
+Mean Loss: 0.5499695, Mean Center Loss: 0.2384621, Mean Hard Triplet Loss: 0.6230148
+Percetage of correct triplets: 0.73
+Features extracted in 12.43 seconds
+Batches computed: 148, Tau value: 0.040
+Mean Loss: 0.5014867, Mean Center Loss: 0.2202004, Mean Hard Triplet Loss: 0.5625726
+Percetage of correct triplets: 0.73
+Features extracted in 11.71 seconds
+Batches computed: 185, Tau value: 0.040
+Mean Loss: 0.4710237, Mean Center Loss: 0.2023348, Mean Hard Triplet Loss: 0.5373777
+Percetage of correct triplets: 0.74
+Features extracted in 12.12 seconds
+Batches computed: 222, Tau value: 0.040
+Mean Loss: 0.4864269, Mean Center Loss: 0.2172802, Mean Hard Triplet Loss: 0.5382934
+Percetage of correct triplets: 0.73
+Features extracted in 12.10 seconds
+Batches computed: 259, Tau value: 0.040
+Mean Loss: 0.5074728, Mean Center Loss: 0.2143120, Mean Hard Triplet Loss: 0.5863217
+Percetage of correct triplets: 0.74
+Training OSNet ...
+Features extracted in 10.55 seconds
+Batches computed: 37, Tau value: 0.040
+Mean Loss: 0.6627535, Mean Center Loss: 0.2350481, Mean Hard Triplet Loss: 0.8554108
+Percetage of correct triplets: 0.73
+Features extracted in 10.63 seconds
+Batches computed: 74, Tau value: 0.040
+Mean Loss: 0.6437034, Mean Center Loss: 0.2348669, Mean Hard Triplet Loss: 0.8176729
+Percetage of correct triplets: 0.72
+Features extracted in 10.77 seconds
+Batches computed: 111, Tau value: 0.040
+Mean Loss: 0.6698968, Mean Center Loss: 0.2368600, Mean Hard Triplet Loss: 0.8660736
+Percetage of correct triplets: 0.73
+Features extracted in 10.61 seconds
+Batches computed: 148, Tau value: 0.040
+Mean Loss: 0.6602433, Mean Center Loss: 0.2427576, Mean Hard Triplet Loss: 0.8349715
+Percetage of correct triplets: 0.73
+Features extracted in 10.70 seconds
+Batches computed: 185, Tau value: 0.040
+Mean Loss: 0.6520917, Mean Center Loss: 0.2443858, Mean Hard Triplet Loss: 0.8154117
+Percetage of correct triplets: 0.72
+Features extracted in 10.75 seconds
+Batches computed: 222, Tau value: 0.040
+Mean Loss: 0.6719767, Mean Center Loss: 0.2541868, Mean Hard Triplet Loss: 0.8355799
+Percetage of correct triplets: 0.72
+Features extracted in 10.76 seconds
+Batches computed: 259, Tau value: 0.040
+Mean Loss: 0.6206186, Mean Center Loss: 0.2224292, Mean Hard Triplet Loss: 0.7963787
+Percetage of correct triplets: 0.73
+Training DenseNet121 ...
+Features extracted in 11.95 seconds
+Batches computed: 37, Tau value: 0.040
+Mean Loss: 0.5283616, Mean Center Loss: 0.2129129, Mean Hard Triplet Loss: 0.6308974
+Percetage of correct triplets: 0.73
+Features extracted in 12.00 seconds
+Batches computed: 74, Tau value: 0.040
+Mean Loss: 0.5406924, Mean Center Loss: 0.2218985, Mean Hard Triplet Loss: 0.6375879
+Percetage of correct triplets: 0.73
+Features extracted in 12.11 seconds
+Batches computed: 111, Tau value: 0.040
+Mean Loss: 0.5817726, Mean Center Loss: 0.2389692, Mean Hard Triplet Loss: 0.6856069
+Percetage of correct triplets: 0.74
+Features extracted in 12.32 seconds
+Batches computed: 148, Tau value: 0.040
+Mean Loss: 0.5324131, Mean Center Loss: 0.2197310, Mean Hard Triplet Loss: 0.6253642
+Percetage of correct triplets: 0.74
+Features extracted in 12.07 seconds
+Batches computed: 185, Tau value: 0.040
+Mean Loss: 0.5422958, Mean Center Loss: 0.2210733, Mean Hard Triplet Loss: 0.6424449
+Percetage of correct triplets: 0.73
+Features extracted in 12.18 seconds
+Batches computed: 222, Tau value: 0.040
+Mean Loss: 0.5237371, Mean Center Loss: 0.2145706, Mean Hard Triplet Loss: 0.6183330
+Percetage of correct triplets: 0.73
+Features extracted in 12.38 seconds
+Batches computed: 259, Tau value: 0.040
+Mean Loss: 0.4911781, Mean Center Loss: 0.2110510, Mean Hard Triplet Loss: 0.5602543
+Percetage of correct triplets: 0.74
+Validating online ResNet50 ...
+Features extracted in 5.89 seconds
+Features extracted in 13.71 seconds
+Computing CMC and mAP ...
+** Results **
+mAP: 61.83%
+CMC curve
+Rank-1  : 77.15%
+Rank-5  : 87.88%
+Rank-10 : 91.16%
+Rank-20 : 93.13%
+Validating momentum ResNet50 ...
+Features extracted in 4.93 seconds
+Features extracted in 13.25 seconds
+Computing CMC and mAP ...
+** Results **
+mAP: 67.98%
+CMC curve
+Rank-1  : 81.46%
+Rank-5  : 89.59%
+Rank-10 : 92.55%
+Rank-20 : 93.99%
+Validating online OSNet ...
+Features extracted in 4.84 seconds
+Features extracted in 11.27 seconds
+Computing CMC and mAP ...
+** Results **
+mAP: 63.14%
+CMC curve
+Rank-1  : 78.32%
+Rank-5  : 88.96%
+Rank-10 : 91.88%
+Rank-20 : 93.81%
+Validating momentum OSNet ...
+Features extracted in 4.78 seconds
+Features extracted in 11.19 seconds
+Computing CMC and mAP ...
+** Results **
+mAP: 62.57%
+CMC curve
+Rank-1  : 78.41%
+Rank-5  : 87.88%
+Rank-10 : 90.89%
+Rank-20 : 92.95%
+Validating online DenseNet121 ...
+Features extracted in 4.84 seconds
+Features extracted in 13.52 seconds
+Computing CMC and mAP ...
+** Results **
+mAP: 61.72%
+CMC curve
+Rank-1  : 77.74%
+Rank-5  : 88.64%
+Rank-10 : 91.02%
+Rank-20 : 93.18%
+Validating momentum DenseNet121 ...
+Features extracted in 4.92 seconds
+Features extracted in 13.48 seconds
+Computing CMC and mAP ...
+** Results **
+mAP: 65.17%
+CMC curve
+Rank-1  : 79.85%
+Rank-5  : 88.55%
+Rank-10 : 91.02%
+Rank-20 : 92.86%
+Validating ensembled with online models ...
+Computing CMC and mAP ...
+** Results **
+mAP: 68.82%
+Ranks:
+Rank-1  : 81.19%
+Rank-5  : 90.17%
+Rank-10 : 92.59%
+Validating ensembled with momentum models ...
+Computing CMC and mAP ...
+** Results **
+mAP: 69.53%
+Ranks:
+Rank-1  : 82.00%
+Rank-5  : 89.50%
+Rank-10 : 91.83%
+###============ Iteration number 16/30 ============###
+Extracting Online Features for ResNet50 ...
+Features extracted in 12.30 seconds
+Extracting Online Features for OSNet ...
+Features extracted in 11.12 seconds
+Extracting Online Features for DenseNet121 ...
+Features extracted in 12.40 seconds
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.901767015457153
+Computing jaccard distance...
+Jaccard distance computing time cost: 19.975586891174316
+Computing jaccard distance...
+Jaccard distance computing time cost: 21.78533434867859
+Reliability: 0.963
+Mean Purity: 0.40766
+There are 86 clusters with 1 cameras
+There are 126 clusters with 2 cameras
+There are 208 clusters with 3 cameras
+There are 145 clusters with 4 cameras
+There are 26 clusters with 5 cameras
+There are 10 clusters with 6 cameras
+There are 5 clusters with 7 cameras
+Number of classes: 606
+Learning Rate: 0.000350
+Training ResNet50 ...
+Features extracted in 11.90 seconds
+Batches computed: 37, Tau value: 0.040
+Mean Loss: 0.5555067, Mean Center Loss: 0.2435545, Mean Hard Triplet Loss: 0.6239044
+Percetage of correct triplets: 0.72
+Features extracted in 11.75 seconds
+Batches computed: 74, Tau value: 0.040
+Mean Loss: 0.5103697, Mean Center Loss: 0.2369910, Mean Hard Triplet Loss: 0.5467574
+Percetage of correct triplets: 0.73
+Features extracted in 12.03 seconds
+Batches computed: 111, Tau value: 0.040
+Mean Loss: 0.5175401, Mean Center Loss: 0.2303236, Mean Hard Triplet Loss: 0.5744331
+Percetage of correct triplets: 0.73
+Features extracted in 12.08 seconds
+Batches computed: 148, Tau value: 0.040
+Mean Loss: 0.4684288, Mean Center Loss: 0.2127269, Mean Hard Triplet Loss: 0.5114038
+Percetage of correct triplets: 0.74
+Features extracted in 11.90 seconds
+Batches computed: 185, Tau value: 0.040
+Mean Loss: 0.4268295, Mean Center Loss: 0.1877652, Mean Hard Triplet Loss: 0.4781287
+Percetage of correct triplets: 0.73
+Features extracted in 12.15 seconds
+Batches computed: 222, Tau value: 0.040
+Mean Loss: 0.4547414, Mean Center Loss: 0.2022142, Mean Hard Triplet Loss: 0.5050545
+Percetage of correct triplets: 0.72
+Features extracted in 12.29 seconds
+Batches computed: 259, Tau value: 0.040
+Mean Loss: 0.4710906, Mean Center Loss: 0.2003450, Mean Hard Triplet Loss: 0.5414912
+Percetage of correct triplets: 0.73
+Training OSNet ...
+Features extracted in 10.48 seconds
+Batches computed: 37, Tau value: 0.040
+Mean Loss: 0.6997155, Mean Center Loss: 0.2498016, Mean Hard Triplet Loss: 0.8998278
+Percetage of correct triplets: 0.73
+Features extracted in 12.11 seconds
+Batches computed: 74, Tau value: 0.040
+Mean Loss: 0.6618297, Mean Center Loss: 0.2427572, Mean Hard Triplet Loss: 0.8381450
+Percetage of correct triplets: 0.73
+Features extracted in 10.72 seconds
+Batches computed: 111, Tau value: 0.040
+Mean Loss: 0.6467981, Mean Center Loss: 0.2360549, Mean Hard Triplet Loss: 0.8214866
+Percetage of correct triplets: 0.72
+Features extracted in 11.59 seconds
+Batches computed: 148, Tau value: 0.040
+Mean Loss: 0.6651473, Mean Center Loss: 0.2469397, Mean Hard Triplet Loss: 0.8364151
+Percetage of correct triplets: 0.72
+Features extracted in 10.51 seconds
+Batches computed: 185, Tau value: 0.040
+Mean Loss: 0.5874353, Mean Center Loss: 0.2210447, Mean Hard Triplet Loss: 0.7327812
+Percetage of correct triplets: 0.72
+Features extracted in 10.63 seconds
+Batches computed: 222, Tau value: 0.040
+Mean Loss: 0.6439226, Mean Center Loss: 0.2279206, Mean Hard Triplet Loss: 0.8320040
+Percetage of correct triplets: 0.71
+Features extracted in 10.59 seconds
+Batches computed: 259, Tau value: 0.040
+Mean Loss: 0.5636512, Mean Center Loss: 0.2020084, Mean Hard Triplet Loss: 0.7232856
+Percetage of correct triplets: 0.71
+Training DenseNet121 ...
+Features extracted in 12.26 seconds
+Batches computed: 37, Tau value: 0.040
+Mean Loss: 0.5253911, Mean Center Loss: 0.2247521, Mean Hard Triplet Loss: 0.6012779
+Percetage of correct triplets: 0.74
+Features extracted in 12.26 seconds
+Batches computed: 74, Tau value: 0.040
+Mean Loss: 0.4965364, Mean Center Loss: 0.2091341, Mean Hard Triplet Loss: 0.5748046
+Percetage of correct triplets: 0.74
+Features extracted in 12.30 seconds
+Batches computed: 111, Tau value: 0.040
+Mean Loss: 0.4860466, Mean Center Loss: 0.1985519, Mean Hard Triplet Loss: 0.5749894
+Percetage of correct triplets: 0.73
+Features extracted in 12.35 seconds
+Batches computed: 148, Tau value: 0.040
+Mean Loss: 0.5292309, Mean Center Loss: 0.2046297, Mean Hard Triplet Loss: 0.6492023
+Percetage of correct triplets: 0.73
+Features extracted in 12.06 seconds
+Batches computed: 185, Tau value: 0.040
+Mean Loss: 0.4708909, Mean Center Loss: 0.1991109, Mean Hard Triplet Loss: 0.5435600
+Percetage of correct triplets: 0.72
+Features extracted in 12.01 seconds
+Batches computed: 222, Tau value: 0.040
+Mean Loss: 0.4499459, Mean Center Loss: 0.1869323, Mean Hard Triplet Loss: 0.5260272
+Percetage of correct triplets: 0.73
+Features extracted in 12.21 seconds
+Batches computed: 259, Tau value: 0.040
+Mean Loss: 0.4433017, Mean Center Loss: 0.1958400, Mean Hard Triplet Loss: 0.4949234
+Percetage of correct triplets: 0.74
+###============ Iteration number 17/30 ============###
+Extracting Online Features for ResNet50 ...
+Features extracted in 13.27 seconds
+Extracting Online Features for OSNet ...
+Features extracted in 11.14 seconds
+Extracting Online Features for DenseNet121 ...
+Features extracted in 12.42 seconds
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.640130043029785
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.127471208572388
+Computing jaccard distance...
+Jaccard distance computing time cost: 21.800353288650513
+Reliability: 0.967
+Mean Purity: 0.40936
+There are 88 clusters with 1 cameras
+There are 121 clusters with 2 cameras
+There are 212 clusters with 3 cameras
+There are 145 clusters with 4 cameras
+There are 27 clusters with 5 cameras
+There are 10 clusters with 6 cameras
+There are 5 clusters with 7 cameras
+Number of classes: 608
+Learning Rate: 0.000350
+Training ResNet50 ...
+Features extracted in 12.33 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.4562588, Mean Center Loss: 0.1985826, Mean Hard Triplet Loss: 0.5153523
+Percetage of correct triplets: 0.74
+Features extracted in 12.09 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.5063715, Mean Center Loss: 0.2283290, Mean Hard Triplet Loss: 0.5560849
+Percetage of correct triplets: 0.72
+Features extracted in 12.32 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.5040820, Mean Center Loss: 0.2272679, Mean Hard Triplet Loss: 0.5536282
+Percetage of correct triplets: 0.73
+Features extracted in 12.20 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.4379539, Mean Center Loss: 0.1996298, Mean Hard Triplet Loss: 0.4766481
+Percetage of correct triplets: 0.74
+Features extracted in 12.87 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.4534409, Mean Center Loss: 0.2014752, Mean Hard Triplet Loss: 0.5039315
+Percetage of correct triplets: 0.74
+Features extracted in 12.78 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.4356824, Mean Center Loss: 0.1873058, Mean Hard Triplet Loss: 0.4967532
+Percetage of correct triplets: 0.73
+Features extracted in 12.44 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.4560023, Mean Center Loss: 0.2016464, Mean Hard Triplet Loss: 0.5087118
+Percetage of correct triplets: 0.72
+Training OSNet ...
+Features extracted in 11.25 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.5566590, Mean Center Loss: 0.2071976, Mean Hard Triplet Loss: 0.6989229
+Percetage of correct triplets: 0.72
+Features extracted in 11.73 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.6076139, Mean Center Loss: 0.2124974, Mean Hard Triplet Loss: 0.7902330
+Percetage of correct triplets: 0.72
+Features extracted in 11.36 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.6197555, Mean Center Loss: 0.2245689, Mean Hard Triplet Loss: 0.7903732
+Percetage of correct triplets: 0.72
+Features extracted in 11.46 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.6126387, Mean Center Loss: 0.2285607, Mean Hard Triplet Loss: 0.7681561
+Percetage of correct triplets: 0.72
+Features extracted in 11.34 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.6025503, Mean Center Loss: 0.2206524, Mean Hard Triplet Loss: 0.7637959
+Percetage of correct triplets: 0.72
+Features extracted in 11.64 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.6307140, Mean Center Loss: 0.2335212, Mean Hard Triplet Loss: 0.7943857
+Percetage of correct triplets: 0.72
+Features extracted in 11.77 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.5692287, Mean Center Loss: 0.2100614, Mean Hard Triplet Loss: 0.7183347
+Percetage of correct triplets: 0.72
+Training DenseNet121 ...
+Features extracted in 13.37 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.4624511, Mean Center Loss: 0.1918510, Mean Hard Triplet Loss: 0.5412001
+Percetage of correct triplets: 0.73
+Features extracted in 13.44 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.4603346, Mean Center Loss: 0.1878820, Mean Hard Triplet Loss: 0.5449051
+Percetage of correct triplets: 0.72
+Features extracted in 13.38 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.4697197, Mean Center Loss: 0.1918957, Mean Hard Triplet Loss: 0.5556479
+Percetage of correct triplets: 0.73
+Features extracted in 13.18 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.4842980, Mean Center Loss: 0.2095414, Mean Hard Triplet Loss: 0.5495132
+Percetage of correct triplets: 0.73
+Features extracted in 13.43 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.4523029, Mean Center Loss: 0.1758906, Mean Hard Triplet Loss: 0.5528247
+Percetage of correct triplets: 0.74
+Features extracted in 13.32 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.4524042, Mean Center Loss: 0.1907536, Mean Hard Triplet Loss: 0.5233012
+Percetage of correct triplets: 0.73
+Features extracted in 13.35 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.4672059, Mean Center Loss: 0.1983667, Mean Hard Triplet Loss: 0.5376782
+Percetage of correct triplets: 0.73
+###============ Iteration number 18/30 ============###
+Extracting Online Features for ResNet50 ...
+Features extracted in 13.40 seconds
+Extracting Online Features for OSNet ...
+Features extracted in 11.87 seconds
+Extracting Online Features for DenseNet121 ...
+Features extracted in 12.86 seconds
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.857579469680786
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.03713345527649
+Computing jaccard distance...
+Jaccard distance computing time cost: 21.736584901809692
+Reliability: 0.969
+Mean Purity: 0.40367
+There are 87 clusters with 1 cameras
+There are 125 clusters with 2 cameras
+There are 209 clusters with 3 cameras
+There are 146 clusters with 4 cameras
+There are 26 clusters with 5 cameras
+There are 10 clusters with 6 cameras
+There are 4 clusters with 7 cameras
+There are 1 clusters with 8 cameras
+Number of classes: 608
+Learning Rate: 0.000350
+Training ResNet50 ...
+Features extracted in 12.94 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.4639514, Mean Center Loss: 0.2051931, Mean Hard Triplet Loss: 0.5175166
+Percetage of correct triplets: 0.73
+Features extracted in 12.16 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.4578536, Mean Center Loss: 0.1959078, Mean Hard Triplet Loss: 0.5238917
+Percetage of correct triplets: 0.73
+Features extracted in 12.91 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.4484242, Mean Center Loss: 0.1951605, Mean Hard Triplet Loss: 0.5065273
+Percetage of correct triplets: 0.72
+Features extracted in 11.87 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.4359849, Mean Center Loss: 0.1897631, Mean Hard Triplet Loss: 0.4924435
+Percetage of correct triplets: 0.72
+Features extracted in 12.06 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.4318059, Mean Center Loss: 0.1889513, Mean Hard Triplet Loss: 0.4857093
+Percetage of correct triplets: 0.73
+Features extracted in 12.72 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.4685218, Mean Center Loss: 0.2078471, Mean Hard Triplet Loss: 0.5213495
+Percetage of correct triplets: 0.73
+Features extracted in 12.99 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.4607534, Mean Center Loss: 0.2074276, Mean Hard Triplet Loss: 0.5066516
+Percetage of correct triplets: 0.73
+Training OSNet ...
+Features extracted in 10.49 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.5676510, Mean Center Loss: 0.2190835, Mean Hard Triplet Loss: 0.6971350
+Percetage of correct triplets: 0.72
+Features extracted in 10.92 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.5747718, Mean Center Loss: 0.2169804, Mean Hard Triplet Loss: 0.7155828
+Percetage of correct triplets: 0.74
+Features extracted in 11.16 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.5592514, Mean Center Loss: 0.2099643, Mean Hard Triplet Loss: 0.6985741
+Percetage of correct triplets: 0.73
+Features extracted in 10.70 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.5733354, Mean Center Loss: 0.2189881, Mean Hard Triplet Loss: 0.7086945
+Percetage of correct triplets: 0.71
+Features extracted in 10.94 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.5097162, Mean Center Loss: 0.2038954, Mean Hard Triplet Loss: 0.6116416
+Percetage of correct triplets: 0.73
+Features extracted in 10.46 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.5329285, Mean Center Loss: 0.2012155, Mean Hard Triplet Loss: 0.6634261
+Percetage of correct triplets: 0.72
+Features extracted in 10.71 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.5179949, Mean Center Loss: 0.1996128, Mean Hard Triplet Loss: 0.6367641
+Percetage of correct triplets: 0.73
+Training DenseNet121 ...
+Features extracted in 12.41 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.4860284, Mean Center Loss: 0.1981487, Mean Hard Triplet Loss: 0.5757593
+Percetage of correct triplets: 0.74
+Features extracted in 12.40 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.4414460, Mean Center Loss: 0.1845536, Mean Hard Triplet Loss: 0.5137847
+Percetage of correct triplets: 0.73
+Features extracted in 12.01 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.4563664, Mean Center Loss: 0.1897843, Mean Hard Triplet Loss: 0.5331643
+Percetage of correct triplets: 0.73
+Features extracted in 12.75 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.3563014, Mean Center Loss: 0.1538732, Mean Hard Triplet Loss: 0.4048565
+Percetage of correct triplets: 0.74
+Features extracted in 13.11 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.4199601, Mean Center Loss: 0.1750604, Mean Hard Triplet Loss: 0.4897994
+Percetage of correct triplets: 0.74
+Features extracted in 12.93 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.3919002, Mean Center Loss: 0.1734068, Mean Hard Triplet Loss: 0.4369868
+Percetage of correct triplets: 0.73
+Features extracted in 12.10 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.4015496, Mean Center Loss: 0.1709634, Mean Hard Triplet Loss: 0.4611724
+Percetage of correct triplets: 0.74
+###============ Iteration number 19/30 ============###
+Extracting Online Features for ResNet50 ...
+Features extracted in 12.58 seconds
+Extracting Online Features for OSNet ...
+Features extracted in 12.23 seconds
+Extracting Online Features for DenseNet121 ...
+Features extracted in 12.44 seconds
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.322455883026123
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.244506359100342
+Computing jaccard distance...
+Jaccard distance computing time cost: 21.908283472061157
+Reliability: 0.970
+Mean Purity: 0.40171
+There are 89 clusters with 1 cameras
+There are 122 clusters with 2 cameras
+There are 211 clusters with 3 cameras
+There are 146 clusters with 4 cameras
+There are 28 clusters with 5 cameras
+There are 11 clusters with 6 cameras
+There are 5 clusters with 7 cameras
+Number of classes: 612
+Learning Rate: 0.000350
+Training ResNet50 ...
+Features extracted in 12.92 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.4993350, Mean Center Loss: 0.2295161, Mean Hard Triplet Loss: 0.5396377
+Percetage of correct triplets: 0.73
+Features extracted in 12.97 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.4885018, Mean Center Loss: 0.2238966, Mean Hard Triplet Loss: 0.5292103
+Percetage of correct triplets: 0.73
+Features extracted in 12.58 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.4133346, Mean Center Loss: 0.1914482, Mean Hard Triplet Loss: 0.4437726
+Percetage of correct triplets: 0.73
+Features extracted in 13.10 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.4289671, Mean Center Loss: 0.1924221, Mean Hard Triplet Loss: 0.4730901
+Percetage of correct triplets: 0.74
+Features extracted in 12.86 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.4415955, Mean Center Loss: 0.1920502, Mean Hard Triplet Loss: 0.4990905
+Percetage of correct triplets: 0.73
+Features extracted in 13.35 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.3966852, Mean Center Loss: 0.1766077, Mean Hard Triplet Loss: 0.4401549
+Percetage of correct triplets: 0.73
+Features extracted in 12.94 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.4268090, Mean Center Loss: 0.1844440, Mean Hard Triplet Loss: 0.4847301
+Percetage of correct triplets: 0.73
+Training OSNet ...
+Features extracted in 10.85 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.5668960, Mean Center Loss: 0.2199932, Mean Hard Triplet Loss: 0.6938056
+Percetage of correct triplets: 0.72
+Features extracted in 11.72 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.5972445, Mean Center Loss: 0.2289777, Mean Hard Triplet Loss: 0.7365336
+Percetage of correct triplets: 0.72
+Features extracted in 11.21 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.5543887, Mean Center Loss: 0.2092460, Mean Hard Triplet Loss: 0.6902855
+Percetage of correct triplets: 0.71
+Features extracted in 11.85 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.5338416, Mean Center Loss: 0.1985510, Mean Hard Triplet Loss: 0.6705811
+Percetage of correct triplets: 0.73
+Features extracted in 10.40 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.5597540, Mean Center Loss: 0.2144610, Mean Hard Triplet Loss: 0.6905861
+Percetage of correct triplets: 0.72
+Features extracted in 10.95 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.5040950, Mean Center Loss: 0.1949941, Mean Hard Triplet Loss: 0.6182018
+Percetage of correct triplets: 0.71
+Features extracted in 10.83 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.4945906, Mean Center Loss: 0.1878503, Mean Hard Triplet Loss: 0.6134806
+Percetage of correct triplets: 0.72
+Training DenseNet121 ...
+Features extracted in 12.49 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.4621126, Mean Center Loss: 0.1958138, Mean Hard Triplet Loss: 0.5325977
+Percetage of correct triplets: 0.75
+Features extracted in 12.23 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.4623563, Mean Center Loss: 0.2072552, Mean Hard Triplet Loss: 0.5102022
+Percetage of correct triplets: 0.73
+Features extracted in 12.44 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.4444846, Mean Center Loss: 0.1857075, Mean Hard Triplet Loss: 0.5175540
+Percetage of correct triplets: 0.73
+Features extracted in 12.35 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.4608150, Mean Center Loss: 0.1943990, Mean Hard Triplet Loss: 0.5328318
+Percetage of correct triplets: 0.74
+Features extracted in 12.50 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.4059926, Mean Center Loss: 0.1770292, Mean Hard Triplet Loss: 0.4579269
+Percetage of correct triplets: 0.73
+Features extracted in 12.26 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.4203002, Mean Center Loss: 0.1835281, Mean Hard Triplet Loss: 0.4735442
+Percetage of correct triplets: 0.73
+Features extracted in 12.58 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.4326980, Mean Center Loss: 0.1764411, Mean Hard Triplet Loss: 0.5125138
+Percetage of correct triplets: 0.74
+###============ Iteration number 20/30 ============###
+Extracting Online Features for ResNet50 ...
+Features extracted in 12.56 seconds
+Extracting Online Features for OSNet ...
+Features extracted in 11.49 seconds
+Extracting Online Features for DenseNet121 ...
+Features extracted in 12.65 seconds
+Computing jaccard distance...
+Jaccard distance computing time cost: 21.011678218841553
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.450156211853027
+Computing jaccard distance...
+Jaccard distance computing time cost: 21.51280689239502
+Reliability: 0.970
+Mean Purity: 0.41326
+There are 93 clusters with 1 cameras
+There are 119 clusters with 2 cameras
+There are 209 clusters with 3 cameras
+There are 147 clusters with 4 cameras
+There are 28 clusters with 5 cameras
+There are 11 clusters with 6 cameras
+There are 5 clusters with 7 cameras
+Number of classes: 612
+Learning Rate: 0.000350
+Training ResNet50 ...
+Features extracted in 12.07 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.4608902, Mean Center Loss: 0.2095399, Mean Hard Triplet Loss: 0.5027007
+Percetage of correct triplets: 0.73
+Features extracted in 12.03 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.4201427, Mean Center Loss: 0.1914805, Mean Hard Triplet Loss: 0.4573243
+Percetage of correct triplets: 0.72
+Features extracted in 12.36 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.4570088, Mean Center Loss: 0.2074412, Mean Hard Triplet Loss: 0.4991353
+Percetage of correct triplets: 0.73
+Features extracted in 11.95 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.4333397, Mean Center Loss: 0.1878240, Mean Hard Triplet Loss: 0.4910313
+Percetage of correct triplets: 0.73
+Features extracted in 12.41 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.4064437, Mean Center Loss: 0.1900067, Mean Hard Triplet Loss: 0.4328741
+Percetage of correct triplets: 0.73
+Features extracted in 12.17 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.3897504, Mean Center Loss: 0.1791394, Mean Hard Triplet Loss: 0.4212220
+Percetage of correct triplets: 0.73
+Features extracted in 11.85 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.4288397, Mean Center Loss: 0.2023752, Mean Hard Triplet Loss: 0.4529290
+Percetage of correct triplets: 0.72
+Training OSNet ...
+Features extracted in 10.60 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.5570089, Mean Center Loss: 0.2170569, Mean Hard Triplet Loss: 0.6799040
+Percetage of correct triplets: 0.72
+Features extracted in 10.61 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.5518613, Mean Center Loss: 0.2117225, Mean Hard Triplet Loss: 0.6802776
+Percetage of correct triplets: 0.72
+Features extracted in 10.52 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.5239551, Mean Center Loss: 0.2040715, Mean Hard Triplet Loss: 0.6397671
+Percetage of correct triplets: 0.71
+Features extracted in 10.74 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.4984978, Mean Center Loss: 0.1944532, Mean Hard Triplet Loss: 0.6080892
+Percetage of correct triplets: 0.72
+Features extracted in 10.69 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.5107755, Mean Center Loss: 0.1926676, Mean Hard Triplet Loss: 0.6362157
+Percetage of correct triplets: 0.73
+Features extracted in 11.26 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.4714473, Mean Center Loss: 0.1841785, Mean Hard Triplet Loss: 0.5745377
+Percetage of correct triplets: 0.72
+Features extracted in 10.69 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.4986917, Mean Center Loss: 0.1944900, Mean Hard Triplet Loss: 0.6084035
+Percetage of correct triplets: 0.72
+Training DenseNet121 ...
+Features extracted in 12.24 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.4406444, Mean Center Loss: 0.1928173, Mean Hard Triplet Loss: 0.4956541
+Percetage of correct triplets: 0.73
+Features extracted in 12.25 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.4537071, Mean Center Loss: 0.1943596, Mean Hard Triplet Loss: 0.5186950
+Percetage of correct triplets: 0.73
+Features extracted in 12.58 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.4339311, Mean Center Loss: 0.1766164, Mean Hard Triplet Loss: 0.5146294
+Percetage of correct triplets: 0.73
+Features extracted in 12.60 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.3895422, Mean Center Loss: 0.1692425, Mean Hard Triplet Loss: 0.4405995
+Percetage of correct triplets: 0.74
+Features extracted in 13.26 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.4056404, Mean Center Loss: 0.1695947, Mean Hard Triplet Loss: 0.4720913
+Percetage of correct triplets: 0.73
+Features extracted in 12.10 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.3830957, Mean Center Loss: 0.1658342, Mean Hard Triplet Loss: 0.4345231
+Percetage of correct triplets: 0.74
+Features extracted in 12.88 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.4190634, Mean Center Loss: 0.1785368, Mean Hard Triplet Loss: 0.4810531
+Percetage of correct triplets: 0.74
+Validating online ResNet50 ...
+Features extracted in 5.52 seconds
+Features extracted in 13.72 seconds
+Computing CMC and mAP ...
+** Results **
+mAP: 60.16%
+CMC curve
+Rank-1  : 77.42%
+Rank-5  : 86.71%
+Rank-10 : 89.41%
+Rank-20 : 91.56%
+Validating momentum ResNet50 ...
+Features extracted in 5.55 seconds
+Features extracted in 13.73 seconds
+Computing CMC and mAP ...
+** Results **
+mAP: 69.48%
+CMC curve
+Rank-1  : 82.50%
+Rank-5  : 90.62%
+Rank-10 : 93.09%
+Rank-20 : 94.88%
+Validating online OSNet ...
+Features extracted in 5.82 seconds
+Features extracted in 12.95 seconds
+Computing CMC and mAP ...
+** Results **
+mAP: 63.82%
+CMC curve
+Rank-1  : 79.08%
+Rank-5  : 89.09%
+Rank-10 : 91.83%
+Rank-20 : 93.81%
+Validating momentum OSNet ...
+Features extracted in 4.78 seconds
+Features extracted in 11.72 seconds
+Computing CMC and mAP ...
+** Results **
+mAP: 66.27%
+CMC curve
+Rank-1  : 81.24%
+Rank-5  : 90.62%
+Rank-10 : 92.59%
+Rank-20 : 94.43%
+Validating online DenseNet121 ...
+Features extracted in 4.95 seconds
+Features extracted in 14.03 seconds
+Computing CMC and mAP ...
+** Results **
+mAP: 60.02%
+CMC curve
+Rank-1  : 76.48%
+Rank-5  : 87.12%
+Rank-10 : 90.35%
+Rank-20 : 92.86%
+Validating momentum DenseNet121 ...
+Features extracted in 4.88 seconds
+Features extracted in 13.22 seconds
+Computing CMC and mAP ...
+** Results **
+mAP: 67.16%
+CMC curve
+Rank-1  : 81.15%
+Rank-5  : 89.86%
+Rank-10 : 92.46%
+Rank-20 : 94.48%
+Validating ensembled with online models ...
+Computing CMC and mAP ...
+** Results **
+mAP: 67.97%
+Ranks:
+Rank-1  : 80.52%
+Rank-5  : 89.45%
+Rank-10 : 92.06%
+Validating ensembled with momentum models ...
+Computing CMC and mAP ...
+** Results **
+mAP: 71.75%
+Ranks:
+Rank-1  : 83.57%
+Rank-5  : 91.38%
+Rank-10 : 93.63%
+###============ Iteration number 21/30 ============###
+Extracting Online Features for ResNet50 ...
+Features extracted in 13.35 seconds
+Extracting Online Features for OSNet ...
+Features extracted in 11.12 seconds
+Extracting Online Features for DenseNet121 ...
+Features extracted in 12.64 seconds
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.706844568252563
+Computing jaccard distance...
+Jaccard distance computing time cost: 19.96409296989441
+Computing jaccard distance...
+Jaccard distance computing time cost: 21.425143003463745
+Reliability: 0.971
+Mean Purity: 0.41310
+There are 91 clusters with 1 cameras
+There are 121 clusters with 2 cameras
+There are 212 clusters with 3 cameras
+There are 147 clusters with 4 cameras
+There are 26 clusters with 5 cameras
+There are 12 clusters with 6 cameras
+There are 5 clusters with 7 cameras
+Number of classes: 614
+Learning Rate: 0.000350
+Training ResNet50 ...
+Features extracted in 12.68 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.4875187, Mean Center Loss: 0.2183533, Mean Hard Triplet Loss: 0.5383308
+Percetage of correct triplets: 0.72
+Features extracted in 11.83 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.4145845, Mean Center Loss: 0.1914405, Mean Hard Triplet Loss: 0.4462879
+Percetage of correct triplets: 0.73
+Features extracted in 12.20 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.4462882, Mean Center Loss: 0.2068934, Mean Hard Triplet Loss: 0.4787895
+Percetage of correct triplets: 0.72
+Features extracted in 12.23 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.4401236, Mean Center Loss: 0.2021742, Mean Hard Triplet Loss: 0.4758989
+Percetage of correct triplets: 0.74
+Features extracted in 12.74 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.4144196, Mean Center Loss: 0.1943057, Mean Hard Triplet Loss: 0.4402277
+Percetage of correct triplets: 0.73
+Features extracted in 12.35 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.4160647, Mean Center Loss: 0.1845408, Mean Hard Triplet Loss: 0.4630479
+Percetage of correct triplets: 0.73
+Features extracted in 12.08 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.4099621, Mean Center Loss: 0.1805490, Mean Hard Triplet Loss: 0.4588263
+Percetage of correct triplets: 0.73
+Training OSNet ...
+Features extracted in 10.57 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.5171071, Mean Center Loss: 0.2075318, Mean Hard Triplet Loss: 0.6191507
+Percetage of correct triplets: 0.72
+Features extracted in 10.69 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.5371967, Mean Center Loss: 0.2120417, Mean Hard Triplet Loss: 0.6503100
+Percetage of correct triplets: 0.73
+Features extracted in 10.76 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.5112408, Mean Center Loss: 0.1957565, Mean Hard Triplet Loss: 0.6309686
+Percetage of correct triplets: 0.72
+Features extracted in 11.06 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.4853770, Mean Center Loss: 0.1841674, Mean Hard Triplet Loss: 0.6024193
+Percetage of correct triplets: 0.72
+Features extracted in 11.87 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.4503086, Mean Center Loss: 0.1819191, Mean Hard Triplet Loss: 0.5367790
+Percetage of correct triplets: 0.73
+Features extracted in 11.50 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.4980203, Mean Center Loss: 0.1907326, Mean Hard Triplet Loss: 0.6145754
+Percetage of correct triplets: 0.73
+Features extracted in 11.58 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.4714341, Mean Center Loss: 0.1716490, Mean Hard Triplet Loss: 0.5995701
+Percetage of correct triplets: 0.72
+Training DenseNet121 ...
+Features extracted in 12.09 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.4095415, Mean Center Loss: 0.1812994, Mean Hard Triplet Loss: 0.4564843
+Percetage of correct triplets: 0.74
+Features extracted in 14.46 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.3878528, Mean Center Loss: 0.1670180, Mean Hard Triplet Loss: 0.4416696
+Percetage of correct triplets: 0.73
+Features extracted in 12.23 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.4143351, Mean Center Loss: 0.1790811, Mean Hard Triplet Loss: 0.4705079
+Percetage of correct triplets: 0.72
+Features extracted in 13.05 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.3681244, Mean Center Loss: 0.1617611, Mean Hard Triplet Loss: 0.4127267
+Percetage of correct triplets: 0.74
+Features extracted in 12.23 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.3516877, Mean Center Loss: 0.1529956, Mean Hard Triplet Loss: 0.3973843
+Percetage of correct triplets: 0.73
+Features extracted in 12.37 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.4137552, Mean Center Loss: 0.1753116, Mean Hard Triplet Loss: 0.4768874
+Percetage of correct triplets: 0.74
+Features extracted in 12.42 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.3896344, Mean Center Loss: 0.1671732, Mean Hard Triplet Loss: 0.4449224
+Percetage of correct triplets: 0.73
+###============ Iteration number 22/30 ============###
+Extracting Online Features for ResNet50 ...
+Features extracted in 12.88 seconds
+Extracting Online Features for OSNet ...
+Features extracted in 10.77 seconds
+Extracting Online Features for DenseNet121 ...
+Features extracted in 12.78 seconds
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.985437631607056
+Computing jaccard distance...
+Jaccard distance computing time cost: 19.94570803642273
+Computing jaccard distance...
+Jaccard distance computing time cost: 21.37639331817627
+Reliability: 0.972
+Mean Purity: 0.41895
+There are 91 clusters with 1 cameras
+There are 116 clusters with 2 cameras
+There are 209 clusters with 3 cameras
+There are 149 clusters with 4 cameras
+There are 28 clusters with 5 cameras
+There are 13 clusters with 6 cameras
+There are 4 clusters with 7 cameras
+Number of classes: 610
+Learning Rate: 0.000350
+Training ResNet50 ...
+Features extracted in 12.48 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.4201754, Mean Center Loss: 0.1930904, Mean Hard Triplet Loss: 0.4541700
+Percetage of correct triplets: 0.72
+Features extracted in 12.68 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.3944252, Mean Center Loss: 0.1919063, Mean Hard Triplet Loss: 0.4050379
+Percetage of correct triplets: 0.73
+Features extracted in 12.03 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.4121008, Mean Center Loss: 0.1898026, Mean Hard Triplet Loss: 0.4445962
+Percetage of correct triplets: 0.71
+Features extracted in 12.39 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.4212946, Mean Center Loss: 0.1971796, Mean Hard Triplet Loss: 0.4482299
+Percetage of correct triplets: 0.72
+Features extracted in 12.32 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.3520574, Mean Center Loss: 0.1642677, Mean Hard Triplet Loss: 0.3755794
+Percetage of correct triplets: 0.72
+Features extracted in 12.19 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.3819852, Mean Center Loss: 0.1777541, Mean Hard Triplet Loss: 0.4084622
+Percetage of correct triplets: 0.73
+Features extracted in 13.02 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.3981195, Mean Center Loss: 0.1792197, Mean Hard Triplet Loss: 0.4377997
+Percetage of correct triplets: 0.73
+Training OSNet ...
+Features extracted in 10.69 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.4869470, Mean Center Loss: 0.1881735, Mean Hard Triplet Loss: 0.5975469
+Percetage of correct triplets: 0.71
+Features extracted in 11.03 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.4399038, Mean Center Loss: 0.1718195, Mean Hard Triplet Loss: 0.5361685
+Percetage of correct triplets: 0.73
+Features extracted in 10.70 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.4649432, Mean Center Loss: 0.1856361, Mean Hard Triplet Loss: 0.5586143
+Percetage of correct triplets: 0.72
+Features extracted in 11.85 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.4571060, Mean Center Loss: 0.1776078, Mean Hard Triplet Loss: 0.5589964
+Percetage of correct triplets: 0.72
+Features extracted in 10.97 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.4520005, Mean Center Loss: 0.1822718, Mean Hard Triplet Loss: 0.5394575
+Percetage of correct triplets: 0.72
+Features extracted in 10.52 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.4308416, Mean Center Loss: 0.1701306, Mean Hard Triplet Loss: 0.5214219
+Percetage of correct triplets: 0.71
+Features extracted in 11.24 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.4323803, Mean Center Loss: 0.1697224, Mean Hard Triplet Loss: 0.5253159
+Percetage of correct triplets: 0.72
+Training DenseNet121 ...
+Features extracted in 11.97 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.4029723, Mean Center Loss: 0.1748051, Mean Hard Triplet Loss: 0.4563344
+Percetage of correct triplets: 0.73
+Features extracted in 12.32 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.3949371, Mean Center Loss: 0.1710874, Mean Hard Triplet Loss: 0.4476994
+Percetage of correct triplets: 0.73
+Features extracted in 11.83 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.3882446, Mean Center Loss: 0.1659033, Mean Hard Triplet Loss: 0.4446825
+Percetage of correct triplets: 0.73
+Features extracted in 12.19 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.3819990, Mean Center Loss: 0.1648088, Mean Hard Triplet Loss: 0.4343805
+Percetage of correct triplets: 0.73
+Features extracted in 12.39 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.3977180, Mean Center Loss: 0.1688005, Mean Hard Triplet Loss: 0.4578350
+Percetage of correct triplets: 0.73
+Features extracted in 12.30 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.3893821, Mean Center Loss: 0.1693481, Mean Hard Triplet Loss: 0.4400681
+Percetage of correct triplets: 0.73
+Features extracted in 12.28 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.4280198, Mean Center Loss: 0.1829226, Mean Hard Triplet Loss: 0.4901946
+Percetage of correct triplets: 0.73
+###============ Iteration number 23/30 ============###
+Extracting Online Features for ResNet50 ...
+Features extracted in 12.66 seconds
+Extracting Online Features for OSNet ...
+Features extracted in 10.98 seconds
+Extracting Online Features for DenseNet121 ...
+Features extracted in 12.78 seconds
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.94323968887329
+Computing jaccard distance...
+Jaccard distance computing time cost: 19.987841606140137
+Computing jaccard distance...
+Jaccard distance computing time cost: 21.49053454399109
+Reliability: 0.972
+Mean Purity: 0.41943
+There are 93 clusters with 1 cameras
+There are 119 clusters with 2 cameras
+There are 209 clusters with 3 cameras
+There are 147 clusters with 4 cameras
+There are 29 clusters with 5 cameras
+There are 13 clusters with 6 cameras
+There are 4 clusters with 7 cameras
+Number of classes: 614
+Learning Rate: 0.000350
+Training ResNet50 ...
+Features extracted in 12.39 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.4369659, Mean Center Loss: 0.2049200, Mean Hard Triplet Loss: 0.4640918
+Percetage of correct triplets: 0.73
+Features extracted in 12.06 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.4122045, Mean Center Loss: 0.1935787, Mean Hard Triplet Loss: 0.4372517
+Percetage of correct triplets: 0.73
+Features extracted in 12.24 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.3747397, Mean Center Loss: 0.1676164, Mean Hard Triplet Loss: 0.4142467
+Percetage of correct triplets: 0.73
+Features extracted in 11.92 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.4030293, Mean Center Loss: 0.1943105, Mean Hard Triplet Loss: 0.4174377
+Percetage of correct triplets: 0.72
+Features extracted in 12.65 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.3905344, Mean Center Loss: 0.1730549, Mean Hard Triplet Loss: 0.4349589
+Percetage of correct triplets: 0.73
+Features extracted in 12.27 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.4137054, Mean Center Loss: 0.1857234, Mean Hard Triplet Loss: 0.4559640
+Percetage of correct triplets: 0.73
+Features extracted in 11.76 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.3689961, Mean Center Loss: 0.1659201, Mean Hard Triplet Loss: 0.4061520
+Percetage of correct triplets: 0.72
+Training OSNet ...
+Features extracted in 10.65 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.4470553, Mean Center Loss: 0.1784532, Mean Hard Triplet Loss: 0.5372042
+Percetage of correct triplets: 0.71
+Features extracted in 10.78 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.4558480, Mean Center Loss: 0.1837875, Mean Hard Triplet Loss: 0.5441211
+Percetage of correct triplets: 0.72
+Features extracted in 11.37 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.4342800, Mean Center Loss: 0.1726725, Mean Hard Triplet Loss: 0.5232151
+Percetage of correct triplets: 0.72
+Features extracted in 10.80 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.4330297, Mean Center Loss: 0.1828654, Mean Hard Triplet Loss: 0.5003285
+Percetage of correct triplets: 0.72
+Features extracted in 11.26 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.4368759, Mean Center Loss: 0.1717484, Mean Hard Triplet Loss: 0.5302549
+Percetage of correct triplets: 0.71
+Features extracted in 11.22 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.4416190, Mean Center Loss: 0.1745439, Mean Hard Triplet Loss: 0.5341501
+Percetage of correct triplets: 0.72
+Features extracted in 11.62 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.4263388, Mean Center Loss: 0.1660092, Mean Hard Triplet Loss: 0.5206591
+Percetage of correct triplets: 0.72
+Training DenseNet121 ...
+Features extracted in 12.67 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.3911032, Mean Center Loss: 0.1659841, Mean Hard Triplet Loss: 0.4502382
+Percetage of correct triplets: 0.73
+Features extracted in 12.27 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.3712277, Mean Center Loss: 0.1634361, Mean Hard Triplet Loss: 0.4155831
+Percetage of correct triplets: 0.73
+Features extracted in 13.00 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.3998345, Mean Center Loss: 0.1799728, Mean Hard Triplet Loss: 0.4397234
+Percetage of correct triplets: 0.72
+Features extracted in 12.45 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.3645978, Mean Center Loss: 0.1596755, Mean Hard Triplet Loss: 0.4098445
+Percetage of correct triplets: 0.72
+Features extracted in 13.62 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.3330358, Mean Center Loss: 0.1464588, Mean Hard Triplet Loss: 0.3731540
+Percetage of correct triplets: 0.73
+Features extracted in 11.90 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.3616782, Mean Center Loss: 0.1587199, Mean Hard Triplet Loss: 0.4059166
+Percetage of correct triplets: 0.72
+Features extracted in 12.01 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.3679487, Mean Center Loss: 0.1555129, Mean Hard Triplet Loss: 0.4248715
+Percetage of correct triplets: 0.74
+###============ Iteration number 24/30 ============###
+Extracting Online Features for ResNet50 ...
+Features extracted in 12.59 seconds
+Extracting Online Features for OSNet ...
+Features extracted in 11.08 seconds
+Extracting Online Features for DenseNet121 ...
+Features extracted in 12.79 seconds
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.62980580329895
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.110873699188232
+Computing jaccard distance...
+Jaccard distance computing time cost: 21.526337146759033
+Reliability: 0.975
+Mean Purity: 0.42045
+There are 92 clusters with 1 cameras
+There are 119 clusters with 2 cameras
+There are 209 clusters with 3 cameras
+There are 147 clusters with 4 cameras
+There are 29 clusters with 5 cameras
+There are 13 clusters with 6 cameras
+There are 4 clusters with 7 cameras
+Number of classes: 613
+Learning Rate: 0.000350
+Training ResNet50 ...
+Features extracted in 12.90 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.4794181, Mean Center Loss: 0.2102498, Mean Hard Triplet Loss: 0.5383367
+Percetage of correct triplets: 0.72
+Features extracted in 13.20 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.4253529, Mean Center Loss: 0.2012761, Mean Hard Triplet Loss: 0.4481537
+Percetage of correct triplets: 0.72
+Features extracted in 13.11 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.4084679, Mean Center Loss: 0.1850225, Mean Hard Triplet Loss: 0.4468909
+Percetage of correct triplets: 0.73
+Features extracted in 13.21 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.3999844, Mean Center Loss: 0.1827442, Mean Hard Triplet Loss: 0.4344803
+Percetage of correct triplets: 0.73
+Features extracted in 13.30 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.3795527, Mean Center Loss: 0.1781016, Mean Hard Triplet Loss: 0.4029022
+Percetage of correct triplets: 0.71
+Features extracted in 12.90 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.3714748, Mean Center Loss: 0.1807551, Mean Hard Triplet Loss: 0.3814393
+Percetage of correct triplets: 0.73
+Features extracted in 13.00 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.3799980, Mean Center Loss: 0.1638430, Mean Hard Triplet Loss: 0.4323100
+Percetage of correct triplets: 0.72
+Training OSNet ...
+Features extracted in 11.13 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.4439129, Mean Center Loss: 0.1785317, Mean Hard Triplet Loss: 0.5307625
+Percetage of correct triplets: 0.72
+Features extracted in 11.64 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.4496737, Mean Center Loss: 0.1793617, Mean Hard Triplet Loss: 0.5406241
+Percetage of correct triplets: 0.73
+Features extracted in 11.47 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.4227383, Mean Center Loss: 0.1729217, Mean Hard Triplet Loss: 0.4996331
+Percetage of correct triplets: 0.71
+Features extracted in 11.22 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.4458432, Mean Center Loss: 0.1806675, Mean Hard Triplet Loss: 0.5303514
+Percetage of correct triplets: 0.73
+Features extracted in 10.81 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.4268213, Mean Center Loss: 0.1706351, Mean Hard Triplet Loss: 0.5123723
+Percetage of correct triplets: 0.73
+Features extracted in 11.44 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.4594543, Mean Center Loss: 0.1888473, Mean Hard Triplet Loss: 0.5412140
+Percetage of correct triplets: 0.70
+Features extracted in 11.91 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.4476524, Mean Center Loss: 0.1826756, Mean Hard Triplet Loss: 0.5299537
+Percetage of correct triplets: 0.73
+Training DenseNet121 ...
+Features extracted in 13.01 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.4273807, Mean Center Loss: 0.1797361, Mean Hard Triplet Loss: 0.4952891
+Percetage of correct triplets: 0.72
+Features extracted in 13.61 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.4025664, Mean Center Loss: 0.1710001, Mean Hard Triplet Loss: 0.4631327
+Percetage of correct triplets: 0.73
+Features extracted in 13.47 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.3938060, Mean Center Loss: 0.1707164, Mean Hard Triplet Loss: 0.4461792
+Percetage of correct triplets: 0.73
+Features extracted in 12.63 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.4235894, Mean Center Loss: 0.1836195, Mean Hard Triplet Loss: 0.4799398
+Percetage of correct triplets: 0.74
+Features extracted in 13.45 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.3652789, Mean Center Loss: 0.1627110, Mean Hard Triplet Loss: 0.4051359
+Percetage of correct triplets: 0.73
+Features extracted in 12.75 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.3919167, Mean Center Loss: 0.1646046, Mean Hard Triplet Loss: 0.4546241
+Percetage of correct triplets: 0.72
+Features extracted in 12.24 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.3716555, Mean Center Loss: 0.1664044, Mean Hard Triplet Loss: 0.4105022
+Percetage of correct triplets: 0.73
+###============ Iteration number 25/30 ============###
+Extracting Online Features for ResNet50 ...
+Features extracted in 13.42 seconds
+Extracting Online Features for OSNet ...
+Features extracted in 11.83 seconds
+Extracting Online Features for DenseNet121 ...
+Features extracted in 13.74 seconds
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.314043521881104
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.138515949249268
+Computing jaccard distance...
+Jaccard distance computing time cost: 21.5277738571167
+Reliability: 0.975
+Mean Purity: 0.42193
+There are 92 clusters with 1 cameras
+There are 119 clusters with 2 cameras
+There are 205 clusters with 3 cameras
+There are 150 clusters with 4 cameras
+There are 29 clusters with 5 cameras
+There are 13 clusters with 6 cameras
+There are 4 clusters with 7 cameras
+Number of classes: 612
+Learning Rate: 0.000350
+Training ResNet50 ...
+Features extracted in 12.29 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.4309801, Mean Center Loss: 0.1970171, Mean Hard Triplet Loss: 0.4679261
+Percetage of correct triplets: 0.74
+Features extracted in 12.55 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.4060386, Mean Center Loss: 0.1874544, Mean Hard Triplet Loss: 0.4371684
+Percetage of correct triplets: 0.73
+Features extracted in 12.40 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.3920462, Mean Center Loss: 0.1774745, Mean Hard Triplet Loss: 0.4291432
+Percetage of correct triplets: 0.72
+Features extracted in 12.23 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.4025626, Mean Center Loss: 0.1824344, Mean Hard Triplet Loss: 0.4402563
+Percetage of correct triplets: 0.73
+Features extracted in 12.45 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.3655216, Mean Center Loss: 0.1710278, Mean Hard Triplet Loss: 0.3889876
+Percetage of correct triplets: 0.72
+Features extracted in 12.51 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.3529992, Mean Center Loss: 0.1597022, Mean Hard Triplet Loss: 0.3865941
+Percetage of correct triplets: 0.74
+Features extracted in 12.21 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.3468279, Mean Center Loss: 0.1590617, Mean Hard Triplet Loss: 0.3755323
+Percetage of correct triplets: 0.72
+Training OSNet ...
+Features extracted in 11.27 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.4403660, Mean Center Loss: 0.1730604, Mean Hard Triplet Loss: 0.5346112
+Percetage of correct triplets: 0.72
+Features extracted in 10.87 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.4106756, Mean Center Loss: 0.1613937, Mean Hard Triplet Loss: 0.4985636
+Percetage of correct triplets: 0.72
+Features extracted in 10.91 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.4544384, Mean Center Loss: 0.1669965, Mean Hard Triplet Loss: 0.5748838
+Percetage of correct triplets: 0.72
+Features extracted in 10.82 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.4246415, Mean Center Loss: 0.1652835, Mean Hard Triplet Loss: 0.5187159
+Percetage of correct triplets: 0.71
+Features extracted in 10.90 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.4233949, Mean Center Loss: 0.1702899, Mean Hard Triplet Loss: 0.5062102
+Percetage of correct triplets: 0.72
+Features extracted in 10.93 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.4088156, Mean Center Loss: 0.1691513, Mean Hard Triplet Loss: 0.4793286
+Percetage of correct triplets: 0.72
+Features extracted in 10.94 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.3993404, Mean Center Loss: 0.1535118, Mean Hard Triplet Loss: 0.4916573
+Percetage of correct triplets: 0.72
+Training DenseNet121 ...
+Features extracted in 12.38 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.3663031, Mean Center Loss: 0.1509816, Mean Hard Triplet Loss: 0.4306430
+Percetage of correct triplets: 0.73
+Features extracted in 13.15 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.3747123, Mean Center Loss: 0.1616670, Mean Hard Triplet Loss: 0.4260906
+Percetage of correct triplets: 0.73
+Features extracted in 12.57 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.3385669, Mean Center Loss: 0.1469485, Mean Hard Triplet Loss: 0.3832368
+Percetage of correct triplets: 0.73
+Features extracted in 12.35 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.3429430, Mean Center Loss: 0.1572858, Mean Hard Triplet Loss: 0.3713142
+Percetage of correct triplets: 0.73
+Features extracted in 12.23 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.3520997, Mean Center Loss: 0.1519347, Mean Hard Triplet Loss: 0.4003301
+Percetage of correct triplets: 0.73
+Features extracted in 12.65 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.3295267, Mean Center Loss: 0.1481963, Mean Hard Triplet Loss: 0.3626608
+Percetage of correct triplets: 0.73
+Features extracted in 12.52 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.3596683, Mean Center Loss: 0.1554412, Mean Hard Triplet Loss: 0.4084542
+Percetage of correct triplets: 0.73
+Validating online ResNet50 ...
+Features extracted in 5.58 seconds
+Features extracted in 13.38 seconds
+Computing CMC and mAP ...
+** Results **
+mAP: 61.52%
+CMC curve
+Rank-1  : 77.83%
+Rank-5  : 87.21%
+Rank-10 : 90.22%
+Rank-20 : 92.55%
+Validating momentum ResNet50 ...
+Features extracted in 4.89 seconds
+Features extracted in 13.41 seconds
+Computing CMC and mAP ...
+** Results **
+mAP: 69.81%
+CMC curve
+Rank-1  : 82.59%
+Rank-5  : 91.34%
+Rank-10 : 93.72%
+Rank-20 : 95.02%
+Validating online OSNet ...
+Features extracted in 4.77 seconds
+Features extracted in 11.33 seconds
+Computing CMC and mAP ...
+** Results **
+mAP: 65.05%
+CMC curve
+Rank-1  : 79.85%
+Rank-5  : 89.77%
+Rank-10 : 91.97%
+Rank-20 : 93.85%
+Validating momentum OSNet ...
+Features extracted in 4.75 seconds
+Features extracted in 11.61 seconds
+Computing CMC and mAP ...
+** Results **
+mAP: 67.70%
+CMC curve
+Rank-1  : 81.91%
+Rank-5  : 90.75%
+Rank-10 : 92.82%
+Rank-20 : 94.43%
+Validating online DenseNet121 ...
+Features extracted in 4.86 seconds
+Features extracted in 13.69 seconds
+Computing CMC and mAP ...
+** Results **
+mAP: 60.76%
+CMC curve
+Rank-1  : 78.10%
+Rank-5  : 87.70%
+Rank-10 : 90.98%
+Rank-20 : 93.13%
+Validating momentum DenseNet121 ...
+Features extracted in 5.15 seconds
+Features extracted in 13.60 seconds
+Computing CMC and mAP ...
+** Results **
+mAP: 67.51%
+CMC curve
+Rank-1  : 81.69%
+Rank-5  : 90.04%
+Rank-10 : 92.46%
+Rank-20 : 94.34%
+Validating ensembled with online models ...
+Computing CMC and mAP ...
+** Results **
+mAP: 69.12%
+Ranks:
+Rank-1  : 81.96%
+Rank-5  : 89.81%
+Rank-10 : 92.41%
+Validating ensembled with momentum models ...
+Computing CMC and mAP ...
+** Results **
+mAP: 72.33%
+Ranks:
+Rank-1  : 83.57%
+Rank-5  : 91.65%
+Rank-10 : 93.58%
+###============ Iteration number 26/30 ============###
+Extracting Online Features for ResNet50 ...
+Features extracted in 12.42 seconds
+Extracting Online Features for OSNet ...
+Features extracted in 11.03 seconds
+Extracting Online Features for DenseNet121 ...
+Features extracted in 12.59 seconds
+Computing jaccard distance...
+Jaccard distance computing time cost: 21.118043422698975
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.492178201675415
+Computing jaccard distance...
+Jaccard distance computing time cost: 21.971943378448486
+Reliability: 0.975
+Mean Purity: 0.42682
+There are 91 clusters with 1 cameras
+There are 118 clusters with 2 cameras
+There are 207 clusters with 3 cameras
+There are 153 clusters with 4 cameras
+There are 27 clusters with 5 cameras
+There are 13 clusters with 6 cameras
+There are 4 clusters with 7 cameras
+Number of classes: 613
+Learning Rate: 0.000350
+Training ResNet50 ...
+Features extracted in 13.07 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.3549160, Mean Center Loss: 0.1666310, Mean Hard Triplet Loss: 0.3765699
+Percetage of correct triplets: 0.72
+Features extracted in 12.66 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.3753440, Mean Center Loss: 0.1715673, Mean Hard Triplet Loss: 0.4075534
+Percetage of correct triplets: 0.72
+Features extracted in 12.81 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.3753494, Mean Center Loss: 0.1758453, Mean Hard Triplet Loss: 0.3990082
+Percetage of correct triplets: 0.71
+Features extracted in 13.79 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.3568300, Mean Center Loss: 0.1742169, Mean Hard Triplet Loss: 0.3652262
+Percetage of correct triplets: 0.72
+Features extracted in 13.38 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.3359627, Mean Center Loss: 0.1537149, Mean Hard Triplet Loss: 0.3644956
+Percetage of correct triplets: 0.71
+Features extracted in 13.17 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.3460659, Mean Center Loss: 0.1614035, Mean Hard Triplet Loss: 0.3693248
+Percetage of correct triplets: 0.71
+Features extracted in 12.08 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.3340531, Mean Center Loss: 0.1564871, Mean Hard Triplet Loss: 0.3551320
+Percetage of correct triplets: 0.73
+Training OSNet ...
+Features extracted in 10.82 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.4237595, Mean Center Loss: 0.1689356, Mean Hard Triplet Loss: 0.5096477
+Percetage of correct triplets: 0.71
+Features extracted in 10.86 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.4244677, Mean Center Loss: 0.1684839, Mean Hard Triplet Loss: 0.5119676
+Percetage of correct triplets: 0.72
+Features extracted in 10.74 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.3782841, Mean Center Loss: 0.1578518, Mean Hard Triplet Loss: 0.4408647
+Percetage of correct triplets: 0.72
+Features extracted in 11.59 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.4354357, Mean Center Loss: 0.1696868, Mean Hard Triplet Loss: 0.5314977
+Percetage of correct triplets: 0.71
+Features extracted in 11.55 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.4252661, Mean Center Loss: 0.1723706, Mean Hard Triplet Loss: 0.5057910
+Percetage of correct triplets: 0.72
+Features extracted in 11.65 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.4639510, Mean Center Loss: 0.1816648, Mean Hard Triplet Loss: 0.5645726
+Percetage of correct triplets: 0.71
+Features extracted in 10.84 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.4090863, Mean Center Loss: 0.1671228, Mean Hard Triplet Loss: 0.4839270
+Percetage of correct triplets: 0.71
+Training DenseNet121 ...
+Features extracted in 12.72 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.3400691, Mean Center Loss: 0.1476605, Mean Hard Triplet Loss: 0.3848172
+Percetage of correct triplets: 0.73
+Features extracted in 13.06 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.3475767, Mean Center Loss: 0.1482131, Mean Hard Triplet Loss: 0.3987273
+Percetage of correct triplets: 0.73
+Features extracted in 12.58 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.3601680, Mean Center Loss: 0.1571846, Mean Hard Triplet Loss: 0.4059668
+Percetage of correct triplets: 0.74
+Features extracted in 12.53 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.3511337, Mean Center Loss: 0.1549918, Mean Hard Triplet Loss: 0.3922837
+Percetage of correct triplets: 0.73
+Features extracted in 12.22 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.3460224, Mean Center Loss: 0.1474498, Mean Hard Triplet Loss: 0.3971452
+Percetage of correct triplets: 0.73
+Features extracted in 12.35 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.3422988, Mean Center Loss: 0.1521077, Mean Hard Triplet Loss: 0.3803823
+Percetage of correct triplets: 0.72
+Features extracted in 12.63 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.3319541, Mean Center Loss: 0.1451207, Mean Hard Triplet Loss: 0.3736669
+Percetage of correct triplets: 0.73
+###============ Iteration number 27/30 ============###
+Extracting Online Features for ResNet50 ...
+Features extracted in 12.53 seconds
+Extracting Online Features for OSNet ...
+Features extracted in 10.88 seconds
+Extracting Online Features for DenseNet121 ...
+Features extracted in 12.71 seconds
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.763209104537964
+Computing jaccard distance...
+Jaccard distance computing time cost: 19.875086784362793
+Computing jaccard distance...
+Jaccard distance computing time cost: 21.154568433761597
+Reliability: 0.977
+Mean Purity: 0.42047
+There are 94 clusters with 1 cameras
+There are 118 clusters with 2 cameras
+There are 207 clusters with 3 cameras
+There are 149 clusters with 4 cameras
+There are 28 clusters with 5 cameras
+There are 12 clusters with 6 cameras
+There are 4 clusters with 7 cameras
+Number of classes: 612
+Learning Rate: 0.000350
+Training ResNet50 ...
+Features extracted in 14.06 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.3892741, Mean Center Loss: 0.1862796, Mean Hard Triplet Loss: 0.4059891
+Percetage of correct triplets: 0.74
+Features extracted in 12.36 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.3542438, Mean Center Loss: 0.1625847, Mean Hard Triplet Loss: 0.3833181
+Percetage of correct triplets: 0.72
+Features extracted in 12.67 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.3722099, Mean Center Loss: 0.1703142, Mean Hard Triplet Loss: 0.4037916
+Percetage of correct triplets: 0.73
+Features extracted in 12.01 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.3738766, Mean Center Loss: 0.1820575, Mean Hard Triplet Loss: 0.3836382
+Percetage of correct triplets: 0.73
+Features extracted in 12.65 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.3786373, Mean Center Loss: 0.1773563, Mean Hard Triplet Loss: 0.4025619
+Percetage of correct triplets: 0.73
+Features extracted in 12.52 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.3731376, Mean Center Loss: 0.1785929, Mean Hard Triplet Loss: 0.3890894
+Percetage of correct triplets: 0.73
+Features extracted in 12.25 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.3329311, Mean Center Loss: 0.1589276, Mean Hard Triplet Loss: 0.3480070
+Percetage of correct triplets: 0.72
+Training OSNet ...
+Features extracted in 10.98 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.4320479, Mean Center Loss: 0.1728217, Mean Hard Triplet Loss: 0.5184525
+Percetage of correct triplets: 0.73
+Features extracted in 11.70 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.3636860, Mean Center Loss: 0.1450372, Mean Hard Triplet Loss: 0.4372976
+Percetage of correct triplets: 0.72
+Features extracted in 11.18 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.3907127, Mean Center Loss: 0.1532257, Mean Hard Triplet Loss: 0.4749741
+Percetage of correct triplets: 0.72
+Features extracted in 10.85 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.3785409, Mean Center Loss: 0.1566787, Mean Hard Triplet Loss: 0.4437244
+Percetage of correct triplets: 0.71
+Features extracted in 11.07 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.3736582, Mean Center Loss: 0.1493551, Mean Hard Triplet Loss: 0.4486062
+Percetage of correct triplets: 0.71
+Features extracted in 10.80 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.3921344, Mean Center Loss: 0.1600386, Mean Hard Triplet Loss: 0.4641916
+Percetage of correct triplets: 0.71
+Features extracted in 10.79 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.3913728, Mean Center Loss: 0.1582689, Mean Hard Triplet Loss: 0.4662077
+Percetage of correct triplets: 0.72
+Training DenseNet121 ...
+Features extracted in 12.45 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.3220236, Mean Center Loss: 0.1407900, Mean Hard Triplet Loss: 0.3624671
+Percetage of correct triplets: 0.73
+Features extracted in 13.32 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.3392852, Mean Center Loss: 0.1531878, Mean Hard Triplet Loss: 0.3721947
+Percetage of correct triplets: 0.72
+Features extracted in 12.14 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.3475098, Mean Center Loss: 0.1521081, Mean Hard Triplet Loss: 0.3908033
+Percetage of correct triplets: 0.73
+Features extracted in 12.42 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.3209827, Mean Center Loss: 0.1434713, Mean Hard Triplet Loss: 0.3550227
+Percetage of correct triplets: 0.74
+Features extracted in 12.57 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.3020891, Mean Center Loss: 0.1403033, Mean Hard Triplet Loss: 0.3235717
+Percetage of correct triplets: 0.74
+Features extracted in 12.21 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.2941954, Mean Center Loss: 0.1269904, Mean Hard Triplet Loss: 0.3344099
+Percetage of correct triplets: 0.74
+Features extracted in 12.81 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.3111700, Mean Center Loss: 0.1375094, Mean Hard Triplet Loss: 0.3473212
+Percetage of correct triplets: 0.73
+###============ Iteration number 28/30 ============###
+Extracting Online Features for ResNet50 ...
+Features extracted in 12.54 seconds
+Extracting Online Features for OSNet ...
+Features extracted in 11.53 seconds
+Extracting Online Features for DenseNet121 ...
+Features extracted in 12.80 seconds
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.182345151901245
+Computing jaccard distance...
+Jaccard distance computing time cost: 19.8588285446167
+Computing jaccard distance...
+Jaccard distance computing time cost: 21.377264261245728
+Reliability: 0.976
+Mean Purity: 0.42371
+There are 92 clusters with 1 cameras
+There are 116 clusters with 2 cameras
+There are 208 clusters with 3 cameras
+There are 151 clusters with 4 cameras
+There are 25 clusters with 5 cameras
+There are 11 clusters with 6 cameras
+There are 5 clusters with 7 cameras
+Number of classes: 608
+Learning Rate: 0.000350
+Training ResNet50 ...
+Features extracted in 12.18 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.3715188, Mean Center Loss: 0.1725028, Mean Hard Triplet Loss: 0.3980321
+Percetage of correct triplets: 0.73
+Features extracted in 12.57 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.3480593, Mean Center Loss: 0.1667115, Mean Hard Triplet Loss: 0.3626957
+Percetage of correct triplets: 0.72
+Features extracted in 12.51 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.3462215, Mean Center Loss: 0.1598811, Mean Hard Triplet Loss: 0.3726808
+Percetage of correct triplets: 0.72
+Features extracted in 12.39 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.3496447, Mean Center Loss: 0.1591202, Mean Hard Triplet Loss: 0.3810489
+Percetage of correct triplets: 0.72
+Features extracted in 12.58 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.3483583, Mean Center Loss: 0.1626078, Mean Hard Triplet Loss: 0.3715010
+Percetage of correct triplets: 0.72
+Features extracted in 12.13 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.3605652, Mean Center Loss: 0.1695456, Mean Hard Triplet Loss: 0.3820391
+Percetage of correct triplets: 0.72
+Features extracted in 12.32 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.3448151, Mean Center Loss: 0.1640475, Mean Hard Triplet Loss: 0.3615352
+Percetage of correct triplets: 0.72
+Training OSNet ...
+Features extracted in 10.65 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.4208133, Mean Center Loss: 0.1705854, Mean Hard Triplet Loss: 0.5004559
+Percetage of correct triplets: 0.71
+Features extracted in 11.21 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.3821396, Mean Center Loss: 0.1483756, Mean Hard Triplet Loss: 0.4675281
+Percetage of correct triplets: 0.71
+Features extracted in 10.32 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.4056747, Mean Center Loss: 0.1594053, Mean Hard Triplet Loss: 0.4925389
+Percetage of correct triplets: 0.72
+Features extracted in 10.77 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.3282161, Mean Center Loss: 0.1345337, Mean Hard Triplet Loss: 0.3873648
+Percetage of correct triplets: 0.72
+Features extracted in 10.70 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.3838524, Mean Center Loss: 0.1578980, Mean Hard Triplet Loss: 0.4519088
+Percetage of correct triplets: 0.72
+Features extracted in 10.72 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.4047427, Mean Center Loss: 0.1629901, Mean Hard Triplet Loss: 0.4835051
+Percetage of correct triplets: 0.71
+Features extracted in 11.48 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.3848999, Mean Center Loss: 0.1597505, Mean Hard Triplet Loss: 0.4502988
+Percetage of correct triplets: 0.71
+Training DenseNet121 ...
+Features extracted in 13.56 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.3565771, Mean Center Loss: 0.1539137, Mean Hard Triplet Loss: 0.4053269
+Percetage of correct triplets: 0.74
+Features extracted in 13.39 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.3418731, Mean Center Loss: 0.1457225, Mean Hard Triplet Loss: 0.3923013
+Percetage of correct triplets: 0.72
+Features extracted in 12.33 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.3867452, Mean Center Loss: 0.1639080, Mean Hard Triplet Loss: 0.4456744
+Percetage of correct triplets: 0.72
+Features extracted in 13.46 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.3564413, Mean Center Loss: 0.1560770, Mean Hard Triplet Loss: 0.4007285
+Percetage of correct triplets: 0.73
+Features extracted in 13.22 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.3370505, Mean Center Loss: 0.1505660, Mean Hard Triplet Loss: 0.3729690
+Percetage of correct triplets: 0.72
+Features extracted in 12.17 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.3152050, Mean Center Loss: 0.1412387, Mean Hard Triplet Loss: 0.3479325
+Percetage of correct triplets: 0.72
+Features extracted in 12.58 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.3269259, Mean Center Loss: 0.1425305, Mean Hard Triplet Loss: 0.3687908
+Percetage of correct triplets: 0.73
+###============ Iteration number 29/30 ============###
+Extracting Online Features for ResNet50 ...
+Features extracted in 12.61 seconds
+Extracting Online Features for OSNet ...
+Features extracted in 11.03 seconds
+Extracting Online Features for DenseNet121 ...
+Features extracted in 12.69 seconds
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.507911920547485
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.02363419532776
+Computing jaccard distance...
+Jaccard distance computing time cost: 21.56397819519043
+Reliability: 0.975
+Mean Purity: 0.42333
+There are 91 clusters with 1 cameras
+There are 119 clusters with 2 cameras
+There are 211 clusters with 3 cameras
+There are 155 clusters with 4 cameras
+There are 26 clusters with 5 cameras
+There are 10 clusters with 6 cameras
+There are 6 clusters with 7 cameras
+Number of classes: 618
+Learning Rate: 0.000350
+Training ResNet50 ...
+Features extracted in 12.36 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.4084873, Mean Center Loss: 0.1805218, Mean Hard Triplet Loss: 0.4559310
+Percetage of correct triplets: 0.72
+Features extracted in 12.75 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.4022260, Mean Center Loss: 0.1894046, Mean Hard Triplet Loss: 0.4256428
+Percetage of correct triplets: 0.73
+Features extracted in 12.11 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.4156061, Mean Center Loss: 0.1945790, Mean Hard Triplet Loss: 0.4420542
+Percetage of correct triplets: 0.72
+Features extracted in 12.29 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.4171908, Mean Center Loss: 0.1968564, Mean Hard Triplet Loss: 0.4406688
+Percetage of correct triplets: 0.72
+Features extracted in 12.24 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.3674242, Mean Center Loss: 0.1775107, Mean Hard Triplet Loss: 0.3798269
+Percetage of correct triplets: 0.73
+Features extracted in 11.99 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.3725120, Mean Center Loss: 0.1753240, Mean Hard Triplet Loss: 0.3943760
+Percetage of correct triplets: 0.72
+Features extracted in 12.49 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.3900589, Mean Center Loss: 0.1741331, Mean Hard Triplet Loss: 0.4318517
+Percetage of correct triplets: 0.72
+Training OSNet ...
+Features extracted in 10.65 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.4098222, Mean Center Loss: 0.1692295, Mean Hard Triplet Loss: 0.4811854
+Percetage of correct triplets: 0.73
+Features extracted in 11.09 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.3704504, Mean Center Loss: 0.1518857, Mean Hard Triplet Loss: 0.4371294
+Percetage of correct triplets: 0.72
+Features extracted in 10.58 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.3783282, Mean Center Loss: 0.1544192, Mean Hard Triplet Loss: 0.4478181
+Percetage of correct triplets: 0.70
+Features extracted in 10.94 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.3841667, Mean Center Loss: 0.1557002, Mean Hard Triplet Loss: 0.4569329
+Percetage of correct triplets: 0.72
+Features extracted in 11.90 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.3985493, Mean Center Loss: 0.1642423, Mean Hard Triplet Loss: 0.4686141
+Percetage of correct triplets: 0.71
+Features extracted in 12.02 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.3699080, Mean Center Loss: 0.1434509, Mean Hard Triplet Loss: 0.4529141
+Percetage of correct triplets: 0.71
+Features extracted in 11.70 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.3633545, Mean Center Loss: 0.1556380, Mean Hard Triplet Loss: 0.4154331
+Percetage of correct triplets: 0.72
+Training DenseNet121 ...
+Features extracted in 13.35 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.3489483, Mean Center Loss: 0.1548522, Mean Hard Triplet Loss: 0.3881921
+Percetage of correct triplets: 0.73
+Features extracted in 13.20 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.3594248, Mean Center Loss: 0.1578639, Mean Hard Triplet Loss: 0.4031218
+Percetage of correct triplets: 0.72
+Features extracted in 13.68 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.3417105, Mean Center Loss: 0.1477877, Mean Hard Triplet Loss: 0.3878455
+Percetage of correct triplets: 0.74
+Features extracted in 13.41 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.3620843, Mean Center Loss: 0.1584762, Mean Hard Triplet Loss: 0.4072161
+Percetage of correct triplets: 0.73
+Features extracted in 12.11 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.3422131, Mean Center Loss: 0.1482384, Mean Hard Triplet Loss: 0.3879493
+Percetage of correct triplets: 0.72
+Features extracted in 12.67 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.3444021, Mean Center Loss: 0.1583931, Mean Hard Triplet Loss: 0.3720178
+Percetage of correct triplets: 0.73
+Features extracted in 12.57 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.3371141, Mean Center Loss: 0.1415417, Mean Hard Triplet Loss: 0.3911449
+Percetage of correct triplets: 0.72
+###============ Iteration number 30/30 ============###
+Extracting Online Features for ResNet50 ...
+Features extracted in 13.09 seconds
+Extracting Online Features for OSNet ...
+Features extracted in 10.84 seconds
+Extracting Online Features for DenseNet121 ...
+Features extracted in 12.95 seconds
+Computing jaccard distance...
+Jaccard distance computing time cost: 20.536322116851807
+Computing jaccard distance...
+Jaccard distance computing time cost: 19.81852650642395
+Computing jaccard distance...
+Jaccard distance computing time cost: 21.230135917663574
+Reliability: 0.977
+Mean Purity: 0.42498
+There are 91 clusters with 1 cameras
+There are 118 clusters with 2 cameras
+There are 210 clusters with 3 cameras
+There are 154 clusters with 4 cameras
+There are 26 clusters with 5 cameras
+There are 13 clusters with 6 cameras
+There are 5 clusters with 7 cameras
+Number of classes: 617
+Learning Rate: 0.000350
+Training ResNet50 ...
+Features extracted in 12.79 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.3618617, Mean Center Loss: 0.1714081, Mean Hard Triplet Loss: 0.3809073
+Percetage of correct triplets: 0.72
+Features extracted in 12.20 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.3258510, Mean Center Loss: 0.1560114, Mean Hard Triplet Loss: 0.3396792
+Percetage of correct triplets: 0.72
+Features extracted in 12.15 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.3775448, Mean Center Loss: 0.1742670, Mean Hard Triplet Loss: 0.4065555
+Percetage of correct triplets: 0.73
+Features extracted in 13.21 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.3520950, Mean Center Loss: 0.1673211, Mean Hard Triplet Loss: 0.3695477
+Percetage of correct triplets: 0.71
+Features extracted in 12.41 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.3296006, Mean Center Loss: 0.1588668, Mean Hard Triplet Loss: 0.3414675
+Percetage of correct triplets: 0.72
+Features extracted in 12.36 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.3307579, Mean Center Loss: 0.1534178, Mean Hard Triplet Loss: 0.3546802
+Percetage of correct triplets: 0.72
+Features extracted in 13.39 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.3362322, Mean Center Loss: 0.1595519, Mean Hard Triplet Loss: 0.3533606
+Percetage of correct triplets: 0.72
+Training OSNet ...
+Features extracted in 11.44 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.3785865, Mean Center Loss: 0.1561949, Mean Hard Triplet Loss: 0.4447832
+Percetage of correct triplets: 0.72
+Features extracted in 10.48 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.3555275, Mean Center Loss: 0.1454241, Mean Hard Triplet Loss: 0.4202068
+Percetage of correct triplets: 0.72
+Features extracted in 10.65 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.3839245, Mean Center Loss: 0.1558382, Mean Hard Triplet Loss: 0.4561726
+Percetage of correct triplets: 0.71
+Features extracted in 10.53 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.3447916, Mean Center Loss: 0.1468763, Mean Hard Triplet Loss: 0.3958307
+Percetage of correct triplets: 0.71
+Features extracted in 10.76 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.3208863, Mean Center Loss: 0.1323633, Mean Hard Triplet Loss: 0.3770461
+Percetage of correct triplets: 0.73
+Features extracted in 10.68 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.3391918, Mean Center Loss: 0.1339892, Mean Hard Triplet Loss: 0.4104051
+Percetage of correct triplets: 0.72
+Features extracted in 10.85 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.3755578, Mean Center Loss: 0.1582046, Mean Hard Triplet Loss: 0.4347064
+Percetage of correct triplets: 0.71
+Training DenseNet121 ...
+Features extracted in 12.33 seconds
+Batches computed: 38, Tau value: 0.040
+Mean Loss: 0.3173303, Mean Center Loss: 0.1337594, Mean Hard Triplet Loss: 0.3671418
+Percetage of correct triplets: 0.72
+Features extracted in 12.76 seconds
+Batches computed: 76, Tau value: 0.040
+Mean Loss: 0.3408393, Mean Center Loss: 0.1418825, Mean Hard Triplet Loss: 0.3979138
+Percetage of correct triplets: 0.72
+Features extracted in 12.19 seconds
+Batches computed: 114, Tau value: 0.040
+Mean Loss: 0.3400750, Mean Center Loss: 0.1475468, Mean Hard Triplet Loss: 0.3850564
+Percetage of correct triplets: 0.73
+Features extracted in 12.46 seconds
+Batches computed: 152, Tau value: 0.040
+Mean Loss: 0.3335555, Mean Center Loss: 0.1498565, Mean Hard Triplet Loss: 0.3673980
+Percetage of correct triplets: 0.72
+Features extracted in 12.63 seconds
+Batches computed: 190, Tau value: 0.040
+Mean Loss: 0.3484412, Mean Center Loss: 0.1450707, Mean Hard Triplet Loss: 0.4067412
+Percetage of correct triplets: 0.73
+Features extracted in 12.38 seconds
+Batches computed: 228, Tau value: 0.040
+Mean Loss: 0.3282551, Mean Center Loss: 0.1471250, Mean Hard Triplet Loss: 0.3622603
+Percetage of correct triplets: 0.73
+Features extracted in 12.44 seconds
+Batches computed: 266, Tau value: 0.040
+Mean Loss: 0.3050262, Mean Center Loss: 0.1281331, Mean Hard Triplet Loss: 0.3537863
+Percetage of correct triplets: 0.73
+Validating online ResNet50 ...
+Features extracted in 4.99 seconds
+Features extracted in 13.37 seconds
+Computing CMC and mAP ...
+** Results **
+mAP: 60.43%
+CMC curve
+Rank-1  : 76.17%
+Rank-5  : 86.58%
+Rank-10 : 89.54%
+Rank-20 : 92.50%
+Validating momentum ResNet50 ...
+Features extracted in 5.11 seconds
+Features extracted in 13.20 seconds
+Computing CMC and mAP ...
+** Results **
+mAP: 69.75%
+CMC curve
+Rank-1  : 82.50%
+Rank-5  : 90.80%
+Rank-10 : 93.85%
+Rank-20 : 95.15%
+Validating online OSNet ...
+Features extracted in 5.41 seconds
+Features extracted in 11.46 seconds
+Computing CMC and mAP ...
+** Results **
+mAP: 65.29%
+CMC curve
+Rank-1  : 79.85%
+Rank-5  : 89.32%
+Rank-10 : 91.47%
+Rank-20 : 93.45%
+Validating momentum OSNet ...
+Features extracted in 4.80 seconds
+Features extracted in 11.60 seconds
+Computing CMC and mAP ...
+** Results **
+mAP: 68.61%
+CMC curve
+Rank-1  : 81.87%
+Rank-5  : 90.71%
+Rank-10 : 92.86%
+Rank-20 : 94.61%
+Validating online DenseNet121 ...
+Features extracted in 5.41 seconds
+Features extracted in 13.22 seconds
+Computing CMC and mAP ...
+** Results **
+mAP: 60.28%
+CMC curve
+Rank-1  : 77.06%
+Rank-5  : 87.93%
+Rank-10 : 91.11%
+Rank-20 : 93.04%
+Validating momentum DenseNet121 ...
+Features extracted in 5.51 seconds
+Features extracted in 13.11 seconds
+Computing CMC and mAP ...
+** Results **
+mAP: 67.63%
+CMC curve
+Rank-1  : 81.73%
+Rank-5  : 89.68%
+Rank-10 : 92.24%
+Rank-20 : 94.43%
+Validating ensembled with online models ...
+Computing CMC and mAP ...
+** Results **
+mAP: 69.05%
+Ranks:
+Rank-1  : 81.10%
+Rank-5  : 90.22%
+Rank-10 : 92.68%
+Validating ensembled with momentum models ...
+Computing CMC and mAP ...
+** Results **
+mAP: 72.73%
+Ranks:
+Rank-1  : 83.71%
+Rank-5  : 91.38%
+Rank-10 : 93.67%
+3067.0576932430267 282.2939176559448 23012.814195632935
+Mean Feature Extraction and Reranking Time: 102.235256
+Mean Clustering Time: 9.409797
+Mean Finetuning Time: 767.093807
+Total pipeline Time:  29975.028516
