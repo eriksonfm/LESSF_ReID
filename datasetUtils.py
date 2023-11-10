@@ -32,7 +32,16 @@ def load_set_from_MSMT17(PATH, base_name):
 	images_names = np.array(images_names)
 	return images_names
 
-def load_from_Jadson(PATH, base_dir):
+import cv2
+
+def cria_arquivo_ruido(entrada, saida):
+    img = cv2.imread(entrada)
+    gaus = cv2.GaussianBlur(img, (5,5), 0)
+    ruido =  cv2.subtract(img, gaus)
+    
+    cv2.imwrite(saida,ruido)
+    
+def load_from_Jadson(PATH, base_dir, use_ruido=False):
     
     images_names = []
     file = open(PATH, "r")
@@ -42,15 +51,37 @@ def load_from_Jadson(PATH, base_dir):
         img_name, pid_name = line.split(",")
         
         pid = int(pid_name[:-1]) # retirando o \n que sobrou da linha
-        # o pid precisa attack/n_attack
+        # o pid precisa ser attack/n_attack
         
         # camid = img_name.split("/")[5].split("_")[0]
         # o camid identifica o aparelho
         
         camid = counter
-        counter +=1
+        counter += 1
         
-        img_path = os.path.join(base_dir, img_name)
+        work_dir = base_dir+'/'
+        if use_ruido == True:
+            novo_dir = "ruido"
+            img_name_ruido = novo_dir + '/' + img_name
+            parts = img_name_ruido.split('/')
+            parts.pop()
+            novo_dir = '/'.join(parts)
+            work_dir = "/work/emorais/"
+            if not os.path.exists(work_dir+img_name_ruido):
+                os.makedirs(work_dir+novo_dir, exist_ok=True)
+                cria_arquivo_ruido(entrada=base_dir+'/'+img_name, saida=work_dir+img_name_ruido)
+            img_name = img_name_ruido
+            
+        # o padrão precisa ser tal como está
+        # incluir um parâmetro usar ruido contendo valor padrão falso
+        # se valor for verdadeiro:
+        #   muda caminho para diretório ruido
+        #	verifica se existe imagem correspondente para o ruido
+        #	se não existe cria
+        #	compor a saída img_path com a imagem de ruído
+         
+        #img_path = os.path.join(base_dir, img_name)
+        img_path = os.path.join(work_dir, img_name)
         images_names.append([img_path, pid, camid])
         
     images_names = np.array(images_names)
@@ -58,7 +89,7 @@ def load_from_Jadson(PATH, base_dir):
 
 
 ## Load target dataset
-def load_dataset(dataset_name):
+def load_dataset(dataset_name, use_ruido=False):
 	
 	if dataset_name == "Market":
 	
@@ -84,7 +115,7 @@ def load_dataset(dataset_name):
 	elif dataset_name == "Jadson":
 		base_name_dir = "/hadatasets/Synthetic-Realities/20-spoofing-mpad/2020-plosone-recod-mpad"
 
-		train_images = load_from_Jadson("csvs/train_motog5.csv", base_name_dir) 
+		train_images = load_from_Jadson("csvs/train_motog5.csv", base_name_dir, use_ruido) 
 		gallery_images = load_from_Jadson("csvs/test_motog5.csv", base_name_dir) 
 		queries_images = load_from_Jadson("csvs/val_motog5.csv", base_name_dir) 
 
