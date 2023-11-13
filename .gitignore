@@ -10,3 +10,8 @@ resultados/test.pt
 resultados/validation.pt
 resultados/labels_test.npy
 resultados/labels_validation.npy
+resultados/labels_test_ruido.npy
+resultados/labels_validation_ruido.npy
+resultados/metricas_ruido.html
+resultados/test_ruido.pt
+resultados/validation_ruido.pt
