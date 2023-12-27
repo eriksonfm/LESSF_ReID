@@ -270,7 +270,9 @@ def main(gpu_ids, base_lr, P, K, tau, beta, k1, sampling, lambda_hard, number_of
 		#joblib.dump(number_of_clusters, "%s/number_clusters_%s_%s_%s" % (dir_to_save_metrics, "To" + target, model_name, version))
 
 	tf_pipeline = time.time()    
+    
     ##################    
+    
 	test_fvs_resnet50 = extractFeatures(gallery_images_target, model_momentum_resnet50, 500, gpu_index=gpu_indexes[0]) 
     
 	sufix =""
