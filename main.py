@@ -42,7 +42,7 @@ cudnn.deterministic = True
 
 
 def main(gpu_ids, base_lr, P, K, tau, beta, k1, sampling, lambda_hard, number_of_iterations, momentum_on_feature_extraction, 
-														target, dir_to_save, dir_to_save_metrics, version, eval_freq):
+														target, dir_to_save, dir_to_save_metrics, version, eval_freq, use_ruido=False):
 
 
 	os.environ["CUDA_VISIBLE_DEVICES"] = gpu_ids
@@ -62,7 +62,7 @@ def main(gpu_ids, base_lr, P, K, tau, beta, k1, sampling, lambda_hard, number_of
 	model_online_resnet50, model_momentum_resnet50, model_online_osnet, model_momentum_osnet, model_online_densenet121, model_momentum_densenet121 = getEnsembles(gpu_indexes)
 
 	#### Load target dataset ####
-	train_images_target, gallery_images_target, queries_images_target = load_dataset(target)
+	train_images_target, gallery_images_target, queries_images_target = load_dataset(target, use_ruido)
 
 	print("Training Size:", train_images_target.shape)
 	print("Gallery Size:", gallery_images_target.shape)
@@ -269,7 +269,25 @@ def main(gpu_ids, base_lr, P, K, tau, beta, k1, sampling, lambda_hard, number_of
 		#joblib.dump(progress_loss, "%s/loss_progress_%s_%s_%s" % (dir_to_save_metrics, "To" + target, model_name, version))
 		#joblib.dump(number_of_clusters, "%s/number_clusters_%s_%s_%s" % (dir_to_save_metrics, "To" + target, model_name, version))
 
-	tf_pipeline = time.time()
+	tf_pipeline = time.time()    
+    ##################    
+	test_fvs_resnet50 = extractFeatures(gallery_images_target, model_momentum_resnet50, 500, gpu_index=gpu_indexes[0]) 
+    
+	sufix =""
+	if use_ruido == True:
+		sufix ="_ruido"
+        
+	torch.save(test_fvs_resnet50, "resultados/test" +sufix+ ".pt")
+    
+	validation_fvs_resnet50 = extractFeatures(
+                queries_images_target, model_momentum_resnet50, 500, gpu_index=gpu_indexes[0])
+	torch.save(validation_fvs_resnet50, "resultados/validation" +sufix+ ".pt")
+    
+	np.save("resultados/labels_validation" +sufix+ ".npy", queries_images_target[:,1]) 
+	np.save("resultados/labels_test" +sufix+ ".npy", gallery_images_target[:,1])
+    
+    ####################
+    
 	total_pipeline_time = tf_pipeline - t0_pipeline
 
 	mean_feature_extraction_reranking_time = total_feature_extraction_reranking_time/number_of_epoches
