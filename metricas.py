@@ -17,10 +17,33 @@ features_validation = ''
 
 base_name_dir = "/hadatasets/Synthetic-Realities/20-spoofing-mpad/2020-plosone-recod-mpad"
 
-def calc_predito(clusters, features, labels_ground_truth):
+distance_matrices = []
+
+def calc_predito(clusters, features, labels_ground_truth, modelo):
     
     kmeans = KMeans(n_clusters=clusters)
-    kmeans.fit(features)
+    
+    features = features/torch.norm(features, dim=1, keepdim=True)
+    distance_matrix = 1.0 - torch.mm(features, features.T)
+    
+    # features = features/torch.norm(features, dim=1, keepdim=True)
+    # distance_matrix = 1.0 - torch.mm(features, features.T)
+    # 
+    # features = features/torch.norm(features, dim=1, keepdim=True)
+    # distance_matrix = 1.0 - torch.mm(features, features.T)
+    
+    # distance_ensemble = (distance_R50 + distance_OSN + distance_DEN)/3
+
+    # Salvar as tres, carregar as 3 e colocar no próximo argumento
+    if modelo == "mean":
+        distance_matrices_array = np.array(distance_matrices)
+        mean_distance_matrix = np.mean(distance_matrices_array, axis=0)
+        distance_matrix = mean_distance_matrix
+    else:
+        distance_matrices.append(distance_matrix)
+    # colocar em um vetor global para fazer a mistura depois
+        
+    kmeans.fit(distance_matrix) 
     labels_kmt = kmeans.labels_
 
     predito = np.zeros(len(labels_ground_truth), dtype=int)
@@ -81,9 +104,9 @@ def medidas(GT, predito, k=0, lambda_hard=0,idx=0, grupo='test'):
     
     return [accuracy, precision, recall, f1_score], ['ACCURACY', 'PRECISION', 'RECALL', 'F1_SCORE'] #incluir APCER e BPCER
     
-def desenha_metricas(GT, features, labels_ground_truth, k=0, lambda_hard=0, idx=0, grupo='test', show_all=True):
+def desenha_metricas(GT, features, labels_ground_truth, k=0, lambda_hard=0, idx=0, modelo, grupo='test', show_all=True):
         
-    predito = calc_predito(clusters=2,features=features,labels_ground_truth=labels_ground_truth)
+    predito = calc_predito(clusters=2,features=features,labels_ground_truth=labels_ground_truth. modelo)
     metricas, rotulos = medidas(GT=GT,predito=predito, k=k, lambda_hard=lambda_hard, idx=idx, grupo=grupo)
     
     # print(GT)
@@ -121,7 +144,7 @@ def desenha_metricas(GT, features, labels_ground_truth, k=0, lambda_hard=0, idx=
     return rotulos, metricas
 
 
-def metricas(k, lambda_hard):
+def metricas(k, lambda_hard, modelo):
     
     #carregando labels
 
@@ -132,8 +155,8 @@ def metricas(k, lambda_hard):
     #print("tamanho de labels_validation: " + str(len(labels_validation)))
     #corregando dados
 
-    features_teste = torch.load("resultados/test_ruido.pt")
-    features_validation = torch.load("resultados/validation_ruido.pt")
+    features_teste = torch.load("resultados/test_ruido" + modelo + ".pt")
+    features_validation = torch.load("resultados/validation_ruido" + modelo +".pt")
 
     #print("tamanho de features_teste: " + str(features_teste.size()))
     #print("tamanho de features_validation: " + str(features_validation.size()))
@@ -146,7 +169,7 @@ def metricas(k, lambda_hard):
 
     metricas_t = []
     for i in range(tentativas):
-        rotulos_t, metricas = desenha_metricas(GT=GT, features=features_teste, labels_ground_truth=labels_teste, k=k, lambda_hard=lambda_hard,idx=i, grupo='test', show_all=False)
+        rotulos_t, metricas = desenha_metricas(GT=GT, features=features_teste, labels_ground_truth=labels_teste, k=k, lambda_hard=lambda_hard,idx=i, modelo, grupo='test', show_all=False)
         metricas_t.append(metricas)
     metricas_t = np.array(metricas_t)
     # print(metricas_t)
