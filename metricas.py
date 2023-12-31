@@ -22,10 +22,7 @@ distance_matrices = []
 def calc_predito(clusters, features, labels_ground_truth, modelo):
     
     kmeans = KMeans(n_clusters=clusters)
-    
-    features = features/torch.norm(features, dim=1, keepdim=True)
-    distance_matrix = 1.0 - torch.mm(features, features.T)
-    
+        
     # features = features/torch.norm(features, dim=1, keepdim=True)
     # distance_matrix = 1.0 - torch.mm(features, features.T)
     # 
@@ -39,9 +36,13 @@ def calc_predito(clusters, features, labels_ground_truth, modelo):
         distance_matrices_array = np.array(distance_matrices)
         mean_distance_matrix = np.mean(distance_matrices_array, axis=0)
         distance_matrix = mean_distance_matrix
+        
     else:
+        features = features/torch.norm(features, dim=1, keepdim=True)
+        distance_matrix = 1.0 - torch.mm(features, features.T)
+        # colocar em um vetor global para fazer a mistura depois
+        
         distance_matrices.append(distance_matrix)
-    # colocar em um vetor global para fazer a mistura depois
         
     kmeans.fit(distance_matrix) 
     labels_kmt = kmeans.labels_
@@ -63,7 +64,7 @@ def calc_predito(clusters, features, labels_ground_truth, modelo):
                      
     return predito 
 
-def medidas(GT, predito, k=0, lambda_hard=0,idx=0, grupo='test'):
+def medidas(GT, predito, modelo, k=0, lambda_hard=0,idx=0, grupo='test'):
     y_true = GT
     y_pred = predito
     confusion = confusion_matrix(GT, predito,normalize='true')
@@ -71,7 +72,7 @@ def medidas(GT, predito, k=0, lambda_hard=0,idx=0, grupo='test'):
     
     disp = ConfusionMatrixDisplay(confusion)
     disp.plot()
-    plt.savefig(f'resultados/MC_{k}_{lambda_hard}_{idx}_{grupo}.png')
+    plt.savefig(f'resultados/MC_{k}_{lambda_hard}_{idx}_{grupo}_{modelo}.png')
     plt.close()
 
     
@@ -80,8 +81,7 @@ def medidas(GT, predito, k=0, lambda_hard=0,idx=0, grupo='test'):
     
     # # Calcular a acurácia (Accuracy)
     accuracy = accuracy_score(y_true, y_pred)
-    
-    
+        
     # Calcular a precisão (Precision)
     precision = precision_score(y_true, y_pred, zero_division="warn")
     
@@ -104,28 +104,17 @@ def medidas(GT, predito, k=0, lambda_hard=0,idx=0, grupo='test'):
     
     return [accuracy, precision, recall, f1_score], ['ACCURACY', 'PRECISION', 'RECALL', 'F1_SCORE'] #incluir APCER e BPCER
     
-def desenha_metricas(GT, features, labels_ground_truth, k=0, lambda_hard=0, idx=0, modelo, grupo='test', show_all=True):
+def desenha_metricas(GT, features, labels_ground_truth, modelo, k=0, lambda_hard=0, idx=0, grupo='test', show_all=True):
         
-    predito = calc_predito(clusters=2,features=features,labels_ground_truth=labels_ground_truth. modelo)
-    metricas, rotulos = medidas(GT=GT,predito=predito, k=k, lambda_hard=lambda_hard, idx=idx, grupo=grupo)
-    
-    # print(GT)
-    # print(predito)
-
+    predito = calc_predito(clusters=2,features=features,labels_ground_truth=labels_ground_truth, modelo=modelo)
+    metricas, rotulos = medidas(GT=GT,predito=predito, modelo=modelo, k=k, lambda_hard=lambda_hard, idx=idx, grupo=grupo)
+ 
     accuracy  = metricas[0]
     precision = metricas[1]
     recall    = metricas[2]
     f1_score  = metricas[3]
     #APCER     = metricas[4]
     #BPCER     = metricas[5]
-
-
-    # print(f'Acurácia: {accuracy}')
-    # print(f'Precisão: {precision}')
-    # print(f'Recall: {recall}')
-    # print(f'F1-Score: {f1_score}')
-    # print(f'APCER: {APCER}')
-    # print(f'BPCER: {BPCER}') 
 
     # Criar o gráfico de barras
     plt.bar(rotulos, metricas)
@@ -139,7 +128,7 @@ def desenha_metricas(GT, features, labels_ground_truth, k=0, lambda_hard=0, idx=
     if (show_all == True):
         plt.show()
     
-    plt.savefig(f'resultados/grafico_{k}_{lambda_hard}_{idx}_{grupo}.png')
+    plt.savefig(f'resultados/grafico_{k}_{lambda_hard}_{idx}_{grupo}_{modelo}.png')
     plt.close()
     return rotulos, metricas
 
@@ -151,15 +140,10 @@ def metricas(k, lambda_hard, modelo):
     labels_teste = np.load("resultados/labels_test_ruido.npy", allow_pickle=True).astype(int)
     labels_validation = np.load("resultados/labels_validation_ruido.npy", allow_pickle=True).astype(int)
 
-    #print("tamanho de labels_teste: " + str(len(labels_teste)))
-    #print("tamanho de labels_validation: " + str(len(labels_validation)))
     #corregando dados
 
-    features_teste = torch.load("resultados/test_ruido" + modelo + ".pt")
-    features_validation = torch.load("resultados/validation_ruido" + modelo +".pt")
-
-    #print("tamanho de features_teste: " + str(features_teste.size()))
-    #print("tamanho de features_validation: " + str(features_validation.size()))
+    features_teste = torch.load("resultados/test_ruido_" + modelo + ".pt")
+    features_validation = torch.load("resultados/validation_ruido_" + modelo +".pt")
 
     # executando com conjunto de testes
     GT = load_from_Jadson("csvs/test_motog5.csv", base_name_dir, True)
@@ -169,21 +153,18 @@ def metricas(k, lambda_hard, modelo):
 
     metricas_t = []
     for i in range(tentativas):
-        rotulos_t, metricas = desenha_metricas(GT=GT, features=features_teste, labels_ground_truth=labels_teste, k=k, lambda_hard=lambda_hard,idx=i, modelo, grupo='test', show_all=False)
+        rotulos_t, metricas = desenha_metricas(GT=GT, features=features_teste, labels_ground_truth=labels_teste, modelo=modelo, k=k, lambda_hard=lambda_hard,idx=i, grupo='test', show_all=False)
         metricas_t.append(metricas)
     metricas_t = np.array(metricas_t)
-    # print(metricas_t)
-
 
     # executando com conjunto de validação
     GT = load_from_Jadson("csvs/val_motog5.csv", base_name_dir, True)
     GT = np.array([ int(item[1]) for item in GT])
     metricas_v = []
     for i in range(tentativas):
-        rotulos_v, metricas = desenha_metricas(GT=GT, features=features_validation, labels_ground_truth=labels_validation, k=k, lambda_hard=lambda_hard,idx=i, grupo='valid', show_all=False)
+        rotulos_v, metricas = desenha_metricas(GT=GT, features=features_validation, labels_ground_truth=labels_validation, modelo=modelo, k=k, lambda_hard=lambda_hard,idx=i, grupo='valid', show_all=False)
         metricas_v.append(metricas)
     metricas_v = np.array(metricas_v)
-    # print(metricas_v)
     
     return metricas_t, metricas_v
 

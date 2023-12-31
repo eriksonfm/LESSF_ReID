@@ -289,7 +289,7 @@ def main(gpu_ids, base_lr, P, K, tau, beta, k1, sampling, lambda_hard, number_of
 	validation_fvs_osnet       = extractFeatures(queries_images_target, model_momentum_osnet,       500, gpu_index=gpu_indexes[0])
 	validation_fvs_densenet121 = extractFeatures(queries_images_target, model_momentum_densenet121, 500, gpu_index=gpu_indexes[0])
 	
- 	torch.save(validation_fvs_resnet50, "resultados/validation" +sufix+ "_rersnet50.pt")
+ 	torch.save(validation_fvs_resnet50, "resultados/validation" +sufix+ "_resnet50.pt")
  	torch.save(validation_fvs_resnet50, "resultados/validation" +sufix+ "_osnet.pt")
  	torch.save(validation_fvs_resnet50, "resultados/validation" +sufix+ "_densenet121.pt")
     
