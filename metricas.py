@@ -1,7 +1,7 @@
 
 import torch
 import numpy as np
-from sklearn.cluster import KMeans
+from sklearn.cluster import *
 import matplotlib.pyplot as plt
 from datasetUtils import load_from_Jadson
 from sklearn.metrics import confusion_matrix
@@ -22,7 +22,7 @@ distancias_v = []
 
 def calc_predito(clusters, features, labels_ground_truth, grupo, modelo):
     
-    kmeans = KMeans(n_clusters=clusters)
+    agg_clustering = AgglomerativeClustering(n_clusters=clusters, metric='precomputed')
         
     # features = features/torch.norm(features, dim=1, keepdim=True)
     # distance_matrix = 1.0 - torch.mm(features, features.T)
@@ -51,8 +51,8 @@ def calc_predito(clusters, features, labels_ground_truth, grupo, modelo):
         elif grupo == 'valid':
             distancias_v.append(distance_matrix)
         
-    kmeans.fit(features) 
-    labels_kmt = kmeans.labels_
+    agg_clustering.fit(distance_matrix) 
+    labels_kmt = agg_clustering.labels_
 
     predito = np.zeros(len(labels_ground_truth), dtype=int)
     zero_idx = np.where(labels_kmt==0)[0]
@@ -159,7 +159,7 @@ def metricas(k, lambda_hard, modelo):
     GT = load_from_Jadson("csvs/test_motog5.csv", base_name_dir, True)
     GT = np.array([ int(item[1]) for item in GT])
     
-    tentativas =10
+    tentativas =0
     
     metricas_t = []
     for i in range(tentativas):
