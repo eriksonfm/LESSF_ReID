@@ -274,8 +274,8 @@ def main(gpu_ids, base_lr, P, K, tau, beta, k1, sampling, lambda_hard, number_of
     ##################    
     
 	test_fvs_resnet50    = extractFeatures(gallery_images_target, model_momentum_resnet50,    500, gpu_index=gpu_indexes[0])
-    test_fvs_osnet       = extractFeatures(gallery_images_target, model_momentum_osnet,       500, gpu_index=gpu_indexes[0])
-    test_fvs_densenet121 = extractFeatures(gallery_images_target, model_momentum_densenet121, 500, gpu_index=gpu_indexes[0]) 
+	test_fvs_osnet       = extractFeatures(gallery_images_target, model_momentum_osnet,       500, gpu_index=gpu_indexes[0])
+	test_fvs_densenet121 = extractFeatures(gallery_images_target, model_momentum_densenet121, 500, gpu_index=gpu_indexes[0]) 
     
 	sufix =""
 	if use_ruido == True:
@@ -289,9 +289,9 @@ def main(gpu_ids, base_lr, P, K, tau, beta, k1, sampling, lambda_hard, number_of
 	validation_fvs_osnet       = extractFeatures(queries_images_target, model_momentum_osnet,       500, gpu_index=gpu_indexes[0])
 	validation_fvs_densenet121 = extractFeatures(queries_images_target, model_momentum_densenet121, 500, gpu_index=gpu_indexes[0])
 	
- 	torch.save(validation_fvs_resnet50, "resultados/validation" +sufix+ "_resnet50.pt")
- 	torch.save(validation_fvs_resnet50, "resultados/validation" +sufix+ "_osnet.pt")
- 	torch.save(validation_fvs_resnet50, "resultados/validation" +sufix+ "_densenet121.pt")
+	torch.save(validation_fvs_resnet50, "resultados/validation" +sufix+ "_resnet50.pt")
+	torch.save(validation_fvs_resnet50, "resultados/validation" +sufix+ "_osnet.pt")
+	torch.save(validation_fvs_resnet50, "resultados/validation" +sufix+ "_densenet121.pt")
     
 	np.save("resultados/labels_validation" +sufix+ ".npy", queries_images_target[:,1]) 
 	np.save("resultados/labels_test" +sufix+ ".npy", gallery_images_target[:,1])
