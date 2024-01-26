@@ -22,7 +22,7 @@ distancias_v = []
 
 def calc_predito(clusters, features, labels_ground_truth, grupo, modelo):
     
-    agg_clustering = AgglomerativeClustering(n_clusters=clusters, metric='precomputed')
+    agg_clustering = AgglomerativeClustering(n_clusters=clusters, metric='precomputed', linkage='average')
         
     # features = features/torch.norm(features, dim=1, keepdim=True)
     # distance_matrix = 1.0 - torch.mm(features, features.T)
@@ -50,6 +50,7 @@ def calc_predito(clusters, features, labels_ground_truth, grupo, modelo):
             distancias_t.append(distance_matrix)
         elif grupo == 'valid':
             distancias_v.append(distance_matrix)
+        distance_matrix = distance_matrix.numpy()
         
     agg_clustering.fit(distance_matrix) 
     labels_kmt = agg_clustering.labels_
@@ -79,7 +80,7 @@ def medidas(GT, predito, modelo, k=0, lambda_hard=0,idx=0, grupo='test'):
     
     disp = ConfusionMatrixDisplay(confusion)
     disp.plot()
-    plt.savefig(f'resultados/MC_{k}_{lambda_hard}_{idx}_{grupo}_{modelo}.png')
+    plt.savefig(f'resultados/MC_{k}_{lambda_hard}_{idx}_{modelo}_{grupo}.png')
     plt.close()
 
     
@@ -135,7 +136,7 @@ def desenha_metricas(GT, features, labels_ground_truth, modelo, k=0, lambda_hard
     if (show_all == True):
         plt.show()
     
-    plt.savefig(f'resultados/grafico_{k}_{lambda_hard}_{idx}_{grupo}_{modelo}.png')
+    plt.savefig(f'resultados/grafico_{k}_{lambda_hard}_{idx}_{modelo}_{grupo}.png')
     plt.close()
     return rotulos, metricas
 
@@ -159,7 +160,7 @@ def metricas(k, lambda_hard, modelo):
     GT = load_from_Jadson("csvs/test_motog5.csv", base_name_dir, True)
     GT = np.array([ int(item[1]) for item in GT])
     
-    tentativas =0
+    tentativas =1
     
     metricas_t = []
     for i in range(tentativas):
