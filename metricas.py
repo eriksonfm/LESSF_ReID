@@ -51,7 +51,7 @@ def calc_predito(clusters, features, labels_ground_truth, grupo, modelo):
         elif grupo == 'valid':
             distancias_v.append(distance_matrix)
         
-    kmeans.fit(distance_matrix) 
+    kmeans.fit(features) 
     labels_kmt = kmeans.labels_
 
     predito = np.zeros(len(labels_ground_truth), dtype=int)
