@@ -97,38 +97,69 @@ def medidas(GT, predito, modelo, k=0, lambda_hard=0,idx=0, grupo='test'):
     recall = recall_score(y_true, y_pred)
      
     # Calcular o F1-Score
-    f1_score = f1_score(y_true, y_pred)
+    f1score = f1_score(y_true, y_pred)
     
     TP = confusion[0,0]
     FN = confusion[0,1]
     FP = confusion[1,0]
     TN = confusion[1,1]
     
-    # # Calcular o APCER
-    # APCER = FN / (TP + FN)
-         
-    # # Calcular o BPCER
-    # BPCER = FP / (TN + FP)
     
-    return [accuracy, precision, recall, f1_score], ['ACCURACY', 'PRECISION', 'RECALL', 'F1_SCORE'] #incluir APCER e BPCER
+    # # Cacular o EER (validação)
+    #
+    eer = -0.01
+    
+    # # clacular o HTER
+    # 
+    hter = -0.01
+    
+    # # Calcular o APCER (teste)
+    # APCER = FN / (TP + FN)
+    apcer = -0.01
+         
+    # # Calcular o BPCER (teste)
+    # BPCER = FP / (TN + FP)
+    bpcer = -0.01
+    
+    return [
+        accuracy
+        ,precision
+        ,recall
+        ,f1score
+        ,eer
+        ,hter
+        ,apcer
+        ,bpcer
+            ],['ACCURACY'
+               ,'PRECISION'
+               ,'RECALL'
+               ,'F1_SCORE'
+               ,'EER'
+               ,'HTER'
+               ,'APCER'
+               ,'BPCER'
+               ]
     
 def desenha_metricas(GT, features, labels_ground_truth, modelo, k=0, lambda_hard=0, idx=0, grupo='test', show_all=True):
         
     predito = calc_predito(clusters=2,features=features,labels_ground_truth=labels_ground_truth, grupo=grupo, modelo=modelo)
     metricas, rotulos = medidas(GT=GT,predito=predito, modelo=modelo, k=k, lambda_hard=lambda_hard, idx=idx, grupo=grupo)
  
-    accuracy  = metricas[0]
-    precision = metricas[1]
-    recall    = metricas[2]
-    f1_score  = metricas[3]
-    #APCER     = metricas[4]
-    #BPCER     = metricas[5]
+    #accuracy  = metricas[0]
+    #precision = metricas[1]
+    #recall    = metricas[2]
+    #f1_score  = metricas[3]
+    #EER       = metricas[4]
+    #HTER      = metricas[5]
+    #APCER     = metricas[6]
+    #BPCER     = metricas[7]
 
     # Criar o gráfico de barras
     plt.bar(rotulos, metricas)
+    plt.xticks(rotation=30, fontsize=5)
 
     # Adicionar rótulos e título
-    plt.xlabel("Métricas")
+    plt.xlabel('Métricas')
     plt.ylabel("Valores")
     plt.title("Comparação das métricas")
 
@@ -178,7 +209,7 @@ def metricas(k, lambda_hard, modelo):
         metricas_v.append(metricas)
     metricas_v = np.array(metricas_v)
     
-    return metricas_t, metricas_v
+    return metricas_t, metricas_v, rotulos_t, rotulos_v
 
 
 
