@@ -78,7 +78,7 @@ def main(gpu_ids, base_lr, P, K, tau, beta, k1, sampling, lambda_hard, number_of
 
 	print("Validating ResNet50 on %s ..." % target)
  
-	distmat= []
+	distmat= [] * TOTAL_MODELOS
 	cmc, mAP, distmat[RESNET50] = validate(queries_images_target, gallery_images_target, model_online[RESNET50], gpu_index=gpu_indexes[0])
 	## cmc, mAP, distmat_resnet50 = validate(queries_images_target, gallery_images_target, model_online_resnet50, gpu_index=gpu_indexes[0])
 
@@ -116,7 +116,7 @@ def main(gpu_ids, base_lr, P, K, tau, beta, k1, sampling, lambda_hard, number_of
 	base_lr_values03 = np.linspace(base_lr/10, base_lr/10, num=10)
 	base_lr_values = np.concatenate((base_lr_values01, base_lr_values02, base_lr_values03))
 
-	optimizer = []
+	optimizer = [] * TOTAL_MODELOS
 	optimizer[RESNET50] 		= torch.optim.Adam(model_online[RESNET50].parameters(), 		lr=base_lr, weight_decay=5e-4)
 	## optimizer_resnet50 		= torch.optim.Adam(model_online_resnet50.parameters(), 		lr=base_lr, weight_decay=5e-4)
 	optimizer[OSNET] 			= torch.optim.Adam(model_online[OSNET].parameters(), 			lr=base_lr, weight_decay=5e-4)
@@ -128,7 +128,7 @@ def main(gpu_ids, base_lr, P, K, tau, beta, k1, sampling, lambda_hard, number_of
 	total_clustering_time = 0
 	total_finetuning_time = 0
 
-	train_fvs = []
+	train_fvs = [] * TOTAL_MODELOS
  
 	t0_pipeline = time.time()
 	for pipeline_iter in range(1, number_of_epoches+1):
@@ -188,7 +188,7 @@ def main(gpu_ids, base_lr, P, K, tau, beta, k1, sampling, lambda_hard, number_of
 			## train_fvs_densenet121 = train_fvs_densenet121/torch.norm(train_fvs_densenet121, dim=1, keepdim=True)
 		
 		
-		distances_v = []
+		distances_v = [] * TOTAL_MODELOS
 		distances_v[RESNET50] = compute_jaccard_distance(train_fvs[RESNET50], k1=k1)
 		distances_v[RESNET50] = np.abs(distances_v[RESNET50])
 
@@ -297,8 +297,8 @@ def main(gpu_ids, base_lr, P, K, tau, beta, k1, sampling, lambda_hard, number_of
 
 		if pipeline_iter % eval_freq == 0:
 			
-			distmat_online = []
-			distmat_momentum =[]
+			distmat_online = [] * TOTAL_MODELOS
+			distmat_momentum =[] * TOTAL_MODELOS
 			print(colored("Validating online ResNet50 ...", "yellow"))
 			cmc, mAP, distmat_online[RESNET50] = validate(queries_images_target, gallery_images_target, 
 																		model_online[RESNET50], gpu_index=gpu_indexes[0])

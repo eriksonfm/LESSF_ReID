@@ -94,8 +94,8 @@ def getDCNN(gpu_indexes, model_name):
 
 def getEnsembles(gpu_indexes):
     
-    model_source = []
-    model_momentum = []
+    model_source = [] * TOTAL_MODELOS
+    model_momentum = [] * TOTAL_MODELOS
 
 	# loading ResNet50
   	model_source[RESNET50] = getDCNN(gpu_indexes,"resnet50")
