@@ -40,12 +40,7 @@ np.random.seed(12)
 torch.manual_seed(12)
 cudnn.deterministic = True
 
-# INDICES PARA OS MODELOS
-RESNET50 =0
-OSNET =1
-DENSENET121 =2
-
-TOTAL_MODELOS =3
+from DCNNs import *
 
 def main(gpu_ids, base_lr, P, K, tau, beta, k1, sampling, lambda_hard, number_of_iterations, momentum_on_feature_extraction, 
 														target, dir_to_save, dir_to_save_metrics, version, eval_freq, use_ruido=False):
