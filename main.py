@@ -69,18 +69,13 @@ def main(gpu_ids, base_lr, P, K, tau, beta, k1, sampling, lambda_hard, number_of
 	print("Query Size:", queries_images_target.shape)
 	
 	query_size = queries_images_target.shape[0]
-
-	print("Validating ResNet50 on %s ..." % target)
  
-	distmat= list(range(TOTAL_MODELOS))
-	cmc, mAP, distmat[RESNET50] = validate(queries_images_target, gallery_images_target, model_online[RESNET50], gpu_index=gpu_indexes[0])
-	
-	print("Validating OSNet on %s ..." % target)
-	cmc, mAP, distmat[OSNET] = validate(queries_images_target, gallery_images_target, model_online[OSNET], gpu_index=gpu_indexes[0])
-	
-	print("Validating DenseNet121 on %s ..." % target)
-	cmc, mAP, distmat[DENSENET121] = validate(queries_images_target, gallery_images_target, model_online[DENSENET121], gpu_index=gpu_indexes[0])
- 	
+	distmat= []
+	for model in range(0, TOTAL_MODELOS):
+		print("Validating %s on %s ..." % (models_name[model], target))
+		cmc, mAP, mat = validate(queries_images_target, gallery_images_target, model_online[model], gpu_index=gpu_indexes[0])
+		distmat.append(mat)
+		
 	distmat_ensembled = np.mean(distmat,0)
 	calculateMetrics(distmat_ensembled, queries_images_target, gallery_images_target)
 	
@@ -106,10 +101,10 @@ def main(gpu_ids, base_lr, P, K, tau, beta, k1, sampling, lambda_hard, number_of
 	base_lr_values03 = np.linspace(base_lr/10, base_lr/10, num=10)
 	base_lr_values   = np.concatenate((base_lr_values01, base_lr_values02, base_lr_values03))
 
-	optimizer = list(range(TOTAL_MODELOS))
-	optimizer[RESNET50]    = torch.optim.Adam(model_online[RESNET50].parameters(), 	  lr=base_lr, weight_decay=5e-4)
-	optimizer[OSNET] 	   = torch.optim.Adam(model_online[OSNET].parameters(), 	  lr=base_lr, weight_decay=5e-4)
-	optimizer[DENSENET121] = torch.optim.Adam(model_online[DENSENET121].parameters(), lr=base_lr, weight_decay=5e-4)
+	optimizer = []
+	for model in range(0, TOTAL_MODELOS):
+		opt = torch.optim.Adam(model_online[model].parameters(), 	  lr=base_lr, weight_decay=5e-4)
+		optimizer.append(opt)
 	
 	total_feature_extraction_reranking_time = 0
 	total_clustering_time = 0
@@ -119,46 +114,26 @@ def main(gpu_ids, base_lr, P, K, tau, beta, k1, sampling, lambda_hard, number_of
 	t0_pipeline = time.time()
 	for pipeline_iter in range(1, number_of_epoches+1):
      
-		train_fvs = list(range(TOTAL_MODELOS))
+		train_fvs   = []
+		distances_v = []
+  
 		t0 = time.time()
 		print("###============ Iteration number %d/%d ============###" % (pipeline_iter, number_of_epoches))
 
-		if momentum_on_feature_extraction == False:
-			print("Extracting Online Features for ResNet50 ...")
-			train_fvs[RESNET50] = extractFeatures(train_images_target, model_online[RESNET50], 500, gpu_index=gpu_indexes[0])
-			train_fvs[RESNET50] = train_fvs[RESNET50]/torch.norm(train_fvs[RESNET50], dim=1, keepdim=True)
+		for model in range(0, TOTAL_MODELOS):
+			if momentum_on_feature_extraction == False:
+				print("Extracting Online Features for %s ..." % models_name[model])
+				train_fvs.append( extractFeatures(train_images_target, model_online[model], 500, gpu_index=gpu_indexes[0]) )
+				train_fvs[model] = train_fvs[model]/torch.norm(train_fvs[model], dim=1, keepdim=True)
 
-			print("Extracting Online Features for OSNet ...")
-			train_fvs[OSNET] = extractFeatures(train_images_target, model_online[OSNET], 500, gpu_index=gpu_indexes[0])
-			train_fvs[OSNET] = train_fvs[OSNET]/torch.norm(train_fvs[OSNET], dim=1, keepdim=True)
+			else:
 
-			print("Extracting Online Features for DenseNet121 ...")
-			train_fvs[DENSENET121] = extractFeatures(train_images_target, model_online[DENSENET121], 500, gpu_index=gpu_indexes[0])
-			train_fvs[DENSENET121] = train_fvs[DENSENET121]/torch.norm(train_fvs[DENSENET121], dim=1, keepdim=True)
+				print("Extracting Ensembled Features for %s ..." % models_name[model])
+				train_fvs.append( extractFeatures(train_images_target, model_momentum[model], 500, gpu_index=gpu_indexes[0]) )
+				train_fvs[model] = train_fvs[model]/torch.norm(train_fvs[model], dim=1, keepdim=True)
 
-		else:
-
-			print("Extracting Ensembled Features for ResNet50 ...")
-			train_fvs[RESNET50] = extractFeatures(train_images_target, model_momentum[RESNET50], 500, gpu_index=gpu_indexes[0])
-			train_fvs[RESNET50] = train_fvs[RESNET50]/torch.norm(train_fvs[RESNET50], dim=1, keepdim=True)
-
-			print("Extracting Ensembled Features for Osnet ...")
-			train_fvs[OSNET] = extractFeatures(train_images_target, model_momentum[OSNET], 500, gpu_index=gpu_indexes[0])
-			train_fvs[OSNET] = train_fvs[OSNET]/torch.norm(train_fvs[OSNET], dim=1, keepdim=True)
-
-			print("Extracting Ensembled Features for DenseNet121 ...")
-			train_fvs[DENSENET121] = extractFeatures(train_images_target, model_momentum[DENSENET121], 500, gpu_index=gpu_indexes[0])
-			train_fvs[DENSENET121] = train_fvs[DENSENET121]/torch.norm(train_fvs[DENSENET121], dim=1, keepdim=True)
-   				
-		distances_v = list(range(TOTAL_MODELOS))
-		distances_v[RESNET50] = compute_jaccard_distance(train_fvs[RESNET50], k1=k1)
-		distances_v[RESNET50] = np.abs(distances_v[RESNET50])
-
-		distances_v[OSNET] = compute_jaccard_distance(train_fvs[OSNET], k1=k1)
-		distances_v[OSNET] = np.abs(distances_v[OSNET])
-
-		distances_v[DENSENET121] = compute_jaccard_distance(train_fvs[DENSENET121], k1=k1)
-		distances_v[DENSENET121] = np.abs(distances_v[DENSENET121])
+			distances_v.append( compute_jaccard_distance(train_fvs[RESNET50], k1=k1) )
+			distances_v[model] = np.abs(distances_v[model])
 
 		distances = np.mean(distances_v,0)
 
@@ -187,69 +162,43 @@ def main(gpu_ids, base_lr, P, K, tau, beta, k1, sampling, lambda_hard, number_of
 
 		print(colored("Learning Rate: %f" % lr_value, "cyan"))
 		
-		lambda_lr_warmup(optimizer[RESNET50], lr_value)
-		lambda_lr_warmup(optimizer[OSNET], lr_value)
-		lambda_lr_warmup(optimizer[DENSENET121], lr_value)
-  		
-		print(colored("Training ResNet50 ...", "green"))
-		
-		model_online[RESNET50], model_momentum[RESNET50], optimizer[RESNET50] = train(selected_images, pseudo_labels, sampling, 
-																					optimizer[RESNET50], 
-																					P, K, perc, tau, beta, lambda_hard, 
-																					number_of_iterations, 
-																					model_online[RESNET50], 
-																					model_momentum[RESNET50], gpu_indexes)
+		for model in range(0, TOTAL_MODELOS):
+			lambda_lr_warmup(optimizer[model], lr_value)
+			
+		for model in range(0, TOTAL_MODELOS):
+			print(colored("Training %s ..." % models_name[model], "green"))
 
-		print(colored("Training OSNet ...", "green"))
-		
-		model_online[OSNET], model_momentum[OSNET], optimizer[OSNET] = train(selected_images, pseudo_labels, sampling, 
-																					optimizer[OSNET], 
-																					P, K, perc, tau, beta, lambda_hard, 
-																					number_of_iterations, 
-																					model_online[OSNET], 
-																					model_momentum[OSNET], gpu_indexes)
-
-		print(colored("Training DenseNet121 ...", "green"))
-		model_online[DENSENET121], model_momentum[DENSENET121], optimizer[DENSENET121] = train(selected_images, pseudo_labels,
-																					sampling, 
-																					optimizer[DENSENET121], 
-																					P, K, perc, tau, beta, lambda_hard, 
-																					number_of_iterations, 
-																					model_online[DENSENET121], 
-																					model_momentum[DENSENET121], gpu_indexes)
-				
+			online, momentum, opt = train(selected_images, pseudo_labels, sampling, 
+											optimizer[model], 
+											P, K, perc, tau, beta, lambda_hard, 
+											number_of_iterations, 
+											model_online[model], 
+											model_momentum[model], gpu_indexes)
+			model_online[model] = online 
+			model_momentum[model] = momentum 
+			optimizer[model] = opt 
+   
+   
 		tf = time.time()
 		dt_finetuning = tf - t0
 		total_finetuning_time += dt_finetuning
 
 		if pipeline_iter % eval_freq == 0:
 			
-			distmat_online = list(range(TOTAL_MODELOS))
-			distmat_momentum = list(range(TOTAL_MODELOS))
-			print(colored("Validating online ResNet50 ...", "yellow"))
-			cmc, mAP, distmat_online[RESNET50] = validate(queries_images_target, gallery_images_target, 
-																		model_online[RESNET50], gpu_index=gpu_indexes[0])
-
-			print(colored("Validating momentum ResNet50 ...", "yellow"))
-			cmc, mAP, distmat_momentum[RESNET50] = validate(queries_images_target, gallery_images_target, 
-																		model_momentum[RESNET50], gpu_index=gpu_indexes[0])
-
-			print(colored("Validating online OSNet ...", "yellow"))
-			cmc, mAP, distmat_online[OSNET] = validate(queries_images_target, gallery_images_target, 
-																		model_online[OSNET], gpu_index=gpu_indexes[0])
-
-			print(colored("Validating momentum OSNet ...", "yellow"))
-			cmc, mAP, distmat_momentum[OSNET] = validate(queries_images_target, gallery_images_target, 
-																		model_momentum[OSNET], gpu_index=gpu_indexes[0])
-
-			print(colored("Validating online DenseNet121 ...", "yellow"))
-			cmc, mAP, distmat_online[DENSENET121] = validate(queries_images_target, gallery_images_target, 
-																		model_online[DENSENET121], gpu_index=gpu_indexes[0])
-
-			print(colored("Validating momentum DenseNet121 ...", "yellow"))
-			cmc, mAP, distmat_momentum[DENSENET121] = validate(queries_images_target, gallery_images_target, 
-																		model_momentum[DENSENET121], gpu_index=gpu_indexes[0])
-									
+			distmat_online   = []
+			distmat_momentum = []
+			for model in range (0, TOTAL_MODELOS):
+				print(colored("Validating online %s ..." % models_name[model], "yellow"))
+				cmc, mAP, distmat = validate(queries_images_target, gallery_images_target, 
+											model_online[model], gpu_index=gpu_indexes[0])
+				distmat_online.append(distmat)
+    
+				print(colored("Validating momentum %s ..." % models_name[model], "yellow"))
+				cmc, mAP, distmat = validate(queries_images_target, gallery_images_target, 
+											model_momentum[model], gpu_index=gpu_indexes[0])
+				distmat_momentum.append(distmat)
+    
+    
 			distmat_ensembled_online = np.mean(distmat_online,0)
 			distmat_ensembled_momentum = np.mean(distmat_momentum,0)
    			
@@ -267,15 +216,10 @@ def main(gpu_ids, base_lr, P, K, tau, beta, k1, sampling, lambda_hard, number_of
 
 		reliable_data_progress.append(ratio_of_reliable_data)
 
-		torch.save(model_online[RESNET50].state_dict(), "%s/model_online_%s_%s_%s.h5" % (dir_to_save, "To" + target, "resnet50", version))
-		torch.save(model_momentum[RESNET50].state_dict(), "%s/model_momentum_%s_%s_%s.h5" % (dir_to_save, "To" + target, "resnet50", version))
+		for model in range(0, TOTAL_MODELOS):
+			torch.save(model_online[model].state_dict(), "%s/model_online_%s_%s_%s.h5" % (dir_to_save, "To" + target, models_name[model], version))
+			torch.save(model_momentum[model].state_dict(), "%s/model_momentum_%s_%s_%s.h5" % (dir_to_save, "To" + target, models_name[model], version))
 
-		torch.save(model_online[OSNET].state_dict(), "%s/model_online_%s_%s_%s.h5" % (dir_to_save, "To" + target, "osnet", version))
-		torch.save(model_momentum[OSNET].state_dict(), "%s/model_momentum_%s_%s_%s.h5" % (dir_to_save, "To" + target, "osnet", version))
-
-		torch.save(model_online[DENSENET121].state_dict(), "%s/model_online_%s_%s_%s.h5" % (dir_to_save, "To" + target, "densenet121", version))
-		torch.save(model_momentum[DENSENET121].state_dict(), "%s/model_momentum_%s_%s_%s.h5" % (dir_to_save, "To" + target, "densenet121", version))
-		
 		joblib.dump(reliable_data_progress, "%s/reliability_progress_%s_%s" % (dir_to_save_metrics, "To" + target, version))
 		joblib.dump(lr_values, "%s/lr_progress_%s_%s" % (dir_to_save_metrics, "To" + target, version))
 
@@ -286,26 +230,17 @@ def main(gpu_ids, base_lr, P, K, tau, beta, k1, sampling, lambda_hard, number_of
     
     ##################    
     
-	test_fvs_resnet50    = extractFeatures(gallery_images_target, model_momentum[RESNET50],    500, gpu_index=gpu_indexes[0])
-	test_fvs_osnet       = extractFeatures(gallery_images_target, model_momentum[OSNET],       500, gpu_index=gpu_indexes[0])
-	test_fvs_densenet121 = extractFeatures(gallery_images_target, model_momentum[DENSENET121], 500, gpu_index=gpu_indexes[0]) 
-    
 	sufix =""
 	if use_ruido == True:
 		sufix ="_ruido"
-        
-	torch.save(test_fvs_resnet50,    "resultados/test" +sufix+ "_resnet50.pt")
-	torch.save(test_fvs_osnet,       "resultados/test" +sufix+ "_osnet.pt")
-	torch.save(test_fvs_densenet121, "resultados/test" +sufix+ "_densenet121.pt")
     
-	validation_fvs_resnet50    = extractFeatures(queries_images_target, model_momentum[RESNET50],    500, gpu_index=gpu_indexes[0])
-	validation_fvs_osnet       = extractFeatures(queries_images_target, model_momentum[OSNET],       500, gpu_index=gpu_indexes[0])
-	validation_fvs_densenet121 = extractFeatures(queries_images_target, model_momentum[DENSENET121], 500, gpu_index=gpu_indexes[0])
-	
-	torch.save(validation_fvs_resnet50, "resultados/validation" +sufix+ "_resnet50.pt")
-	torch.save(validation_fvs_resnet50, "resultados/validation" +sufix+ "_osnet.pt")
-	torch.save(validation_fvs_resnet50, "resultados/validation" +sufix+ "_densenet121.pt")
-    
+	for model in range(0, TOTAL_MODELOS):
+		test_fvs = extractFeatures(gallery_images_target, model_momentum[model], 500, gpu_index=gpu_indexes[0])
+		torch.save(test_fvs, "resultados/test" +sufix+ "_%s.pt" % models_name[model])
+		
+		validation_fvs = extractFeatures(queries_images_target, model_momentum[model], 500, gpu_index=gpu_indexes[0])
+		torch.save(validation_fvs, "resultados/validation" +sufix+ "_%s.pt" % models_name[model])
+		
 	np.save("resultados/labels_validation" +sufix+ ".npy", queries_images_target[:,1]) 
 	np.save("resultados/labels_test" +sufix+ ".npy", gallery_images_target[:,1])
     
