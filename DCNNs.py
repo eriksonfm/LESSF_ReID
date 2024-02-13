@@ -99,62 +99,13 @@ def getEnsembles(gpu_indexes):
 
 	# loading ResNet50 (0)
     model_source[RESNET50], model_momentum[RESNET50] = getDCNN(gpu_indexes, "resnet50")
-	## model_source_resnet50 = resnet50(pretrained=True)
-	## model_source_resnet50 = ResNet50ReID(model_source_resnet50)
-	## 
-	## model_momentum_resnet50 = resnet50(pretrained=True)
-	## model_momentum_resnet50 = ResNet50ReID(model_momentum_resnet50)
-	## 
-	## model_source_resnet50 = nn.DataParallel(model_source_resnet50, device_ids=gpu_indexes)
-	## model_momentum_resnet50 = nn.DataParallel(model_momentum_resnet50, device_ids=gpu_indexes)
-	## 
-	## model_momentum_resnet50.load_state_dict(model_source_resnet50.state_dict())
-	## 
-	## model_source_resnet50 = model_source_resnet50.cuda(gpu_indexes[0])
-	## model_source_resnet50 = model_source_resnet50.eval()
-	## 
-	## model_momentum_resnet50 = model_momentum_resnet50.cuda(gpu_indexes[0])
-	## model_momentum_resnet50 = model_momentum_resnet50.eval()
-
+	
 	# loading OSNet
     model_source[OSNET], model_momentum[OSNET] = getDCNN(gpu_indexes, "osnet")
-	
- 	## model_source_osnet = torchreid.models.build_model(name="osnet_x1_0", num_classes=1000, pretrained=True)
-	## model_source_osnet = OSNETReID(model_source_osnet)
-	## 
-	## model_momentum_osnet = torchreid.models.build_model(name="osnet_x1_0", num_classes=1000, pretrained=True)
-	## model_momentum_osnet = OSNETReID(model_momentum_osnet)
-	## 
-	## model_source_osnet = nn.DataParallel(model_source_osnet, device_ids=gpu_indexes)
-	## model_momentum_osnet = nn.DataParallel(model_momentum_osnet, device_ids=gpu_indexes)
-	## 
-	## model_momentum_osnet.load_state_dict(model_source_osnet.state_dict())
-	## 
-	## model_source_osnet = model_source_osnet.cuda(gpu_indexes[0])
-	## model_source_osnet = model_source_osnet.eval()
-	## 
-	## model_momentum_osnet = model_momentum_osnet.cuda(gpu_indexes[0])
-	## model_momentum_osnet = model_momentum_osnet.eval()
-
+	 	
 	# loading DenseNet121
     model_source[DENSENET121], model_momentum[DENSENET121] = getDCNN(gpu_indexes, "densenet121")
-	## model_source_densenet121 = densenet121(pretrained=True)
-	## model_source_densenet121 = DenseNet121ReID(model_source_densenet121)
-	## 
-	## model_momentum_densenet121 = densenet121(pretrained=True)
-	## model_momentum_densenet121 = DenseNet121ReID(model_momentum_densenet121)
-	## 
-	## model_source_densenet121 = nn.DataParallel(model_source_densenet121, device_ids=gpu_indexes)
-	## model_momentum_densenet121 = nn.DataParallel(model_momentum_densenet121, device_ids=gpu_indexes)
-	## 
-	## model_momentum_densenet121.load_state_dict(model_source_densenet121.state_dict())
-	## 
-	## model_source_densenet121 = model_source_densenet121.cuda(gpu_indexes[0])
-	## model_source_densenet121 = model_source_densenet121.eval()
-	## 
-	## model_momentum_densenet121 = model_momentum_densenet121.cuda(gpu_indexes[0])
-	## model_momentum_densenet121 = model_momentum_densenet121.eval()
-
+	
     return model_source, model_momentum
 	
 
