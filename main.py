@@ -78,7 +78,7 @@ def main(gpu_ids, base_lr, P, K, tau, beta, k1, sampling, lambda_hard, number_of
 
 	print("Validating ResNet50 on %s ..." % target)
  
-	distmat= [] * TOTAL_MODELOS
+	distmat= list(range(TOTAL_MODELOS))
 	cmc, mAP, distmat[RESNET50] = validate(queries_images_target, gallery_images_target, model_online[RESNET50], gpu_index=gpu_indexes[0])
 	## cmc, mAP, distmat_resnet50 = validate(queries_images_target, gallery_images_target, model_online_resnet50, gpu_index=gpu_indexes[0])
 
@@ -90,7 +90,7 @@ def main(gpu_ids, base_lr, P, K, tau, beta, k1, sampling, lambda_hard, number_of
 	cmc, mAP, distmat[DENSENET121] = validate(queries_images_target, gallery_images_target, model_online[DENSENET121], gpu_index=gpu_indexes[0])
  	## cmc, mAP, distmat_densenet121 = validate(queries_images_target, gallery_images_target, model_online_densenet121, gpu_index=gpu_indexes[0])
 
-	distmat_ensembled = np.mean(distmat)
+	distmat_ensembled = np.mean(distmat,0)
  	## distmat_ensembled = (distmat_resnet50 + distmat_osnet + distmat_densenet121)/3
 	calculateMetrics(distmat_ensembled, queries_images_target, gallery_images_target)
 	
@@ -116,7 +116,7 @@ def main(gpu_ids, base_lr, P, K, tau, beta, k1, sampling, lambda_hard, number_of
 	base_lr_values03 = np.linspace(base_lr/10, base_lr/10, num=10)
 	base_lr_values = np.concatenate((base_lr_values01, base_lr_values02, base_lr_values03))
 
-	optimizer = [] * TOTAL_MODELOS
+	optimizer = list(range(TOTAL_MODELOS))
 	optimizer[RESNET50] 		= torch.optim.Adam(model_online[RESNET50].parameters(), 		lr=base_lr, weight_decay=5e-4)
 	## optimizer_resnet50 		= torch.optim.Adam(model_online_resnet50.parameters(), 		lr=base_lr, weight_decay=5e-4)
 	optimizer[OSNET] 			= torch.optim.Adam(model_online[OSNET].parameters(), 			lr=base_lr, weight_decay=5e-4)
@@ -128,11 +128,11 @@ def main(gpu_ids, base_lr, P, K, tau, beta, k1, sampling, lambda_hard, number_of
 	total_clustering_time = 0
 	total_finetuning_time = 0
 
-	train_fvs = [] * TOTAL_MODELOS
  
 	t0_pipeline = time.time()
 	for pipeline_iter in range(1, number_of_epoches+1):
-
+     
+		train_fvs = list(range(TOTAL_MODELOS))
 		t0 = time.time()
 		print("###============ Iteration number %d/%d ============###" % (pipeline_iter, number_of_epoches))
 
@@ -188,7 +188,7 @@ def main(gpu_ids, base_lr, P, K, tau, beta, k1, sampling, lambda_hard, number_of
 			## train_fvs_densenet121 = train_fvs_densenet121/torch.norm(train_fvs_densenet121, dim=1, keepdim=True)
 		
 		
-		distances_v = [] * TOTAL_MODELOS
+		distances_v = list(range(TOTAL_MODELOS))
 		distances_v[RESNET50] = compute_jaccard_distance(train_fvs[RESNET50], k1=k1)
 		distances_v[RESNET50] = np.abs(distances_v[RESNET50])
 
@@ -198,8 +198,8 @@ def main(gpu_ids, base_lr, P, K, tau, beta, k1, sampling, lambda_hard, number_of
 		distances_v[DENSENET121] = compute_jaccard_distance(train_fvs[DENSENET121], k1=k1)
 		distances_v[DENSENET121] = np.abs(distances_v[DENSENET121])
 
-		distances = np.mean(distances_v)
-  
+		distances = np.mean(distances_v,0)
+
 		## distances_resnet50 = compute_jaccard_distance(train_fvs_resnet50, k1=k1)
 		## distances_resnet50 = np.abs(distances_resnet50)
 		## 
@@ -210,7 +210,8 @@ def main(gpu_ids, base_lr, P, K, tau, beta, k1, sampling, lambda_hard, number_of
 		## distances_densenet121 = np.abs(distances_densenet121)
 		## 
 		## distances = (distances_resnet50 + distances_osnet + distances_densenet121)/3
-    	tf = time.time()
+  		
+		tf = time.time()
 		dt_feature_extraction_reranking = tf - t0
 		total_feature_extraction_reranking_time += dt_feature_extraction_reranking
 
@@ -291,14 +292,14 @@ def main(gpu_ids, base_lr, P, K, tau, beta, k1, sampling, lambda_hard, number_of
 		## 																			model_online_densenet121, 
 		## 																			model_momentum_densenet121, gpu_indexes)
 		
-  		tf = time.time()
+		tf = time.time()
 		dt_finetuning = tf - t0
 		total_finetuning_time += dt_finetuning
 
 		if pipeline_iter % eval_freq == 0:
 			
-			distmat_online = [] * TOTAL_MODELOS
-			distmat_momentum =[] * TOTAL_MODELOS
+			distmat_online = list(range(TOTAL_MODELOS))
+			distmat_momentum = list(range(TOTAL_MODELOS))
 			print(colored("Validating online ResNet50 ...", "yellow"))
 			cmc, mAP, distmat_online[RESNET50] = validate(queries_images_target, gallery_images_target, 
 																		model_online[RESNET50], gpu_index=gpu_indexes[0])
@@ -339,8 +340,8 @@ def main(gpu_ids, base_lr, P, K, tau, beta, k1, sampling, lambda_hard, number_of
 			## 															model_momentum_densenet121, gpu_index=gpu_indexes[0])
 			
 			
-			distmat_ensembled_online = np.mean(distmat_online)
-			distmat_ensembled_momentum = np.mean(distmat_momentum)
+			distmat_ensembled_online = np.mean(distmat_online,0)
+			distmat_ensembled_momentum = np.mean(distmat_momentum,0)
    			## distmat_ensembled_online = (distmat_online_resnet50 + distmat_online_osnet + distmat_online_densenet121)/3
 			## distmat_ensembled_momentum = (distmat_momentum_resnet50 + distmat_momentum_osnet + distmat_momentum_densenet121)/3
 

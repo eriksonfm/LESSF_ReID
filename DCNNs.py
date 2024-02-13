@@ -94,12 +94,11 @@ def getDCNN(gpu_indexes, model_name):
 
 def getEnsembles(gpu_indexes):
     
-    model_source = [] * TOTAL_MODELOS
-    model_momentum = [] * TOTAL_MODELOS
+    model_source = list(range(TOTAL_MODELOS))
+    model_momentum = list(range(TOTAL_MODELOS))
 
-	# loading ResNet50
-  	model_source[RESNET50] = getDCNN(gpu_indexes,"resnet50")
-	model_momentum[RESNET50] = getDCNN(gpu_indexes, "resnet50")
+	# loading ResNet50 (0)
+    model_source[RESNET50], model_momentum[RESNET50] = getDCNN(gpu_indexes, "resnet50")
 	## model_source_resnet50 = resnet50(pretrained=True)
 	## model_source_resnet50 = ResNet50ReID(model_source_resnet50)
 	## 
@@ -118,8 +117,7 @@ def getEnsembles(gpu_indexes):
 	## model_momentum_resnet50 = model_momentum_resnet50.eval()
 
 	# loading OSNet
-	model_source[OSNET] = getDCNN(gpu_indexes, "osnet")
-	model_momentum[OSNET] = getDCNN(gpu_indexes, "osnet")
+    model_source[OSNET], model_momentum[OSNET] = getDCNN(gpu_indexes, "osnet")
 	
  	## model_source_osnet = torchreid.models.build_model(name="osnet_x1_0", num_classes=1000, pretrained=True)
 	## model_source_osnet = OSNETReID(model_source_osnet)
@@ -139,8 +137,7 @@ def getEnsembles(gpu_indexes):
 	## model_momentum_osnet = model_momentum_osnet.eval()
 
 	# loading DenseNet121
-	model_source[DENSENET121] = getDCNN(gpu_indexes, "densenet121")
-	model_momentum[DENSENET121] = getDCNN(gpu_indexes, "densenet121")
+    model_source[DENSENET121], model_momentum[DENSENET121] = getDCNN(gpu_indexes, "densenet121")
 	## model_source_densenet121 = densenet121(pretrained=True)
 	## model_source_densenet121 = DenseNet121ReID(model_source_densenet121)
 	## 
@@ -158,7 +155,7 @@ def getEnsembles(gpu_indexes):
 	## model_momentum_densenet121 = model_momentum_densenet121.cuda(gpu_indexes[0])
 	## model_momentum_densenet121 = model_momentum_densenet121.eval()
 
-	return model_source, model_momentum
+    return model_source, model_momentum
 	
 
 
