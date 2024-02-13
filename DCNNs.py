@@ -20,17 +20,18 @@ except ImportError:
         'unavailable, now use python evaluation.'
     )
 
-
+# LISTA DE MODELOS
+models_name = ["resnet50","osnet","densenet121"]
 # INDICES PARA OS MODELOS
-RESNET50 =0
-OSNET =1
-DENSENET121 =2
+RESNET50 	= 0
+OSNET 		= 1
+DENSENET121 = 2
 
-TOTAL_MODELOS =3
+TOTAL_MODELOS = len(models_name)
 
 def getDCNN(gpu_indexes, model_name):
 
-	if model_name == "resnet50":
+	if model_name == models_name[RESNET50]:
 		# loading ResNet50
 		model_source = resnet50(pretrained=True)
 		model_source = ResNet50ReID(model_source)
@@ -49,7 +50,7 @@ def getDCNN(gpu_indexes, model_name):
 		model_momentum = model_momentum.cuda(gpu_indexes[0])
 		model_momentum = model_momentum.eval()
 
-	elif model_name == "osnet":
+	elif model_name == models_name[OSNET]:
 
 		# loading OSNet	
 		model_source = torchreid.models.build_model(name="osnet_x1_0", num_classes=1000, pretrained=True)
@@ -69,7 +70,7 @@ def getDCNN(gpu_indexes, model_name):
 		model_momentum = model_momentum.cuda(gpu_indexes[0])
 		model_momentum = model_momentum.eval()
 
-	elif model_name == "densenet121":
+	elif model_name == models_name[DENSENET121]:
 		# loading DenseNet121
 		model_source = densenet121(pretrained=True)
 		model_source = DenseNet121ReID(model_source)
@@ -94,18 +95,14 @@ def getDCNN(gpu_indexes, model_name):
 
 def getEnsembles(gpu_indexes):
     
-    model_source = list(range(TOTAL_MODELOS))
-    model_momentum = list(range(TOTAL_MODELOS))
+    model_source = []
+    model_momentum = []
 
-	# loading ResNet50 (0)
-    model_source[RESNET50], model_momentum[RESNET50] = getDCNN(gpu_indexes, "resnet50")
-	
-	# loading OSNet
-    model_source[OSNET], model_momentum[OSNET] = getDCNN(gpu_indexes, "osnet")
-	 	
-	# loading DenseNet121
-    model_source[DENSENET121], model_momentum[DENSENET121] = getDCNN(gpu_indexes, "densenet121")
-	
+    for model in range(0,TOTAL_MODELOS):
+        source, momentum = getDCNN(gpu_indexes, models_name[model])
+        model_source.append(source)
+        model_momentum.append(momentum)
+        	
     return model_source, model_momentum
 	
 
