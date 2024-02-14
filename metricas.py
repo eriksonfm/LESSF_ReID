@@ -105,39 +105,37 @@ def medidas(GT, predito, modelo, k=0, lambda_hard=0,idx=0, grupo='test'):
     TN = confusion[1,1]
     
     
-    # # Cacular o EER (validação)
-    #
-    eer = -0.01
-    
-    # # clacular o HTER
-    # 
-    hter = -0.01
-    
+    far = FP / (TN+FP) #apcer
+    frr = FN / (FN+TP) #
+        
     # # Calcular o APCER (teste)
     # APCER = FN / (TP + FN)
-    apcer = -0.01
+    apcer = far
          
     # # Calcular o BPCER (teste)
     # BPCER = FP / (TN + FP)
-    bpcer = -0.01
+    bpcer = far
     
+    # # Calcular o ACER
+    # ACER = (APCER + BPCER) /2
+    acer = (apcer+bpcer)/2.0
+    
+    #fonte: https://sites.google.com/view/face-anti-spoofing-challenge/evaluation
     return [
         accuracy
         ,precision
         ,recall
         ,f1score
-        ,eer
-        ,hter
         ,apcer
         ,bpcer
+        ,acer
             ],['ACCURACY'
                ,'PRECISION'
                ,'RECALL'
                ,'F1_SCORE'
-               ,'EER'
-               ,'HTER'
                ,'APCER'
                ,'BPCER'
+               ,'ACER'
                ]
     
 def desenha_metricas(GT, features, labels_ground_truth, modelo, k=0, lambda_hard=0, idx=0, grupo='test', show_all=True):
