@@ -11,6 +11,7 @@ from torch.nn import functional as F
 from torch import nn
 
 import os
+import sys
 import copy
 
 from torch.utils.data import Dataset, DataLoader
@@ -132,7 +133,7 @@ def main(gpu_ids, base_lr, P, K, tau, beta, k1, sampling, lambda_hard, number_of
 				train_fvs.append( extractFeatures(train_images_target, model_momentum[model], 500, gpu_index=gpu_indexes[0]) )
 				train_fvs[model] = train_fvs[model]/torch.norm(train_fvs[model], dim=1, keepdim=True)
 
-			distances_v.append( compute_jaccard_distance(train_fvs[RESNET50], k1=k1) )
+			distances_v.append( compute_jaccard_distance(train_fvs[model], k1=k1) )
 			distances_v[model] = np.abs(distances_v[model])
 
 		distances = np.mean(distances_v,0)
@@ -165,15 +166,34 @@ def main(gpu_ids, base_lr, P, K, tau, beta, k1, sampling, lambda_hard, number_of
 		for model in range(0, TOTAL_MODELOS):
 			lambda_lr_warmup(optimizer[model], lr_value)
 			
+		name_to_save_model_online=[]
+		name_to_save_model_momentum=[]
+  
 		for model in range(0, TOTAL_MODELOS):
-			print(colored("Training %s ..." % models_name[model], "green"))
+			name_to_save_model_online.append("%s/model_online_%s_%s_%s.h5" % (dir_to_save, "To" + target, models_name[model], version))
+			name_to_save_model_momentum.append("%s/model_momentum_%s_%s_%s.h5" % (dir_to_save, "To" + target, models_name[model], version))
 
-			online, momentum, opt = train(selected_images, pseudo_labels, sampling, 
+			if not os.path.exists(name_to_save_model_online[model]) or not os.path.exists(name_to_save_model_momentum[model]):
+				print(colored("Training %s ..." % models_name[model], "green"))
+				online, momentum, opt = train(selected_images, pseudo_labels, sampling, 
 											optimizer[model], 
 											P, K, perc, tau, beta, lambda_hard, 
 											number_of_iterations, 
 											model_online[model], 
 											model_momentum[model], gpu_indexes)
+				print("não encontrou modelos %s. Treinando..." % models_name[model])
+				# sys.exit()
+   
+			else:
+				online = model_online[model]
+				online.load_state_dict(torch.load(name_to_save_model_online[model]))
+    
+				momentum = model_momentum[model]
+				print("encontrou modelos %s. Carregando..." % models_name[model])
+				momentum.load_state_dict(torch.load(name_to_save_model_momentum[model]))
+    
+				continue
+    
 			model_online[model] = online 
 			model_momentum[model] = momentum 
 			optimizer[model] = opt 

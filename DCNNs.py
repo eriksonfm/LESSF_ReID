@@ -1,7 +1,7 @@
 import torch
 import torchreid
 import torchvision
-from torchvision.models import resnet50, densenet121, inception_v3
+from torchvision.models import resnet50, densenet121, inception_v3, vgg16
 from torch.nn import Module, Dropout, BatchNorm1d, Linear, AdaptiveAvgPool2d, CrossEntropyLoss, Softmax, ReLU, AdaptiveMaxPool2d
 from torch.nn import functional as F
 from torch import nn
@@ -21,11 +21,13 @@ except ImportError:
     )
 
 # LISTA DE MODELOS
-models_name = ["resnet50","osnet","densenet121"]
+models_name = ["vgg16", "resnet50", "osnet", "densenet121" ]
 # INDICES PARA OS MODELOS
-RESNET50 	= 0
-OSNET 		= 1
-DENSENET121 = 2
+
+VGG16		= 0
+RESNET50 	= 1
+OSNET 		= 2
+DENSENET121 = 3
 
 TOTAL_MODELOS = len(models_name)
 
@@ -88,7 +90,26 @@ def getDCNN(gpu_indexes, model_name):
 
 		model_momentum = model_momentum.cuda(gpu_indexes[0])
 		model_momentum = model_momentum.eval()
+	
+	elif model_name == models_name[VGG16]:
+		# loading VGG16
+		model_source = vgg16(pretrained=True)
+		model_source = VGG16ReID(model_source)
 
+		model_momentum = vgg16(pretrained=True)
+		model_momentum = VGG16ReID(model_momentum)
+
+		model_source = nn.DataParallel(model_source, device_ids=gpu_indexes)
+		model_momentum = nn.DataParallel(model_momentum, device_ids=gpu_indexes)
+
+		model_momentum.load_state_dict(model_source.state_dict())
+
+		model_source = model_source.cuda(gpu_indexes[0])
+		model_source = model_source.eval()
+
+		model_momentum = model_momentum.cuda(gpu_indexes[0])
+		model_momentum = model_momentum.eval()
+  
 	return model_source, model_momentum
 
 
@@ -212,7 +233,36 @@ class OSNETReID(Module):
 		#output = self.fc(v)
 		return output
 
+class VGG16ReID(Module):
+    def __init__(self, model_base):
+        super(VGG16ReID, self).__init__()
 
+        # Extraindo as características do modelo VGG16
+        self.model_base = model_base.features
+
+        # Modificação personalizada: Ajustando o classificador para ReID
+        self.model_base_classifier = model_base.classifier
+        # Alterando o número de características de saída
+        self.model_base_classifier[6] = nn.Linear(4096, 2048)  
+
+        self.gap = nn.AdaptiveAvgPool2d(1)
+        self.gmp = nn.AdaptiveMaxPool2d(output_size=(1, 1))
+        self.last_bn = nn.BatchNorm1d(1024)
+
+    def forward(self, x):
+        
+        x = self.model_base(x)
+        x = F.relu(x, inplace=True)
+        
+        x_avg = self.gap(x)
+        x_max = self.gmp(x)
+        x = x_avg + x_max
+        x = torch.cat([x,x], dim=1)
+        
+        x = x.view(x.size(0), -1)
+        output = self.last_bn(x)
+        
+        return output
 
 def validate(queries, gallery, model, rerank=False, gpu_index=0):
     model.eval()
