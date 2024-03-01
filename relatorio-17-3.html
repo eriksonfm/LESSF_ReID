@@ -1,4 +1,30 @@
-<html><head><title>Meu Relatório</title></head><body><table border="1" class="dataframe">
+<!DOCTYPE html>
+<html lang='pt-br'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    thead th {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background-color: #f2f2f2;    }
+  </style>
+    <title>Relatório Parcial</title>
+</head>
+<body><table border="1" class="dataframe">
  <thead>
   <tr style="text-align: right;">
    <th>
@@ -14,16 +40,25 @@
     modelo
    </th>
    <th>
-    Acuracia
+    ACCURACY
    </th>
    <th>
-    Precisao
+    PRECISION
    </th>
    <th>
-    Recall
+    RECALL
    </th>
    <th>
-    F1-score
+    F1_SCORE
+   </th>
+   <th>
+    APCER
+   </th>
+   <th>
+    BPCER
+   </th>
+   <th>
+    ACER
    </th>
    <th>
     MC
@@ -45,19 +80,110 @@
     Test
    </td>
    <td>
+    vgg16
+   </td>
+   <td>
+    0.803500
+   </td>
+   <td>
+    0.803826
+   </td>
+   <td>
+    0.997917
+   </td>
+   <td>
+    0.890417
+   </td>
+   <td>
+    0.002083
+   </td>
+   <td>
+    0.002083
+   </td>
+   <td>
+    0.002083
+   </td>
+   <td>
+    <img src="resultados/MC_4_0.0_0_vgg16_test.png" width="400"/>
+   </td>
+   <td>
+    <img src="resultados/grafico_4_0.0_0_vgg16_test.png" width="400"/>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    4.0
+   </td>
+   <td>
+    0.0
+   </td>
+   <td>
+    Valid
+   </td>
+   <td>
+    vgg16
+   </td>
+   <td>
+    0.647396
+   </td>
+   <td>
+    0.763983
+   </td>
+   <td>
+    0.809245
+   </td>
+   <td>
+    0.785963
+   </td>
+   <td>
+    0.190755
+   </td>
+   <td>
+    0.190755
+   </td>
+   <td>
+    0.190755
+   </td>
+   <td>
+    <img src="resultados/MC_4_0.0_0_vgg16_valid.png" width="400"/>
+   </td>
+   <td>
+    <img src="resultados/grafico_4_0.0_0_vgg16_valid.png" width="400"/>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    4.0
+   </td>
+   <td>
+    0.0
+   </td>
+   <td>
+    Test
+   </td>
+   <td>
     resnet50
    </td>
    <td>
-    0.797333
+    0.800000
    </td>
    <td>
-    0.801075
+    0.800125
    </td>
    <td>
-    0.993333
+    0.999740
    </td>
    <td>
-    0.886905
+    0.888863
+   </td>
+   <td>
+    0.000260
+   </td>
+   <td>
+    0.000260
+   </td>
+   <td>
+    0.000260
    </td>
    <td>
     <img src="resultados/MC_4_0.0_0_resnet50_test.png" width="400"/>
@@ -80,16 +206,25 @@
     resnet50
    </td>
    <td>
-    0.778854
+    0.786667
    </td>
    <td>
-    0.795679
+    0.797297
    </td>
    <td>
-    0.973568
+    0.983333
    </td>
    <td>
-    0.875681
+    0.880597
+   </td>
+   <td>
+    0.016667
+   </td>
+   <td>
+    0.016667
+   </td>
+   <td>
+    0.016667
    </td>
    <td>
     <img src="resultados/MC_4_0.0_0_resnet50_valid.png" width="400"/>
@@ -112,16 +247,25 @@
     osnet
    </td>
    <td>
-    0.790958
+    0.794667
    </td>
    <td>
-    0.803069
+    0.802168
    </td>
    <td>
-    0.978698
+    0.986667
    </td>
    <td>
-    0.882227
+    0.884903
+   </td>
+   <td>
+    0.013333
+   </td>
+   <td>
+    0.013333
+   </td>
+   <td>
+    0.013333
    </td>
    <td>
     <img src="resultados/MC_4_0.0_0_osnet_test.png" width="400"/>
@@ -144,16 +288,25 @@
     osnet
    </td>
    <td>
-    0.778854
+    0.652396
    </td>
    <td>
-    0.795679
+    0.769584
    </td>
    <td>
-    0.973568
+    0.807161
    </td>
    <td>
-    0.875681
+    0.787925
+   </td>
+   <td>
+    0.192839
+   </td>
+   <td>
+    0.192839
+   </td>
+   <td>
+    0.192839
    </td>
    <td>
     <img src="resultados/MC_4_0.0_0_osnet_valid.png" width="400"/>
@@ -176,16 +329,25 @@
     densenet121
    </td>
    <td>
-    0.771708
+    0.793542
    </td>
    <td>
-    0.811261
+    0.801942
    </td>
    <td>
-    0.931302
+    0.985260
    </td>
    <td>
-    0.867147
+    0.884199
+   </td>
+   <td>
+    0.014740
+   </td>
+   <td>
+    0.014740
+   </td>
+   <td>
+    0.014740
    </td>
    <td>
     <img src="resultados/MC_4_0.0_0_densenet121_test.png" width="400"/>
@@ -208,16 +370,25 @@
     densenet121
    </td>
    <td>
-    0.778854
+    0.785833
    </td>
    <td>
-    0.795679
+    0.797126
    </td>
    <td>
-    0.973568
+    0.982292
    </td>
    <td>
-    0.875681
+    0.880075
+   </td>
+   <td>
+    0.017708
+   </td>
+   <td>
+    0.017708
+   </td>
+   <td>
+    0.017708
    </td>
    <td>
     <img src="resultados/MC_4_0.0_0_densenet121_valid.png" width="400"/>
@@ -240,16 +411,25 @@
     mean
    </td>
    <td>
-    0.773333
+    0.794667
    </td>
    <td>
-    0.811594
+    0.802168
    </td>
    <td>
-    0.933333
+    0.986667
    </td>
    <td>
-    0.868217
+    0.884903
+   </td>
+   <td>
+    0.013333
+   </td>
+   <td>
+    0.013333
+   </td>
+   <td>
+    0.013333
    </td>
    <td>
     <img src="resultados/MC_4_0.0_0_mean_test.png" width="400"/>
@@ -272,16 +452,25 @@
     mean
    </td>
    <td>
-    0.778854
+    0.720000
    </td>
    <td>
-    0.795679
+    0.795455
    </td>
    <td>
-    0.973568
+    0.875000
    </td>
    <td>
-    0.875681
+    0.833333
+   </td>
+   <td>
+    0.125000
+   </td>
+   <td>
+    0.125000
+   </td>
+   <td>
+    0.125000
    </td>
    <td>
     <img src="resultados/MC_4_0.0_0_mean_valid.png" width="400"/>
