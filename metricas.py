@@ -20,6 +20,7 @@ base_name_dir = "/hadatasets/Synthetic-Realities/20-spoofing-mpad/2020-plosone-r
 
 distancias_t = []
 distancias_v = []
+s_models     = []
 
 def calc_predito(clusters, features, labels_ground_truth, grupo, modelo):
     
@@ -56,7 +57,14 @@ def calc_predito(clusters, features, labels_ground_truth, grupo, modelo):
     agg_clustering.fit(distance_matrix) 
     labels_kmt = agg_clustering.labels_
     
-    # s_model = silhouette_score(labels_kmt, metric='euclidean') 
+    if modelo == "mean":
+        s_model = np.array(s_models)
+        s_model = np.mean (s_model)
+        
+    else:
+        s_model = (silhouette_score(distance_matrix, labels_kmt, metric='euclidean') +1)/2.0 # 0 <= s_model <= 1
+        s_models.append(s_model)
+         
     # acumular s_model para cada modelo: olhar para melhor, media ponderada (precisa estar entre 0 e 1)
 
     predito = np.zeros(len(labels_ground_truth), dtype=int)
@@ -125,6 +133,14 @@ def medidas(GT, predito, modelo, k=0, lambda_hard=0,idx=0, grupo='test'):
     acer = (apcer+bpcer)/2.0
     
     #fonte: https://sites.google.com/view/face-anti-spoofing-challenge/evaluation
+    
+    if modelo =="mean":
+        silhouette = np.array(s_models)
+        silhouette = np.mean(silhouette)
+        
+    else:
+        silhouette = s_models[-1]
+    
     return [
         accuracy
         ,precision
@@ -133,6 +149,7 @@ def medidas(GT, predito, modelo, k=0, lambda_hard=0,idx=0, grupo='test'):
         ,apcer
         ,bpcer
         ,acer
+        ,silhouette 
             ],['ACCURACY'
                ,'PRECISION'
                ,'RECALL'
@@ -140,6 +157,7 @@ def medidas(GT, predito, modelo, k=0, lambda_hard=0,idx=0, grupo='test'):
                ,'APCER'
                ,'BPCER'
                ,'ACER'
+               ,'SILHOUETTE'
                ]
     
 def desenha_metricas(GT, features, labels_ground_truth, modelo, k=0, lambda_hard=0, idx=0, grupo='test', show_all=True):
