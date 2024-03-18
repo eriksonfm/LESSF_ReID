@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 from datasetUtils import load_from_Jadson
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import ConfusionMatrixDisplay
+from sklearn.metrics import silhouette_score
 
 ########## DADOS GLOBAIS ##########
 
@@ -54,6 +55,9 @@ def calc_predito(clusters, features, labels_ground_truth, grupo, modelo):
         
     agg_clustering.fit(distance_matrix) 
     labels_kmt = agg_clustering.labels_
+    
+    # s_model = silhouette_score(labels_kmt, metric='euclidean') 
+    # acumular s_model para cada modelo: olhar para melhor, media ponderada (precisa estar entre 0 e 1)
 
     predito = np.zeros(len(labels_ground_truth), dtype=int)
     zero_idx = np.where(labels_kmt==0)[0]
@@ -109,12 +113,12 @@ def medidas(GT, predito, modelo, k=0, lambda_hard=0,idx=0, grupo='test'):
     frr = FN / (FN+TP) #
         
     # # Calcular o APCER (teste)
-    # APCER = FN / (TP + FN)
+    # APCER = FP / (TN + FP)
     apcer = far
          
     # # Calcular o BPCER (teste)
-    # BPCER = FP / (TN + FP)
-    bpcer = far
+    # BPCER = FN / (TP + FN)
+    bpcer = frr
     
     # # Calcular o ACER
     # ACER = (APCER + BPCER) /2
