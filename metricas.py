@@ -20,7 +20,8 @@ base_name_dir = "/hadatasets/Synthetic-Realities/20-spoofing-mpad/2020-plosone-r
 
 distancias_t = []
 distancias_v = []
-s_models     = []
+s_models_t   = []
+s_models_v   = []
 
 def calc_predito(clusters, features, labels_ground_truth, grupo, modelo):
     
@@ -38,9 +39,13 @@ def calc_predito(clusters, features, labels_ground_truth, grupo, modelo):
     if modelo == "mean":
         if grupo == "test":
             array = np.array(distancias_t)
-        else:
-            array = np.array(distancias_v)    
-        media = np.mean(array, axis=0)
+            s_models = s_models_t
+        elif grupo == "valid":
+            array = np.array(distancias_v)
+            s_models = s_models_v
+                
+        # media = np.mean(array, axis=0)
+        media = np.average(array, 0, s_models) # ponderada pelas medidas de silhouette
         distance_matrix = media
         
     else:
@@ -58,12 +63,21 @@ def calc_predito(clusters, features, labels_ground_truth, grupo, modelo):
     labels_kmt = agg_clustering.labels_
     
     if modelo == "mean":
+        if grupo == 'test':
+            s_models = s_models_t
+        elif grupo == 'valid':
+            s_models = s_models_v
+            
         s_model = np.array(s_models)
-        s_model = np.mean (s_model)
+        s_model = np.mean (s_model, axis=0)
         
     else:
         s_model = (silhouette_score(distance_matrix, labels_kmt, metric='euclidean') +1)/2.0 # 0 <= s_model <= 1
-        s_models.append(s_model)
+        
+    if grupo == 'test':
+        s_models_t.append(s_model)
+    elif grupo == 'valid': 
+        s_models_v.append(s_model)
          
     # acumular s_model para cada modelo: olhar para melhor, media ponderada (precisa estar entre 0 e 1)
 
