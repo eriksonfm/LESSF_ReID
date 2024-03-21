@@ -148,6 +148,12 @@ def medidas(GT, predito, modelo, k=0, lambda_hard=0,idx=0, grupo='test'):
     
     #fonte: https://sites.google.com/view/face-anti-spoofing-challenge/evaluation
     
+    
+    if grupo == 'test':
+        s_models = s_models_t
+    elif grupo == 'valid':
+        s_models = s_models_v
+        
     if modelo =="mean":
         silhouette = np.array(s_models)
         silhouette = np.mean(silhouette)
