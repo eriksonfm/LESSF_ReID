@@ -87,7 +87,7 @@ def main(gpu_ids, base_lr, P, K, tau, beta, k1, sampling, lambda_hard, number_of
 	reliable_data_progress = []
 	lr_values = []
 
-	number_of_epoches = 30
+	number_of_epoches = 90
 	perc = 1.0
 
 	'''
