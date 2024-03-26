@@ -38,6 +38,7 @@ def cria_arquivo_ruido(entrada, saida):
     img = cv2.imread(entrada)
     gaus = cv2.GaussianBlur(img, (5,5), 0)
     ruido =  cv2.subtract(img, gaus)
+    ruido = cv2.normalize(ruido, ruido, 0, 255, cv2.NORM_MINMAX)
     
     cv2.imwrite(saida,ruido)
     
@@ -72,15 +73,6 @@ def load_from_Jadson(PATH, base_dir, use_ruido=False):
                 cria_arquivo_ruido(entrada=base_dir+'/'+img_name, saida=work_dir+img_name_ruido)
             img_name = img_name_ruido
             
-        # o padrão precisa ser tal como está
-        # incluir um parâmetro usar ruido contendo valor padrão falso
-        # se valor for verdadeiro:
-        #   muda caminho para diretório ruido
-        #	verifica se existe imagem correspondente para o ruido
-        #	se não existe cria
-        #	compor a saída img_path com a imagem de ruído
-         
-        #img_path = os.path.join(base_dir, img_name)
         img_path = os.path.join(work_dir, img_name)
         images_names.append([img_path, pid, camid])
         
