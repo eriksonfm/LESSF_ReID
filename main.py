@@ -97,9 +97,9 @@ def main(gpu_ids, base_lr, P, K, tau, beta, k1, sampling, lambda_hard, number_of
 	base_lr_values = np.concatenate((base_lr_values01, base_lr_values02))
 	'''
 
-	base_lr_values01 = np.linspace(base_lr/10, base_lr, num=10)
-	base_lr_values02 = np.linspace(base_lr, base_lr, num=30)
-	base_lr_values03 = np.linspace(base_lr/10, base_lr/10, num=10)
+	base_lr_values01 = np.linspace(base_lr/20, 	base_lr, num=20)
+	base_lr_values02 = np.linspace(base_lr, 	base_lr, num=50)
+	base_lr_values03 = np.linspace(base_lr/20, 	base_lr, num=20)
 	base_lr_values   = np.concatenate((base_lr_values01, base_lr_values02, base_lr_values03))
 
 	optimizer = []
