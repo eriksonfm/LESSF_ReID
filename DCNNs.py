@@ -21,10 +21,11 @@ except ImportError:
     )
 
 # LISTA DE MODELOS
-models_name = ["mobilenet", "vgg16", "resnet50", "osnet", "densenet121" ]
+models_name = ["convnext", "mobilenet", "vgg16", "resnet50", "osnet", "densenet121" ]
+
+
 # INDICES PARA OS MODELOS
-
-
+CONVNEXT	= models_name.index("convnext")
 VGG16		= models_name.index("vgg16")
 RESNET50 	= models_name.index("resnet50")
 OSNET 		= models_name.index("osnet")
@@ -119,6 +120,25 @@ def getDCNN(gpu_indexes, model_name):
 
 		model_momentum = mobilenet_v3_large(pretrained=True)
 		model_momentum = MobileNetReID(model_momentum)
+
+		model_source = nn.DataParallel(model_source, device_ids=gpu_indexes)
+		model_momentum = nn.DataParallel(model_momentum, device_ids=gpu_indexes)
+
+		model_momentum.load_state_dict(model_source.state_dict())
+
+		model_source = model_source.cuda(gpu_indexes[0])
+		model_source = model_source.eval()
+
+		model_momentum = model_momentum.cuda(gpu_indexes[0])
+		model_momentum = model_momentum.eval()
+  	
+	elif model_name == models_name[CONVNEXT]:
+		# loading ConvNext
+		model_source = convnext_large(pretrained=True)
+		model_source = ConvNextReID(model_source)
+
+		model_momentum = convnext_large(pretrained=True)
+		model_momentum = ConvNextReID(model_momentum)
 
 		model_source = nn.DataParallel(model_source, device_ids=gpu_indexes)
 		model_momentum = nn.DataParallel(model_momentum, device_ids=gpu_indexes)
@@ -311,6 +331,33 @@ class MobileNetReID(Module):
         output = self.fc(x)
         
         return output
+
+## New Definition for ConvNext
+class ConvNextReID(Module):
+    def __init__(self, model_base):
+        super(ConvNextReID, self).__init__()
+
+        self.model_base = model_base.features
+        self.gap = AdaptiveAvgPool2d(1)
+        self.gmp = AdaptiveMaxPool2d(output_size=(1, 1))
+        self.fc = Linear(1920, 2048)  # Adiciona uma camada totalmente conectada para aumentar a dimensionalidade para 2048
+        
+        
+    def forward(self, x):
+        
+        x = self.model_base(x)
+        x = F.relu(x, inplace=True)
+        
+        x_avg = self.gap(x)
+        x_max = self.gmp(x)
+        x = x_avg + x_max
+        x = torch.cat([x,x], dim=1)
+        
+        x = x.view(x.size(0), -1)
+        output = self.fc(x)
+        
+        return output
+
 
 def validate(queries, gallery, model, rerank=False, gpu_index=0):
     model.eval()
