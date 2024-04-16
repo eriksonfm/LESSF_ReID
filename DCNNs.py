@@ -294,8 +294,7 @@ class MobileNetReID(Module):
         self.model_base = model_base.features
         self.gap = AdaptiveAvgPool2d(1)
         self.gmp = AdaptiveMaxPool2d(output_size=(1, 1))
-        # self.last_bn = BatchNorm1d(1920)
-        self.fc = Linear(1920, 2048)  # Adicionar uma camada totalmente conectada para aumentar a dimensionalidade para 2048
+        self.fc = Linear(1920, 2048)  # Adiciona uma camada totalmente conectada para aumentar a dimensionalidade para 2048
         
         
     def forward(self, x):
@@ -309,9 +308,7 @@ class MobileNetReID(Module):
         x = torch.cat([x,x], dim=1)
         
         x = x.view(x.size(0), -1)
-        #output = self.last_bn(x)
         output = self.fc(x)
-        #print("passou aqui")
         
         return output
 
