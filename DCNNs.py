@@ -134,10 +134,10 @@ def getDCNN(gpu_indexes, model_name):
   	
 	elif model_name == models_name[CONVNEXT]:
 		# loading ConvNext
-		model_source = convnext_large(pretrained=True)
+		model_source = convnext_base(pretrained=True)
 		model_source = ConvNextReID(model_source)
 
-		model_momentum = convnext_large(pretrained=True)
+		model_momentum = convnext_base(pretrained=True)
 		model_momentum = ConvNextReID(model_momentum)
 
 		model_source = nn.DataParallel(model_source, device_ids=gpu_indexes)
@@ -340,7 +340,7 @@ class ConvNextReID(Module):
         self.model_base = model_base.features
         self.gap = AdaptiveAvgPool2d(1)
         self.gmp = AdaptiveMaxPool2d(output_size=(1, 1))
-        self.fc = Linear(1920, 2048)  # Adiciona uma camada totalmente conectada para aumentar a dimensionalidade para 2048
+        self.fc = Linear(2048, 2048)  # Adiciona uma camada totalmente conectada para aumentar a dimensionalidade para 2048
         
         
     def forward(self, x):
