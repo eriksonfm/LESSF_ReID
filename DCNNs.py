@@ -174,10 +174,10 @@ def getDCNN(gpu_indexes, model_name):
   
 	elif model_name == models_name[VISIONTRANSF]:
 		# loading VisionTransformer
-		model_source = VisionTransformer(pretrained=True)
+		model_source = vit_l_32(pretrained=True)
 		model_source = VisionTransformerReID(model_source)
 
-		model_momentum = VisionTransformer(pretrained=True)
+		model_momentum = vit_l_32(pretrained=True)
 		model_momentum = VisionTransformerReID(model_momentum)
 
 		model_source = nn.DataParallel(model_source, device_ids=gpu_indexes)
@@ -467,7 +467,7 @@ class VisionTransformerReID(Module):
     def __init__(self, model_base):
         super(VisionTransformerReID, self).__init__()
 
-        self.model_base = model_base.features
+        self.model_base = model_base.encoder.ln
         self.gap = AdaptiveAvgPool2d(1)
         self.gmp = AdaptiveMaxPool2d(output_size=(1, 1))
         self.fc = Linear(2560, 2048)  # Adiciona uma camada totalmente conectada para aumentar a dimensionalidade para 2048
