@@ -21,7 +21,7 @@ except ImportError:
     )
 
 # LISTA DE MODELOS
-models_name = ["convnext", "mobilenet", "vgg16", "resnet50", "osnet", "densenet121" ]
+models_name = ["efficientnet", "convnext", "mobilenet", "vgg16", "resnet50", "osnet", "densenet121" ]
 
 
 # INDICES PARA OS MODELOS
@@ -31,6 +31,7 @@ RESNET50 	= models_name.index("resnet50")
 OSNET 		= models_name.index("osnet")
 DENSENET121 = models_name.index("densenet121")
 MOBILENET 	= models_name.index("mobilenet")
+EFFICIENTNET= models_name.index("efficientnet")
 
 TOTAL_MODELOS = len(models_name)
 
@@ -150,7 +151,26 @@ def getDCNN(gpu_indexes, model_name):
 
 		model_momentum = model_momentum.cuda(gpu_indexes[0])
 		model_momentum = model_momentum.eval()
-  
+   	
+	elif model_name == models_name[EFFICIENTNET]:
+		# loading EfficientNetV2
+		model_source = efficientnet_v2_m(pretrained=True)
+		model_source = EfficientNetReID(model_source)
+
+		model_momentum = efficientnet_v2_m(pretrained=True)
+		model_momentum = EfficientNetReID(model_momentum)
+
+		model_source = nn.DataParallel(model_source, device_ids=gpu_indexes)
+		model_momentum = nn.DataParallel(model_momentum, device_ids=gpu_indexes)
+
+		model_momentum.load_state_dict(model_source.state_dict())
+
+		model_source = model_source.cuda(gpu_indexes[0])
+		model_source = model_source.eval()
+
+		model_momentum = model_momentum.cuda(gpu_indexes[0])
+		model_momentum = model_momentum.eval()
+    
 	return model_source, model_momentum
 
 
@@ -341,6 +361,32 @@ class ConvNextReID(Module):
         self.gap = AdaptiveAvgPool2d(1)
         self.gmp = AdaptiveMaxPool2d(output_size=(1, 1))
         self.fc = Linear(2048, 2048)  # Adiciona uma camada totalmente conectada para aumentar a dimensionalidade para 2048
+        
+        
+    def forward(self, x):
+        
+        x = self.model_base(x)
+        x = F.relu(x, inplace=True)
+        
+        x_avg = self.gap(x)
+        x_max = self.gmp(x)
+        x = x_avg + x_max
+        x = torch.cat([x,x], dim=1)
+        
+        x = x.view(x.size(0), -1)
+        output = self.fc(x)
+        
+        return output
+
+## New Definition for EfficientNetV2
+class EfficientNetReID(Module):
+    def __init__(self, model_base):
+        super(EfficientNetReID, self).__init__()
+
+        self.model_base = model_base.features
+        self.gap = AdaptiveAvgPool2d(1)
+        self.gmp = AdaptiveMaxPool2d(output_size=(1, 1))
+        self.fc = Linear(2560, 2048)  # Adiciona uma camada totalmente conectada para aumentar a dimensionalidade para 2048
         
         
     def forward(self, x):
