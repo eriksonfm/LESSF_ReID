@@ -31,6 +31,7 @@ RESNET50 	= models_name.index("resnet50")
 OSNET 		= models_name.index("osnet")
 DENSENET121 = models_name.index("densenet121")
 MOBILENET 	= models_name.index("mobilenet")
+EFFICIENTNET= models_name.index("efficientnet")
 
 TOTAL_MODELOS = len(models_name)
 
