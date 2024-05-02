@@ -43,7 +43,7 @@ def cria_arquivo_ruido(entrada, saida):
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     fourier = cv2.dft(np.float32(gray), flags=cv2.DFT_REAL_OUTPUT)
     fourier_shift = np.fft.fftshift(fourier)
-    magnitude = 20*np.log(cv2.magnitude(fourier_shift[:,:,0],fourier_shift[:,:,1]))
+    magnitude = 20*np.log(cv2.magnitude(fourier_shift[:,0],fourier_shift[:,1]))
         
     ruido = cv2.normalize(magnitude, None, 0, 255, cv2.NORM_MINMAX)
     
