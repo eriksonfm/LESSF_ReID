@@ -45,7 +45,8 @@ def cria_arquivo_ruido(entrada, saida):
     fourier_shift = np.fft.fftshift(fourier)
     magnitude = 20*np.log(cv2.magnitude(fourier_shift[:,0],fourier_shift[:,1]))
         
-    ruido = cv2.normalize(magnitude, None, 0, 255, cv2.NORM_MINMAX)
+    #ruido = cv2.normalize(magnitude, None, 0, 255, cv2.NORM_MINMAX)
+    ruido = fourier_shift
     
     cv2.imwrite(saida,ruido)
     
