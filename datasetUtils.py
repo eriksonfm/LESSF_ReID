@@ -36,10 +36,12 @@ import cv2
 
 def cria_arquivo_ruido(entrada, saida):
     img = cv2.imread(entrada)
-    gaus = cv2.GaussianBlur(img, (5,5), 0)
-    ruido =  cv2.subtract(img, gaus)
-    ruido = cv2.normalize(ruido, ruido, 0, 255, cv2.NORM_MINMAX)
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+    # gaus = cv2.GaussianBlur(img, (5,5), 0)
+    # ruido =  cv2.subtract(img, gaus)
+    # ruido = cv2.normalize(ruido, ruido, 0, 255, cv2.NORM_MINMAX)
     
+    ruido = img
     cv2.imwrite(saida,ruido)
     
 def load_from_Jadson(PATH, base_dir, use_ruido=False):
