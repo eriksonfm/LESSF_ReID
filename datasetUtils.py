@@ -36,10 +36,19 @@ import cv2
 
 def cria_arquivo_ruido(entrada, saida):
     img = cv2.imread(entrada)
-    gaus = cv2.GaussianBlur(img, (5,5), 0)
-    ruido =  cv2.subtract(img, gaus)
-    ruido = cv2.normalize(ruido, ruido, 0, 255, cv2.NORM_MINMAX)
+    # img = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+    # gaus = cv2.GaussianBlur(img, (5,5), 0)
+    # ruido =  cv2.subtract(img, gaus)
     
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    fourier = cv2.dft(np.float32(gray), flags=cv2.DFT_REAL_OUTPUT)
+    fourier_shift = np.fft.fftshift(fourier)
+    magnitude = 20*np.log(cv2.magnitude(fourier_shift[:,0],fourier_shift[:,1]))
+        
+    #ruido = cv2.normalize(magnitude, None, 0, 255, cv2.NORM_MINMAX)
+    ruido = fourier_shift
+    
+    ruido = img
     cv2.imwrite(saida,ruido)
     
 def load_from_Jadson(PATH, base_dir, use_ruido=False):
