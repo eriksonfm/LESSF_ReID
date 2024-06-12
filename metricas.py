@@ -25,7 +25,7 @@ s_models_v   = []
 
 def calc_predito(clusters, features, labels_ground_truth, grupo, modelo):
     
-    agg_clustering = AgglomerativeClustering(n_clusters=clusters, metric='euclidean', linkage='ward')
+    agg_clustering = AgglomerativeClustering(n_clusters=clusters, metric='precomputed', linkage='average')
         
     # features = features/torch.norm(features, dim=1, keepdim=True)
     # distance_matrix = 1.0 - torch.mm(features, features.T)
