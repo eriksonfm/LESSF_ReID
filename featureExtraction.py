@@ -153,6 +153,9 @@ def extractFeatures(subset, model, batch_size, gpu_index=0, eval_mode=True):
             batch_gpu = batch.cuda(gpu_index)
             fv = model(batch_gpu)
             fvs = fv.data.cpu()
+            
+            del batch_gpu
+            torch.cuda.empty_cache()
 
         if len(subset_fvs) == 0:
             subset_fvs = fvs
