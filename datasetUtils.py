@@ -36,9 +36,7 @@ import cv2
 
 def cria_arquivo_ruido(entrada, saida):
     img = cv2.imread(entrada)
-    # img = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
-    # gaus = cv2.GaussianBlur(img, (5,5), 0)
-    # ruido =  cv2.subtract(img, gaus)
+    img = cv2.resize(img,dsize=(256, 128),interpolation=cv2.INTER_CUBIC)
     
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     fourier = cv2.dft(np.float32(gray), flags=cv2.DFT_REAL_OUTPUT)
@@ -70,16 +68,16 @@ def load_from_Jadson(PATH, base_dir, use_ruido=False):
         
         work_dir = base_dir+'/'
         if use_ruido == True:
-            novo_dir = "ruido"
-            img_name_ruido = novo_dir + '/' + img_name
-            parts = img_name_ruido.split('/')
+            novo_dir = "fft"
+            img_name_nova = novo_dir + '/' + img_name
+            parts = img_name_nova.split('/')
             parts.pop()
             novo_dir = '/'.join(parts)
             work_dir = "/work/emorais/"
-            if not os.path.exists(work_dir+img_name_ruido):
+            if not os.path.exists(work_dir+img_name_nova):
                 os.makedirs(work_dir+novo_dir, exist_ok=True)
-                cria_arquivo_ruido(entrada=base_dir+'/'+img_name, saida=work_dir+img_name_ruido)
-            img_name = img_name_ruido
+                cria_arquivo_ruido(entrada=base_dir+'/'+img_name, saida=work_dir+img_name_nova)
+            img_name = img_name_nova
             
         img_path = os.path.join(work_dir, img_name)
         images_names.append([img_path, pid, camid])
@@ -113,8 +111,8 @@ def load_dataset(dataset_name, use_ruido=False):
 		queries_images = load_set_from_MSMT17("/hadatasets/ReID_Datasets/MSMT17_V2/list_query.txt", base_name_test)
   
 	elif dataset_name == "Jadson":
-		base_name_dir = "/hadatasets/Synthetic-Realities/20-spoofing-mpad/2020-plosone-recod-mpad"
-
+		base_name_dir = "/hadatasets/Synthetic-Realities/20-spoofing-mpad/2020-plosone-recod-mpad/crops/"
+	
 		train_images = load_from_Jadson("csvs/train_motog5.csv", base_name_dir, use_ruido) 
 		gallery_images = load_from_Jadson("csvs/test_motog5.csv", base_name_dir, use_ruido) 
 		queries_images = load_from_Jadson("csvs/val_motog5.csv", base_name_dir, use_ruido) 
