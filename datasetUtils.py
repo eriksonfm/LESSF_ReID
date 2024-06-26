@@ -113,9 +113,9 @@ def load_dataset(dataset_name, use_ruido=False):
 	elif dataset_name == "Jadson":
 		base_name_dir = "/hadatasets/Synthetic-Realities/20-spoofing-mpad/2020-plosone-recod-mpad/crops/"
 	
-		train_images = load_from_Jadson("csvs/train_motog5.csv", base_name_dir, use_ruido) 
-		gallery_images = load_from_Jadson("csvs/test_motog5.csv", base_name_dir, use_ruido) 
-		queries_images = load_from_Jadson("csvs/val_motog5.csv", base_name_dir, use_ruido) 
+		train_images   = load_from_Jadson("csvs/mpad_crop_just_motog_train.csv", base_name_dir, use_ruido) 
+		gallery_images = load_from_Jadson("csvs/mpad_crop_just_motog_test.csv",  base_name_dir, use_ruido) 
+		queries_images = load_from_Jadson("csvs/mpad_crop_just_motog_val.csv",   base_name_dir, use_ruido) 
 
 
 	return train_images, gallery_images, queries_images
