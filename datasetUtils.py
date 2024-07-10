@@ -36,7 +36,6 @@ import cv2
 
 def cria_arquivo_ruido(entrada, saida):
     img = cv2.imread(entrada)
-    img = cv2.resize(img,dsize=(256, 128),interpolation=cv2.INTER_CUBIC)
     
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     fourier = cv2.dft(np.float32(gray), flags=cv2.DFT_REAL_OUTPUT)

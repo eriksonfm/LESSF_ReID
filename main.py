@@ -43,7 +43,7 @@ cudnn.deterministic = True
 
 from DCNNs import *
 
-def main(gpu_ids, base_lr, P, K, tau, beta, k1, sampling, lambda_hard, number_of_iterations, momentum_on_feature_extraction, 
+def main(sufix, gpu_ids, base_lr, P, K, tau, beta, k1, sampling, lambda_hard, number_of_iterations, momentum_on_feature_extraction, 
 														target, dir_to_save, dir_to_save_metrics, version, eval_freq, use_ruido=False):
 
 
@@ -250,19 +250,19 @@ def main(gpu_ids, base_lr, P, K, tau, beta, k1, sampling, lambda_hard, number_of
     
     ##################    
     
-	sufix =""
-	if use_ruido == True:
-		sufix ="_ruido"
+	# sufix =""
+	# if use_ruido == True:
+	# 	sufix ="_ruido"
     
 	for model in range(0, TOTAL_MODELOS):
 		test_fvs = extractFeatures(gallery_images_target, model_momentum[model], 500, gpu_index=gpu_indexes[0])
-		torch.save(test_fvs, "resultados/test" +sufix+ "_%s.pt" % models_name[model])
+		torch.save(test_fvs, "resultados/test_" +sufix+ "_%s.pt" % models_name[model])
 		
 		validation_fvs = extractFeatures(queries_images_target, model_momentum[model], 500, gpu_index=gpu_indexes[0])
-		torch.save(validation_fvs, "resultados/validation" +sufix+ "_%s.pt" % models_name[model])
+		torch.save(validation_fvs, "resultados/validation_" +sufix+ "_%s.pt" % models_name[model])
 		
-	np.save("resultados/labels_validation" +sufix+ ".npy", queries_images_target[:,1]) 
-	np.save("resultados/labels_test" +sufix+ ".npy", gallery_images_target[:,1])
+	np.save("resultados/labels_validation_" +sufix+ ".npy", queries_images_target[:,1]) 
+	np.save("resultados/labels_test_" +sufix+ ".npy", gallery_images_target[:,1])
     
     ####################
     

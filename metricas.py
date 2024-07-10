@@ -16,7 +16,7 @@ labels_validation = ''
 features_teste = ''
 features_validation = ''
 
-base_name_dir = "/hadatasets/Synthetic-Realities/20-spoofing-mpad/2020-plosone-recod-mpad"
+base_name_dir = "/hadatasets/Synthetic-Realities/20-spoofing-mpad/2020-plosone-recod-mpad/crops/"
 
 distancias_t = []
 distancias_v = []
@@ -212,23 +212,23 @@ def desenha_metricas(GT, features, labels_ground_truth, modelo, k=0, lambda_hard
     return rotulos, metricas
 
 
-def metricas(k, lambda_hard, modelo):
+def metricas(sufix, k, lambda_hard, modelo):
     
     #carregando labels
 
-    labels_teste = np.load("resultados/labels_test_ruido.npy", allow_pickle=True).astype(int)
-    labels_validation = np.load("resultados/labels_validation_ruido.npy", allow_pickle=True).astype(int)
+    labels_teste = np.load("resultados/labels_test_" + sufix + ".npy", allow_pickle=True).astype(int)
+    labels_validation = np.load("resultados/labels_validation_" + sufix + ".npy", allow_pickle=True).astype(int)
 
     #corregando dados
     if (modelo == 'mean'):
         features_teste = ""
         features_validation = ""
     else:
-        features_teste = torch.load("resultados/test_ruido_" + modelo + ".pt")
-        features_validation = torch.load("resultados/validation_ruido_" + modelo +".pt")
+        features_teste = torch.load("resultados/test_" + sufix + "_" + modelo + ".pt")
+        features_validation = torch.load("resultados/validation_" + sufix + "_" + modelo +".pt")
 
     # executando com conjunto de testes
-    GT = load_from_Jadson("csvs/test_motog5.csv", base_name_dir, True)
+    GT = load_from_Jadson("csvs/mpad_crop_just_motog_test.csv", base_name_dir, True)
     GT = np.array([ int(item[1]) for item in GT])
     
     tentativas =1
@@ -240,7 +240,7 @@ def metricas(k, lambda_hard, modelo):
     metricas_t = np.array(metricas_t)
 
     # executando com conjunto de validação
-    GT = load_from_Jadson("csvs/val_motog5.csv", base_name_dir, True)
+    GT = load_from_Jadson("csvs/mpad_crop_just_motog_val.csv", base_name_dir, True)
     GT = np.array([ int(item[1]) for item in GT])
     
     metricas_v = []
