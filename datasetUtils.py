@@ -37,7 +37,6 @@ import cv2
 def cria_arquivo_ruido(entrada, saida):
     img = cv2.imread(entrada)
     img = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
-    img = cv2.resize(img,dsize=(256, 128),interpolation=cv2.INTER_CUBIC)
     
     nova = img
     cv2.imwrite(saida,nova)
