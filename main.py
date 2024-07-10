@@ -165,39 +165,19 @@ def main(sufix, gpu_ids, base_lr, P, K, tau, beta, k1, sampling, lambda_hard, nu
 		
 		for model in range(0, TOTAL_MODELOS):
 			lambda_lr_warmup(optimizer[model], lr_value)
-			
-		name_to_save_model_online=[]
-		name_to_save_model_momentum=[]
   
 		for model in range(0, TOTAL_MODELOS):
-			name_to_save_model_online.append("%s/model_online_%s_%s_%s.h5" % (dir_to_save, "To" + target, models_name[model], version))
-			name_to_save_model_momentum.append("%s/model_momentum_%s_%s_%s.h5" % (dir_to_save, "To" + target, models_name[model], version))
+			print(colored("Training %s ..." % models_name[model], "green"))
+			online, momentum, opt = train(selected_images, pseudo_labels, sampling, 
+										optimizer[model], 
+										P, K, perc, tau, beta, lambda_hard, 
+										number_of_iterations, 
+										model_online[model], 
+										model_momentum[model], gpu_indexes)
 
-			if not os.path.exists(name_to_save_model_online[model]) or not os.path.exists(name_to_save_model_momentum[model]):
-				print(colored("Training %s ..." % models_name[model], "green"))
-				online, momentum, opt = train(selected_images, pseudo_labels, sampling, 
-											optimizer[model], 
-											P, K, perc, tau, beta, lambda_hard, 
-											number_of_iterations, 
-											model_online[model], 
-											model_momentum[model], gpu_indexes)
-				print("não encontrou modelos %s. Treinando..." % models_name[model])
-				# sys.exit()
-   
-			else:
-				online = model_online[model]
-				online.load_state_dict(torch.load(name_to_save_model_online[model]))
-    
-				momentum = model_momentum[model]
-				print("encontrou modelos %s. Carregando..." % models_name[model])
-				momentum.load_state_dict(torch.load(name_to_save_model_momentum[model]))
-    
-				continue
-    
 			model_online[model] = online 
 			model_momentum[model] = momentum 
 			optimizer[model] = opt 
-   
    
 		tf = time.time()
 		dt_finetuning = tf - t0
