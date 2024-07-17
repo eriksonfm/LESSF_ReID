@@ -125,11 +125,11 @@ def medidas(GT, predito, modelo, k=0, lambda_hard=0,idx=0, grupo='test'):
     # Calcular o F1-Score
     f1score = f1_score(y_true, y_pred)
     
-    TP = confusion[0,0]
-    FN = confusion[0,1]
-    FP = confusion[1,0]
-    TN = confusion[1,1]
-    
+    # TP = confusion[0,0]
+    # FN = confusion[0,1]
+    # FP = confusion[1,0]
+    # TN = confusion[1,1]
+    TN, FP, FN, TP = confusion.ravel()
     
     far = FP / (TN+FP) #apcer
     frr = FN / (FN+TP) #
