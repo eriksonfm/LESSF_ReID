@@ -99,7 +99,7 @@ def main(sufix, gpu_ids, base_lr, P, K, tau, beta, k1, sampling, lambda_hard, nu
 
 	base_lr_values01 = np.linspace(base_lr/round(number_of_epoches/6),	base_lr, num=round(number_of_epoches/6))
 	base_lr_values02 = np.linspace(base_lr,								base_lr, num=2*round(number_of_epoches/3))
-	base_lr_values03 = np.linspace(base_lr/round(number_of_epoches/6),	base_lr, num=round(number_of_epoches/6))
+	base_lr_values03 = np.linspace(base_lr, base_lr/round(number_of_epoches/6),  num=round(number_of_epoches/6))
 	base_lr_values   = np.concatenate((base_lr_values01, base_lr_values02, base_lr_values03))
 
 	optimizer = []

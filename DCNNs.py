@@ -21,17 +21,25 @@ except ImportError:
     )
 
 # LISTA DE MODELOS
-models_name = ["efficientnet", "convnext", "mobilenet", "vgg16", "resnet50", "osnet", "densenet121" ]
+models_name = [
+    # "efficientnet", 
+    # "convnext", 
+    # "mobilenet", 
+    # "vgg16", 
+    "resnet50", 
+    "osnet", 
+    "densenet121" 
+    ]
 
 
 # INDICES PARA OS MODELOS
-CONVNEXT	= models_name.index("convnext")
-VGG16		= models_name.index("vgg16")
+# EFFICIENTNET= models_name.index("efficientnet")
+# CONVNEXT	= models_name.index("convnext")
+# MOBILENET 	= models_name.index("mobilenet")
+# VGG16		= models_name.index("vgg16")
 RESNET50 	= models_name.index("resnet50")
 OSNET 		= models_name.index("osnet")
 DENSENET121 = models_name.index("densenet121")
-MOBILENET 	= models_name.index("mobilenet")
-EFFICIENTNET= models_name.index("efficientnet")
 
 TOTAL_MODELOS = len(models_name)
 
